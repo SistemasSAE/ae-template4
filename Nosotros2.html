@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Unidad Educativa Colegio La Ninfa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Paleta de colores */
+            --primary-dark: #003366;
+            --primary-accent: #D4AF37;
+            --background-light: #F8F9FA;
+            --tech-accent: #20B2AA;
+            --text-gray: #5A6D7B;
+            --dynamic-coral: #FF6B6B;
+            --dark-section: #1E3D59;
+            
+            /* Sombras */
+            --shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.2);
+            
+            /* Transiciones */
+            --transition: all 0.4s ease;
+
+            /* Bordes redondeados */
+            --border-radius-lg: 30px;
+            --border-radius-xl: 50px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-gray);
+            background-color: var(--background-light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: var(--border-radius-xl);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary {
+            background: var(--dynamic-coral);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--tech-accent);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background: var(--tech-accent);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: var(--dynamic-coral);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--dark-section) 100%);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            margin-right: 15px;
+            border-radius: 10px;
+        }
+
+        .logo-text {
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .logo-text span {
+            color: var(--primary-accent);
+            font-weight: 600;
+        }
+
+        /* Navegación */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            position: relative;
+            margin: 0 10px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: var(--border-radius-lg);
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link i {
+            margin-left: 5px;
+            font-size: 14px;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .submenu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            list-style: none;
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px);
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .submenu-item {
+            padding: 8px 25px;
+        }
+
+        .submenu-link {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+            font-size: 15px;
+            padding: 5px 0;
+        }
+
+        .submenu-link:hover {
+            color: var(--primary-dark);
+            transform: translateX(8px);
+        }
+
+        .nav-item:hover .submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Sección Nosotros */
+        .about-us-container {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .about-us-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-us-intro p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .identity-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .identity-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .identity-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .identity-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 32px;
+            color: var(--primary-dark);
+            box-shadow: var(--shadow);
+        }
+
+        .identity-title {
+            font-size: 24px;
+            margin-bottom: 18px;
+            color: var(--primary-dark);
+        }
+
+        /* Valores */
+        .values-section {
+            background: linear-gradient(to bottom, var(--background-light) 0%, #ffffff 100%);
+            padding: 80px 0;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 35px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(212, 175, 55, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 28px;
+            color: var(--primary-accent);
+        }
+
+        .value-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .value-description {
+            font-size: 16px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 70px 0 0;
+            background-image: url('https://placehold.co/1920x1080/003366/FFFFFF?text=Personal+del+Colegio');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            color: white;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 40px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 22px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 14px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        .footer-links a i {
+            margin-right: 12px;
+            font-size: 15px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(8px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-accent);
+            transform: translateY(-8px);
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            display: flex;
+            margin-bottom: 18px;
+            align-items: flex-start;
+            font-size: 16px;
+        }
+
+        .contact-info i {
+            margin-right: 18px;
+            color: var(--primary-accent);
+            font-size: 22px;
+            min-width: 22px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 90px;
+                right: -100%;
+                flex-direction: column;
+                background: var(--primary-dark);
+                width: 300px;
+                height: calc(100vh - 90px);
+                padding: 20px;
+                transition: var(--transition);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-item {
+                margin: 10px 0;
+            }
+            
+            .submenu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                box-shadow: none;
+                background: rgba(255, 255, 255, 0.05);
+                margin-top: 5px;
+                display: none;
+            }
+            
+            .nav-item:hover .submenu {
+                display: block;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .identity-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-col h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .about-us-intro p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="0316808d-720d-40e0-8c3e-35eac2a4822f-removebg-preview.png" alt="Logo Colegio La Ninfa" class="logo-img">
+                <div class="logo-text">Colegio <span>La Ninfa</span></div>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="Index2.html" class="nav-link">Inicio</a></li>
+                    
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Colegio <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="Nosotros2.html" class="submenu-link">Nosotros</a></li>
+                            <li class="submenu-item"><a href="Historia2.html" class="submenu-link">Historia</a></li>
+                            <li class="submenu-item"><a href="Programas2.html" class="submenu-link">Programas</a></li>
+                            <li class="submenu-item"><a href="Reglas2.html" class="submenu-link">Normativa Interna</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Publicaciones <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="Noticias2.html" class="submenu-link">Noticias</a></li>
+                            <li class="submenu-item"><a href="Eventos2.html" class="submenu-link">Eventos</a></li>
+                            <li class="submenu-item"><a href="Galería2.html" class="submenu-link">Galería</a></li>
+                            <li class="submenu-item"><a href="Horarios2.html" class="submenu-link">Horarios</a></li>
+                            <li class="submenu-item"><a href="Útiles.html" class="submenu-link">Útiles</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Comunidad <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="Egresados2.html" class="submenu-link">Egresados</a></li>
+                            <li class="submenu-item"><a href="Donar2.html" class="submenu-link">Apóyanos</a></li>
+                            <li class="submenu-item"><a href="Eventoex2.html" class="submenu-link">Eventos</a></li>
+                            <li class="submenu-item"><a href="Noticiasex2.html" class="submenu-link">Noticias</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item"><a href="Contacto2.html" class="nav-link">Contáctanos</a></li>
+                    
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Intranet <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="Sesión2.html" class="submenu-link">Institución</a></li>
+                            <li class="submenu-item"><a href="Sesión2.html" class="submenu-link">Personal</a></li>
+                            <li class="submenu-item"><a href="Sesión2.html" class="submenu-link">Representante</a></li>
+                            <li class="submenu-item"><a href="Sesión2.html" class="submenu-link">Estudiante</a></li>
+                            <li class="submenu-item"><a href="Sesiónex2.html" class="submenu-link">Egresados</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección Nosotros -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title"><u>Nosotros</u></h2>
+            
+            <div class="about-us-container">
+                <div class="about-us-intro">
+                    <p>El Colegio La Ninfa es una institución educativa de tradición jesuita, fundada en 1900, comprometida con la formación integral de personas competentes, conscientes, compasivas y comprometidas. Nuestro modelo educativo combina excelencia académica con formación en valores, preparando a nuestros estudiantes para enfrentar los desafíos del mundo actual con una sólida base ética y espiritual.</p>
+                </div>
+                
+                <div class="identity-cards">
+                    <div class="identity-card">
+                        <div class="identity-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="identity-title">Quiénes Somos</h3>
+                        <p>Somos una comunidad educativa jesuita dedicada a formar personas íntegras que contribuyan a la construcción de una sociedad más justa y humana. Nuestro proyecto educativo se fundamenta en la espiritualidad ignaciana, la excelencia académica y el compromiso social.</p>
+                    </div>
+                    
+                    <div class="identity-card">
+                        <div class="identity-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3 class="identity-title">Misión</h3>
+                        <p>Formar personas íntegras, capaces de transformar la sociedad a través de la excelencia académica, la formación en valores cristianos y el compromiso con la justicia y el servicio a los demás, siguiendo el modelo educativo de la Compañía de Jesús.</p>
+                    </div>
+                    
+                    <div class="identity-card">
+                        <div class="identity-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="identity-title">Visión</h3>
+                        <p>Ser reconocidos como el referente nacional en educación jesuita, innovadora y de calidad, que contribuye a la construcción de una sociedad más justa y humana, formando líderes comprometidos con el desarrollo integral de Venezuela y el mundo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sección Valores -->
+    <section class="section values-section">
+        <div class="container">
+            <h2 class="section-title"><u>Nuestros Valores</u></h2>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 class="value-title">Excelencia</h3>
+                    <p class="value-description">Buscamos la excelencia en todo lo que hacemos, promoviendo el máximo desarrollo de las capacidades de nuestros estudiantes en lo académico, artístico, deportivo y humano.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="value-title">Integridad</h3>
+                    <p class="value-description">Actuamos con coherencia entre pensamiento, palabra y acción, manteniendo siempre una conducta ética y responsable en todas nuestras actividades.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3 class="value-title">Compromiso Social</h3>
+                    <p class="value-description">Fomentamos la sensibilidad ante las necesidades de los demás y el compromiso activo en la construcción de una sociedad más justa e inclusiva.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="value-title">Respeto</h3>
+                    <p class="value-description">Valoramos la dignidad de cada persona, promoviendo relaciones basadas en el respeto mutuo, la empatía y el reconocimiento de la diversidad.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="value-title">Innovación</h3>
+                    <p class="value-description">Impulsamos la creatividad y el pensamiento crítico, adaptándonos a los cambios y buscando constantemente nuevas formas de enseñar y aprender.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="value-title">Trabajo en Equipo</h3>
+                    <p class="value-description">Promovemos la colaboración y el trabajo conjunto, reconociendo que el logro de objetivos comunes requiere del esfuerzo coordinado de todos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Colegio La Ninfa</h3>
+                    <p style="margin-bottom: 20px; opacity: 0.8;">Educación jesuita de excelencia desde 1900. Formando líderes con valores para un mundo mejor.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="Index2.html#cupo"><i class="fas fa-chevron-right"></i>Admisiones</a></li>
+                        <li><a href="Index2.html#calendario"><i class="fas fa-chevron-right"></i> Calendario Escolar</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Trabaja con Nosotros</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contáctanos</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. Principal, Sector La Ninfa, Caracas, Venezuela</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+58 212 555 1234</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@colegiolaninfa.edu.ve</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Lunes a Viernes: 7:00 AM - 4:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Síguenos</h3>
+                    <p style="margin-bottom: 20px; opacity: 0.8;">Mantente conectado con nuestra comunidad a través de las redes sociales.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <div class="container">
+                &copy; 2025 Unidad Educativa Colegio La Ninfa. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menú móvil
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.querySelector('i').classList.toggle('fa-bars');
+            mobileToggle.querySelector('i').classList.toggle('fa-times');
+        });
+    </script>
+</body>
+</html>

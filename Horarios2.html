@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horarios Escolares - Colegio La Ninfa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos base del sitio */
+        :root {
+            --primary-dark: #003366;
+            --primary-accent: #D4AF37;
+            --background-light: #F8F9FA;
+            --tech-accent: #20B2AA;
+            --text-gray: #5A6D7B;
+            --dynamic-coral: #FF6B6B;
+            --dark-section: #1E3D59;
+            --shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.2);
+            --transition: all 0.4s ease;
+            --border-radius-lg: 30px;
+            --border-radius-xl: 50px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-gray);
+            background-color: var(--background-light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: var(--border-radius-xl);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary {
+            background: var(--dynamic-coral);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--tech-accent);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background: var(--tech-accent);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: var(--dynamic-coral);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--dark-section) 100%);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            margin-right: 15px;
+            border-radius: 10px;
+        }
+
+        .logo-text {
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .logo-text span {
+            color: var(--primary-accent);
+            font-weight: 600;
+        }
+
+        /* Navegación */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            position: relative;
+            margin: 0 10px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: var(--border-radius-lg);
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link i {
+            margin-left: 5px;
+            font-size: 14px;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .submenu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            list-style: none;
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px);
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .submenu-item {
+            padding: 8px 25px;
+        }
+
+        .submenu-link {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+            font-size: 15px;
+            padding: 5px 0;
+        }
+
+        .submenu-link:hover {
+            color: var(--primary-dark);
+            transform: translateX(8px);
+        }
+
+        .nav-item:hover .submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Breadcrumbs */
+        .breadcrumb {
+            padding: 25px 0 15px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .breadcrumb ul {
+            display: flex;
+            list-style: none;
+            padding-left: 20px;
+        }
+        
+        .breadcrumb li {
+            margin-right: 15px;
+            position: relative;
+            font-size: 15px;
+        }
+        
+        .breadcrumb li:after {
+            content: "/";
+            position: absolute;
+            right: -12px;
+            color: var(--text-gray);
+        }
+        
+        .breadcrumb li:last-child:after {
+            content: none;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--primary-accent);
+        }
+        
+        .breadcrumb li:last-child a {
+            color: var(--tech-accent);
+            font-weight: 600;
+        }
+
+        /* Nueva sección de descargas por grado */
+        .download-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--dark-section) 100%);
+            padding: 60px 0;
+            border-radius: var(--border-radius-lg);
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .download-title {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 32px;
+        }
+
+        .download-subtitle {
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 18px;
+        }
+
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .download-btn {
+            background: var(--primary-accent);
+            color: var(--primary-dark);
+            font-weight: 700;
+            padding: 18px 35px;
+            border-radius: var(--border-radius-lg);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: var(--transition);
+            text-decoration: none;
+            box-shadow: var(--shadow);
+        }
+
+        .download-btn:hover {
+            background: white;
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        /* Estilos para secciones de grados */
+        .grades-section {
+            margin-bottom: 60px;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-accent);
+        }
+        
+        .section-icon {
+            font-size: 36px;
+            color: var(--primary-accent);
+            margin-right: 20px;
+            background: rgba(212, 175, 55, 0.1);
+            padding: 15px;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .section-content {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        /* MODIFICACIÓN PRINCIPAL: Ajuste para mostrar 3 cartas por fila */
+        .grades-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        /* Aumentar el ancho de las cartas */
+        .grade-card {
+            background: rgba(32, 178, 170, 0.1);
+            border-radius: var(--border-radius-lg);
+            padding: 25px 20px;
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid rgba(32, 178, 170, 0.2);
+            min-width: 300px; /* Ancho mínimo aumentado */
+        }
+        
+        .grade-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--tech-accent);
+        }
+        
+        .grade-icon {
+            font-size: 32px;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+        
+        .grade-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+        
+        .grade-info {
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: var(--text-gray);
+        }
+        
+        .grade-download {
+            display: inline-block;
+            background: var(--dynamic-coral);
+            color: white;
+            padding: 10px 20px;
+            border-radius: var(--border-radius-xl);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            font-size: 14px;
+        }
+        
+        .grade-download:hover {
+            background: var(--tech-accent);
+            transform: translateY(-3px);
+        }
+        
+        /* Estilos para talleres y deportes */
+        .extracurricular-section {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+        
+        .extracurricular-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .extracurricular-card {
+            background: rgba(0, 51, 102, 0.05);
+            border-radius: var(--border-radius-lg);
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            border-left: 5px solid var(--primary-accent);
+        }
+        
+        .extracurricular-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+        }
+        
+        .extracurricular-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+        
+        .extracurricular-desc {
+            margin-bottom: 20px;
+            color: var(--text-gray);
+        }
+
+        /* Cambios principales para el espacio */
+        .main-content {
+            margin-top: 120px; /* Aumentamos el margen superior */
+        }
+        
+        .title-container {
+            padding-top: 30px; /* Espacio adicional sobre el título */
+            padding-bottom: 20px;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.05) 0%, rgba(30, 61, 89, 0.05) 100%);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        /* Nuevos estilos para sección unificada */
+        .sub-section-title {
+            text-align: center;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px dashed var(--primary-accent);
+            color: var(--primary-dark);
+            font-size: 1.8rem;
+        }
+        
+        /* MODIFICACIÓN: Ajuste para mostrar 3 cartas por fila en Educación Media */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .media-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .media-divider::before,
+        .media-divider::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--primary-accent), transparent);
+        }
+        
+        .media-divider-text {
+            padding: 0 20px;
+            color: var(--primary-dark);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .grades-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .extracurricular-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .media-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 90px;
+                right: -100%;
+                flex-direction: column;
+                background: var(--primary-dark);
+                width: 300px;
+                height: calc(100vh - 90px);
+                padding: 20px;
+                transition: var(--transition);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-item {
+                margin: 10px 0;
+            }
+            
+            .submenu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                box-shadow: none;
+                background: rgba(255, 255, 255, 0.05);
+                margin-top: 5px;
+                display: none;
+            }
+            
+            .nav-item:hover .submenu {
+                display: block;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .section-content, .extracurricular-section {
+                padding: 25px;
+            }
+            
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .section-icon {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            /* Ajustes responsive para el espacio */
+            .main-content {
+                margin-top: 100px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .sub-section-title {
+                font-size: 1.5rem;
+            }
+            
+            /* MODIFICACIÓN: Cambio a 1 columna en móviles */
+            .grades-grid, .media-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .main-content {
+                margin-top: 90px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .media-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sub-section-title {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Footer */
+        footer {
+            padding: 70px 0 0;
+            background-image: url('https://placehold.co/1920x1080/003366/FFFFFF?text=Personal+del+Colegio');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            color: white;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 22px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 14px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        .footer-links a i {
+            margin-right: 12px;
+            font-size: 15px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(8px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-accent);
+            transform: translateY(-8px);
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            display: flex;
+            margin-bottom: 18px;
+            align-items: flex-start;
+            font-size: 16px;
+        }
+
+        .contact-info i {
+            margin-right: 18px;
+            color: var(--primary-accent);
+            font-size: 22px;
+            min-width: 22px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="0316808d-720d-40e0-8c3e-35eac2a4822f-removebg-preview.png" alt="Logo Colegio La Ninfa" class="logo-img">
+                <div class="logo-text">Colegio <span>La Ninfa</span></div>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="Index2.html" class="nav-link">Inicio</a></li>
+                    
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Colegio <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="Nosotros2.html" class="submenu-link">Nosotros</a></li>
+                            <li class="submenu-item"><a href="Historia2.html" class="submenu-link">Historia</a></li>
+                            <li class="submenu-item"><a href="Programas2.html" class="submenu-link">Programas</a></li>
+                            <li class="submenu-item"><a href="Reglas2.html" class="submenu-link">Normativa Interna</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">Publicaciones <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="Noticias2.html" class="submenu-link">Noticias</a></li>
+                            <li class="submenu-item"><a href="Eventos2.html" class="submenu-link">Eventos</a></li>
+                            <li class="submenu-item"><a href="Galería2.html" class="submenu-link">Galería</a></li>
+                            <li class="submenu-item"><a href="Horarios2.html" class="submenu-link active">Horarios</a></li>
+                            <li class="submenu-item"><a href="Útiles.html" class="submenu-link">Útiles</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Comunidad <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="Egresados2.html" class="submenu-link">Egresados</a></li>
+                            <li class="submenu-item"><a href="Donar2.html" class="submenu-link">Apóyanos</a></li>
+                            <li class="submenu-item"><a href="Eventoex2.html" class="submenu-link">Eventos</a></li>
+                            <li class="submenu-item"><a href="Noticiasex2.html" class="submenu-link">Noticias</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item"><a href="Contacto2.html" class="nav-link">Contáctanos</a></li>
+                    
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Intranet <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="Sesión2.html" class="submenu-link">Institución</a></li>
+                            <li class="submenu-item"><a href="Sesión2.html" class="submenu-link">Personal</a></li>
+                            <li class="submenu-item"><a href="Sesión2.html" class="submenu-link">Representante</a></li>
+                            <li class="submenu-item"><a href="Sesión2.html" class="submenu-link">Estudiante</a></li>
+                            <li class="submenu-item"><a href="Sesiónex2.html" class="submenu-link">Egresados</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido Principal - Horarios -->
+    <section class="section main-content">
+        <div class="container">
+            <div class="title-container">
+                <h2 class="section-title"><u>Horarios Escolares</u></h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 20px; font-size: 18px; color: var(--text-gray);">
+                    Descarga los horarios por grado para el año escolar 2025-2026. Selecciona el grado de tu interés para obtener el horario completo en formato PDF.
+                </p>
+            </div>
+            
+            <!-- Sección Primaria -->
+            <div class="grades-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Educación Primaria</h3>
+                        <p>Horarios para los grados de 1ro a 6to de primaria</p>
+                    </div>
+                </div>
+                
+                <div class="section-content">
+                    <div class="grades-grid">
+                        <!-- Grado 1ro -->
+                        <div class="grade-card">
+                            <div class="grade-icon">
+                                <i class="fas fa-child"></i>
+                            </div>
+                            <h4 class="grade-title">1er Grado</h4>
+                            <p class="grade-info">Horario completo de clases y actividades</p>
+                            <a href="#" class="grade-download">
+                                <i class="fas fa-download"></i> Descargar PDF
+                            </a>
+                        </div>
+                        
+                        <!-- Grado 2do -->
+                        <div class="grade-card">
+                            <div class="grade-icon">
+                                <i class="fas fa-book-reader"></i>
+                            </div>
+                            <h4 class="grade-title">2do Grado</h4>
+                            <p class="grade-info">Horario completo de clases y actividades</p>
+                            <a href="#" class="grade-download">
+                                <i class="fas fa-download"></i> Descargar PDF
+                            </a>
+                        </div>
+                        
+                        <!-- Grado 3ro -->
+                        <div class="grade-card">
+                            <div class="grade-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h4 class="grade-title">3er Grado</h4>
+                            <p class="grade-info">Horario completo de clases y actividades</p>
+                            <a href="#" class="grade-download">
+                                <i class="fas fa-download"></i> Descargar PDF
+                            </a>
+                        </div>
+                        
+                        <!-- Grado 4to -->
+                        <div class="grade-card">
+                            <div class="grade-icon">
+                                <i class="fas fa-globe-americas"></i>
+                            </div>
+                            <h4 class="grade-title">4to Grado</h4>
+                            <p class="grade-info">Horario completo de clases y actividades</p>
+                            <a href="#" class="grade-download">
+                                <i class="fas fa-download"></i> Descargar PDF
+                            </a>
+                        </div>
+                        
+                        <!-- Grado 5to -->
+                        <div class="grade-card">
+                            <div class="grade-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <h4 class="grade-title">5to Grado</h4>
+                            <p class="grade-info">Horario completo de clases y actividades</p>
+                            <a href="#" class="grade-download">
+                                <i class="fas fa-download"></i> Descargar PDF
+                            </a>
+                        </div>
+                        
+                        <!-- Grado 6to -->
+                        <div class="grade-card">
+                            <div class="grade-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4 class="grade-title">6to Grado</h4>
+                            <p class="grade-info">Horario completo de clases y actividades</p>
+                            <a href="#" class="grade-download">
+                                <i class="fas fa-download"></i> Descargar PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sección Educación Media (Secundaria + Bachillerato Unificados) -->
+            <div class="grades-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div>
+                        <h3>Educación Media</h3>
+                        <p>Horarios para Secundaria (1ro a 3ro) y Bachillerato (4to a 6to)</p>
+                    </div>
+                </div>
+                
+                <div class="section-content">
+                    <h4 class="sub-section-title">Secundaria</h4>
+                    <div class="media-grid">
+                        <!-- Año 1ro -->
+                        <div class="grade-card">
+                            <div class="grade-icon">
+                                <i class="fas fa-atom"></i>
+                            </div>
+                            <h4 class="grade-title">1er Año</h4>
+                            <p class="grade-info">Horario completo de clases y actividades</p>
+                            <a href="#" class="grade-download">
+                                <i class="fas fa-download"></i> Descargar PDF
+                            </a>
+                        </div>
+                        
+                        <!-- Año 2do -->
+                        <div class="grade-card">
+                            <div class="grade-icon">
+                                <i class="fas fa-dna"></i>
+                            </div>
+                            <h4 class="grade-title">2do Año</h4>
+                            <p class="grade-info">Horario completo de clases y actividades</p>
+                            <a href="#" class="grade-download">
+                                <i class="fas fa-download"></i> Descargar PDF
+                            </a>
+                        </div>
+                        
+                        <!-- Año 3ro -->
+                        <div class="grade-card">
+                            <div class="grade-icon">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <h4 class="grade-title">3er Año</h4>
+                            <p class="grade-info">Horario completo de clases y actividades</p>
+                            <a href="#" class="grade-download">
+                                <i class="fas fa-download"></i> Descargar PDF
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="media-divider">
+                        <div class="media-divider-text">Bachillerato</div>
+                    </div>
+                    
+                    <div class="media-grid">
+                        <!-- Bachillerato 1ro -->
+                        <div class="grade-card">
+                            <div class="grade-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h4 class="grade-title">4to Año</h4>
+                            <p class="grade-info">Horario completo de clases y actividades</p>
+                            <a href="#" class="grade-download">
+                                <i class="fas fa-download"></i> Descargar PDF
+                            </a>
+                        </div>
+                        
+                        <!-- Bachillerato 2do -->
+                        <div class="grade-card">
+                            <div class="grade-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h4 class="grade-title">5to Año</h4>
+                            <p class="grade-info">Horario completo de clases y actividades</p>
+                            <a href="#" class="grade-download">
+                                <i class="fas fa-download"></i> Descargar PDF
+                            </a>
+                        </div>
+                        
+                        <!-- Bachillerato 3ro -->
+                        <div class="grade-card">
+                            <div class="grade-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h4 class="grade-title">6to Año</h4>
+                            <p class="grade-info">Horario completo de clases y actividades</p>
+                            <a href="#" class="grade-download">
+                                <i class="fas fa-download"></i> Descargar PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sección Talleres -->
+            <div class="extracurricular-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div>
+                        <h3>Talleres Extracurriculares</h3>
+                        <p>Descarga los horarios de nuestros talleres especiales</p>
+                    </div>
+                </div>
+                
+                <div class="extracurricular-grid">
+                    <div class="extracurricular-card">
+                        <h3 class="extracurricular-title">Talleres Culturales</h3>
+                        <p class="extracurricular-desc">Horarios para teatro, música, danza y artes plásticas</p>
+                        <a href="#" class="grade-download">
+                            <i class="fas fa-download"></i> Descargar Horarios
+                        </a>
+                    </div>
+                    
+                    <div class="extracurricular-card">
+                        <h3 class="extracurricular-title">Talleres Tecnológicos</h3>
+                        <p class="extracurricular-desc">Horarios para robótica, programación y diseño digital</p>
+                        <a href="#" class="grade-download">
+                            <i class="fas fa-download"></i> Descargar Horarios
+                        </a>
+                    </div>
+                    
+                    <div class="extracurricular-card">
+                        <h3 class="extracurricular-title">Talleres Académicos</h3>
+                        <p class="extracurricular-desc">Horarios para clubes de ciencias, matemáticas y literatura</p>
+                        <a href="#" class="grade-download">
+                            <i class="fas fa-download"></i> Descargar Horarios
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sección Deportes -->
+            <div class="extracurricular-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <div>
+                        <h3>Programa Deportivo</h3>
+                        <p>Descarga los horarios de entrenamientos y actividades deportivas</p>
+                    </div>
+                </div>
+                
+                <div class="extracurricular-grid">
+                    <div class="extracurricular-card">
+                        <h3 class="extracurricular-title">Deportes de Conjunto</h3>
+                        <p class="extracurricular-desc">Horarios para fútbol, baloncesto, voleibol y béisbol</p>
+                        <a href="#" class="grade-download">
+                            <i class="fas fa-download"></i> Descargar Horarios
+                        </a>
+                    </div>
+                    
+                    <div class="extracurricular-card">
+                        <h3 class="extracurricular-title">Deportes Individuales</h3>
+                        <p class="extracurricular-desc">Horarios para atletismo, natación, tenis y artes marciales</p>
+                        <a href="#" class="grade-download">
+                            <i class="fas fa-download"></i> Descargar Horarios
+                        </a>
+                    </div>
+                    
+                    <div class="extracurricular-card">
+                        <h3 class="extracurricular-title">Competencias</h3>
+                        <p class="extracurricular-desc">Calendario de competencias intercolegiales y torneos</p>
+                        <a href="#" class="grade-download">
+                            <i class="fas fa-download"></i> Descargar Calendario
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sección de Descargas Completas -->
+            <div class="download-section">
+                <h3 class="download-title">Descarga todos los horarios</h3>
+                <p class="download-subtitle">
+                    Disponibles en formato PDF para imprimir o guardar en tu dispositivo. 
+                    Incluye todos los grados, talleres y actividades deportivas.
+                </p>
+                
+                <div class="download-buttons">
+                    <a href="#" class="download-btn">
+                        <i class="fas fa-file-pdf"></i> Descargar Primaria Completa
+                    </a>
+                    <a href="#" class="download-btn">
+                        <i class="fas fa-file-pdf"></i> Descargar Media Completa
+                    </a>
+                    <a href="#" class="download-btn">
+                        <i class="fas fa-file-pdf"></i> Descargar Todo en Uno
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Colegio La Ninfa</h3>
+                    <p style="margin-bottom: 20px; opacity: 0.8;">Educación jesuita de excelencia desde 1900. Formando líderes con valores para un mundo mejor.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="Index2.html#cupo"><i class="fas fa-chevron-right"></i> Admisiones</a></li>
+                        <li><a href="Index2.html#calendario"><i class="fas fa-chevron-right"></i> Calendario Escolar</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Trabaja con Nosotros</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contáctanos</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. Principal, Sector La Ninfa, Caracas, Venezuela</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+58 212 555 1234</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@colegiolaninfa.edu.ve</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Lunes a Viernes: 7:00 AM - 4:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Síguenos</h3>
+                    <p style="margin-bottom: 20px; opacity: 0.8;">Mantente conectado con nuestra comunidad a través de las redes sociales.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <div class="container">
+                &copy; 2025 Unidad Educativa Colegio La Ninfa. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menú móvil
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.querySelector('i').classList.toggle('fa-bars');
+            mobileToggle.querySelector('i').classList.toggle('fa-times');
+        });
+        
+        // Simular carga de página
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>

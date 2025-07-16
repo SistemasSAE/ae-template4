@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas de Útiles - Colegio La Ninfa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Paleta de colores */
+            --primary-dark: #003366;
+            --primary-accent: #D4AF37;
+            --background-light: #F8F9FA;
+            --tech-accent: #20B2AA;
+            --text-gray: #5A6D7B;
+            --dynamic-coral: #FF6B6B;
+            --dark-section: #1E3D59;
+            
+            /* Sombras */
+            --shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.2);
+            
+            /* Transiciones */
+            --transition: all 0.4s ease;
+
+            /* Bordes redondeados */
+            --border-radius-lg: 30px;
+            --border-radius-xl: 50px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-gray);
+            background-color: var(--background-light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: var(--border-radius-xl);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary {
+            background: var(--dynamic-coral);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--tech-accent);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background: var(--tech-accent);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: var(--dynamic-coral);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--dark-section) 100%);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            margin-right: 15px;
+            border-radius: 10px;
+        }
+
+        .logo-text {
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .logo-text span {
+            color: var(--primary-accent);
+            font-weight: 600;
+        }
+
+        /* Navegación */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            position: relative;
+            margin: 0 10px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: var(--border-radius-lg);
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link i {
+            margin-left: 5px;
+            font-size: 14px;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .submenu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            list-style: none;
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px);
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .submenu-item {
+            padding: 8px 25px;
+        }
+
+        .submenu-link {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+            font-size: 15px;
+            padding: 5px 0;
+        }
+
+        .submenu-link:hover {
+            color: var(--primary-dark);
+            transform: translateX(8px);
+        }
+
+        .nav-item:hover .submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Contenido de útiles */
+        .utiles-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .utiles-intro p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .utiles-container {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .utiles-header {
+            background: var(--primary-dark);
+            color: white;
+            padding: 20px;
+            border-radius: var(--border-radius-lg);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .utiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .utiles-card {
+            background: var(--background-light);
+            border-radius: var(--border-radius-lg);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .utiles-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .utiles-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-accent);
+            width: 100%;
+        }
+
+        .document-icon {
+            font-size: 60px;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background: var(--primary-accent);
+            color: var(--primary-dark);
+            border-radius: var(--border-radius-xl);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: var(--shadow);
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .download-btn:hover {
+            background: var(--tech-accent);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            color: white;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--border-radius-lg);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .info-card h3 {
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 70px 0 0;
+            background-image: url('https://placehold.co/1920x1080/003366/FFFFFF?text=Personal+del+Colegio');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            color: white;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 22px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 14px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        .footer-links a i {
+            margin-right: 12px;
+            font-size: 15px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(8px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-accent);
+            transform: translateY(-8px);
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            display: flex;
+            margin-bottom: 18px;
+            align-items: flex-start;
+            font-size: 16px;
+        }
+
+        .contact-info i {
+            margin-right: 18px;
+            color: var(--primary-accent);
+            font-size: 22px;
+            min-width: 22px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 90px;
+                right: -100%;
+                flex-direction: column;
+                background: var(--primary-dark);
+                width: 300px;
+                height: calc(100vh - 90px);
+                padding: 20px;
+                transition: var(--transition);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-item {
+                margin: 10px 0;
+            }
+            
+            .submenu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                box-shadow: none;
+                background: rgba(255, 255, 255, 0.05);
+                margin-top: 5px;
+                display: none;
+            }
+            
+            .nav-item:hover .submenu {
+                display: block;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-grid {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-col h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .utiles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="0316808d-720d-40e0-8c3e-35eac2a4822f-removebg-preview.png" alt="Logo Colegio La Ninfa" class="logo-img">
+                <div class="logo-text">Colegio <span>La Ninfa</span></div>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="Index2.html" class="nav-link">Inicio</a></li>
+                    
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Colegio <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="Nosotros2.html" class="submenu-link">Nosotros</a></li>
+                            <li class="submenu-item"><a href="Historia2.html" class="submenu-link">Historia</a></li>
+                            <li class="submenu-item"><a href="Programas2.html" class="submenu-link">Programas</a></li>
+                            <li class="submenu-item"><a href="Reglas2.html" class="submenu-link">Normativa Interna</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Publicaciones <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="Noticias2.html" class="submenu-link">Noticias</a></li>
+                            <li class="submenu-item"><a href="Eventos2.html" class="submenu-link">Eventos</a></li>
+                            <li class="submenu-item"><a href="Galería2.html" class="submenu-link">Galería</a></li>
+                            <li class="submenu-item"><a href="Horarios2.html" class="submenu-link">Horarios</a></li>
+                            <li class="submenu-item"><a href="Utiles2.html" class="submenu-link active">Útiles</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Comunidad <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="Egresados2.html" class="submenu-link">Egresados</a></li>
+                            <li class="submenu-item"><a href="Donar2.html" class="submenu-link">Apóyanos</a></li>
+                            <li class="submenu-item"><a href="Eventoex2.html" class="submenu-link">Eventos</a></li>
+                            <li class="submenu-item"><a href="Noticiasex2.html" class="submenu-link">Noticias</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item"><a href="Contacto2.html" class="nav-link">Contáctanos</a></li>
+                    
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Intranet <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="Sesión2.html" class="submenu-link">Institución</a></li>
+                            <li class="submenu-item"><a href="Sesión2.html" class="submenu-link">Personal</a></li>
+                            <li class="submenu-item"><a href="Sesión2.html" class="submenu-link">Representante</a></li>
+                            <li class="submenu-item"><a href="Sesión2.html" class="submenu-link">Estudiante</a></li>
+                            <li class="submenu-item"><a href="Sesiónex2.html" class="submenu-link">Egresados</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido Principal - Listas de Útiles -->
+    <section class="section" style="padding-top: 120px;">
+        <div class="container">
+            <h1 class="section-title">Listas de Útiles Escolares</h1>
+            
+            <div class="utiles-intro">
+                <p>En esta sección encontrarás las listas completas de útiles escolares para cada nivel educativo del Colegio La Ninfa para el año escolar 2025-2026. Por favor, selecciona el grado correspondiente para descargar la lista en formato PDF.</p>
+                <p>Los documentos contienen la lista completa de materiales requeridos, especificaciones y recomendaciones para el año escolar.</p>
+            </div>
+            
+            <div class="utiles-container">
+                <div class="utiles-header">
+                    <h2>Educación Básica</h2>
+                </div>
+                
+                <div class="utiles-grid">
+                    <div class="utiles-card">
+                        <h3>1er Grado</h3>
+                        <div class="document-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <p>Lista completa de útiles para estudiantes de primer grado.</p>
+                        <a href="#" class="download-btn">
+                            <i class="fas fa-download"></i> Descargar lista
+                        </a>
+                    </div>
+                    
+                    <div class="utiles-card">
+                        <h3>2do Grado</h3>
+                        <div class="document-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <p>Lista completa de útiles para estudiantes de segundo grado.</p>
+                        <a href="#" class="download-btn">
+                            <i class="fas fa-download"></i> Descargar lista
+                        </a>
+                    </div>
+                    
+                    <div class="utiles-card">
+                        <h3>3er Grado</h3>
+                        <div class="document-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <p>Lista completa de útiles para estudiantes de tercer grado.</p>
+                        <a href="#" class="download-btn">
+                            <i class="fas fa-download"></i> Descargar lista
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="utiles-container">
+                <div class="utiles-header">
+                    <h2>Educación Media General</h2>
+                </div>
+                
+                <div class="utiles-grid">
+                    <div class="utiles-card">
+                        <h3>1er Año</h3>
+                        <div class="document-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <p>Lista completa de útiles para estudiantes de primer año.</p>
+                        <a href="#" class="download-btn">
+                            <i class="fas fa-download"></i> Descargar lista
+                        </a>
+                    </div>
+                    
+                    <div class="utiles-card">
+                        <h3>2do Año</h3>
+                        <div class="document-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <p>Lista completa de útiles para estudiantes de segundo año.</p>
+                        <a href="#" class="download-btn">
+                            <i class="fas fa-download"></i> Descargar lista
+                        </a>
+                    </div>
+                    
+                    <div class="utiles-card">
+                        <h3>3er Año</h3>
+                        <div class="document-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <p>Lista completa de útiles para estudiantes de tercer año.</p>
+                        <a href="#" class="download-btn">
+                            <i class="fas fa-download"></i> Descargar lista
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="utiles-container">
+                <div class="utiles-header">
+                    <h2>Educación Media Técnica</h2>
+                </div>
+                
+                <div class="utiles-grid">
+                    <div class="utiles-card">
+                        <h3>4to Año - Informática</h3>
+                        <div class="document-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <p>Lista completa de útiles para estudiantes de Informática.</p>
+                        <a href="#" class="download-btn">
+                            <i class="fas fa-download"></i> Descargar lista
+                        </a>
+                    </div>
+                    
+                    <div class="utiles-card">
+                        <h3>4to Año - Industrial</h3>
+                        <div class="document-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <p>Lista completa de útiles para estudiantes de Industrial.</p>
+                        <a href="#" class="download-btn">
+                            <i class="fas fa-download"></i> Descargar lista
+                        </a>
+                    </div>
+                    
+                    <div class="utiles-card">
+                        <h3>5to Año - Todas las especialidades</h3>
+                        <div class="document-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <p>Lista completa de útiles para quinto año.</p>
+                        <a href="#" class="download-btn">
+                            <i class="fas fa-download"></i> Descargar lista
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-card">
+                <h3>Información importante</h3>
+                <p>Todos los materiales deben estar marcados con el nombre completo del estudiante. Los libros de texto serán proporcionados por la institución. Algunas asignaturas específicas podrían requerir materiales adicionales que serán comunicados durante el año escolar.</p>
+                <p>Para cualquier duda o aclaratoria, por favor contactar a la coordinación académica.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Colegio La Ninfa</h3>
+                    <p style="margin-bottom: 20px; opacity: 0.8;">Educación jesuita de excelencia desde 1900. Formando líderes con valores para un mundo mejor.</p>
+                    <div class="iso-element">
+                        <div class="iso-building">
+                            <div class="iso-window"></div>
+                            <div class="iso-window"></div>
+                            <div class="iso-window"></div>
+                            <div class="iso-window"></div>
+                            <div class="iso-window"></div>
+                            <div class="iso-window"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Admisiones</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Calendario Escolar</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Trabaja con Nosotros</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contáctanos</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. Principal, Sector La Ninfa, Caracas, Venezuela</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+58 212 555 1234</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@colegiolaninfa.edu.ve</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Lunes a Viernes: 7:00 AM - 4:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Síguenos</h3>
+                    <p style="margin-bottom: 20px; opacity: 0.8;">Mantente conectado con nuestra comunidad a través de las redes sociales.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <div class="container">
+                &copy; 2025 Unidad Educativa Colegio La Ninfa. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menú móvil
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.querySelector('i').classList.toggle('fa-bars');
+            mobileToggle.querySelector('i').classList.toggle('fa-times');
+        });
+    </script>
+</body>
+</html>
