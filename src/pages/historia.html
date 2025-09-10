@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nuestra Historia - Colegio La Ninfa</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            /* Copiar todos los estilos del index.html aquí */
+            /* Por razones de espacio, en esta demostración solo incluiré los estilos necesarios para la página de historia */
+            :root {
+                --primary-dark: #003366;
+                --primary-accent: #d4af37;
+                --background-light: #f8f9fa;
+                --tech-accent: #20b2aa;
+                --text-gray: #5a6d7b;
+                --dynamic-coral: #ff6b6b;
+                --dark-section: #1e3d59;
+                --shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+                --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.2);
+                --transition: all 0.4s ease;
+                --border-radius-lg: 30px;
+                --border-radius-xl: 50px;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Open Sans', sans-serif;
+                color: var(--text-gray);
+                background-color: var(--background-light);
+                line-height: 1.6;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5 {
+                font-family: 'Montserrat', sans-serif;
+                color: var(--primary-dark);
+                font-weight: 700;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            .btn {
+                display: inline-block;
+                padding: 14px 32px;
+                border-radius: var(--border-radius-xl);
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 16px;
+                transition: var(--transition);
+                cursor: pointer;
+                border: none;
+                font-family: 'Montserrat', sans-serif;
+                box-shadow: var(--shadow);
+            }
+
+            .btn-primary {
+                background: var(--dynamic-coral);
+                color: white;
+            }
+
+            .btn-primary:hover {
+                background: var(--tech-accent);
+                transform: translateY(-5px);
+                box-shadow: var(--shadow-hover);
+            }
+
+            .btn-secondary {
+                background: var(--tech-accent);
+                color: white;
+            }
+
+            .btn-secondary:hover {
+                background: var(--dynamic-coral);
+                transform: translateY(-5px);
+                box-shadow: var(--shadow-hover);
+            }
+
+            .section {
+                padding: 80px 0;
+                position: relative;
+            }
+
+            .section-title {
+                text-align: center;
+                margin-bottom: 50px;
+                position: relative;
+            }
+
+            /* Header */
+            header {
+                background: linear-gradient(
+                    135deg,
+                    var(--primary-dark) 0%,
+                    var(--dark-section) 100%
+                );
+                padding: 15px 0;
+                position: fixed;
+                width: 100%;
+                top: 0;
+                z-index: 1000;
+                box-shadow: var(--shadow);
+            }
+
+            .header-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .logo {
+                display: flex;
+                align-items: center;
+            }
+
+            .logo-img {
+                height: 60px;
+                width: auto;
+                margin-right: 15px;
+                border-radius: 10px;
+            }
+
+            .logo-text {
+                color: white;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 24px;
+                font-weight: 700;
+            }
+
+            .logo-text span {
+                color: var(--primary-accent);
+                font-weight: 600;
+            }
+
+            /* Navegación */
+            .nav-menu {
+                display: flex;
+                list-style: none;
+            }
+
+            .nav-item {
+                position: relative;
+                margin: 0 10px;
+            }
+
+            .nav-link {
+                color: white;
+                text-decoration: none;
+                padding: 10px 15px;
+                border-radius: var(--border-radius-lg);
+                font-weight: 500;
+                transition: var(--transition);
+                display: flex;
+                align-items: center;
+            }
+
+            .nav-link i {
+                margin-left: 5px;
+                font-size: 14px;
+            }
+
+            .nav-link:hover {
+                background: rgba(255, 255, 255, 0.15);
+            }
+
+            .submenu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: white;
+                min-width: 200px;
+                border-radius: var(--border-radius-lg);
+                box-shadow: var(--shadow);
+                list-style: none;
+                padding: 10px 0;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(15px);
+                transition: var(--transition);
+                z-index: 100;
+            }
+
+            .submenu-item {
+                padding: 8px 25px;
+            }
+
+            .submenu-link {
+                color: var(--text-gray);
+                text-decoration: none;
+                transition: var(--transition);
+                display: block;
+                font-size: 15px;
+                padding: 5px 0;
+            }
+
+            .submenu-link:hover {
+                color: var(--primary-dark);
+                transform: translateX(8px);
+            }
+
+            .nav-item:hover .submenu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .mobile-toggle {
+                display: none;
+                font-size: 28px;
+                color: white;
+                cursor: pointer;
+            }
+
+            /* Hero Section para Historia */
+            .history-hero {
+                padding-top: 150px;
+                background-size: cover;
+                background-position: center;
+                min-height: 500px;
+                display: flex;
+                align-items: center;
+                position: relative;
+                overflow: hidden;
+                background-image: url('https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            }
+
+            .history-hero::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.3);
+                z-index: 1;
+            }
+
+            .history-hero-content {
+                max-width: 800px;
+                position: relative;
+                z-index: 2;
+                padding: 30px;
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            .history-hero-title {
+                font-size: 52px;
+                color: white;
+                margin-bottom: 20px;
+                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            }
+
+            .history-hero-subtitle {
+                font-size: 22px;
+                color: white;
+                margin-bottom: 35px;
+                text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            }
+
+            /* Estilos para la línea de tiempo */
+            .timeline-section {
+                background: var(--background-light);
+            }
+
+            .timeline {
+                position: relative;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .timeline::after {
+                content: '';
+                position: absolute;
+                width: 6px;
+                background-color: var(--primary-accent);
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                margin-left: -3px;
+            }
+
+            .timeline-item {
+                padding: 10px 40px;
+                position: relative;
+                width: 50%;
+                box-sizing: border-box;
+            }
+
+            .timeline-item::after {
+                content: '';
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                background-color: white;
+                border: 4px solid var(--primary-accent);
+                top: 15px;
+                border-radius: 50%;
+                z-index: 1;
+            }
+
+            .left {
+                left: 0;
+            }
+
+            .right {
+                left: 50%;
+            }
+
+            .left::after {
+                right: -17px;
+            }
+
+            .right::after {
+                left: -17px;
+            }
+
+            .timeline-content {
+                padding: 20px 30px;
+                background-color: white;
+                border-radius: var(--border-radius-lg);
+                box-shadow: var(--shadow);
+                position: relative;
+                transition: var(--transition);
+            }
+
+            .timeline-content:hover {
+                transform: translateY(-5px);
+                box-shadow: var(--shadow-hover);
+            }
+
+            .timeline-year {
+                font-size: 24px;
+                color: var(--primary-accent);
+                margin-bottom: 10px;
+            }
+
+            .timeline-title {
+                font-size: 22px;
+                margin-bottom: 15px;
+                color: var(--primary-dark);
+            }
+
+            .timeline-image {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: var(--border-radius-lg);
+                margin-bottom: 20px;
+            }
+
+            /* Footer */
+            footer {
+                padding: 70px 0 0;
+                background-image: url('https://placehold.co/1920x1080/003366/FFFFFF?text=Personal+del+Colegio');
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                position: relative;
+                color: white;
+            }
+
+            footer::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.6);
+                z-index: 1;
+            }
+
+            .footer-grid {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                gap: 40px;
+                margin-bottom: 50px;
+                position: relative;
+                z-index: 2;
+            }
+
+            .footer-col {
+                flex: 1;
+                min-width: 250px;
+            }
+
+            .footer-col h3 {
+                color: white;
+                margin-bottom: 25px;
+                font-size: 22px;
+                position: relative;
+                padding-bottom: 10px;
+            }
+
+            .footer-col h3::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 60px;
+                height: 3px;
+                background: var(--primary-accent);
+            }
+
+            .footer-links {
+                list-style: none;
+            }
+
+            .footer-links li {
+                margin-bottom: 14px;
+            }
+
+            .footer-links a {
+                color: rgba(255, 255, 255, 0.8);
+                text-decoration: none;
+                transition: var(--transition);
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+            }
+
+            .footer-links a i {
+                margin-right: 12px;
+                font-size: 15px;
+            }
+
+            .footer-links a:hover {
+                color: white;
+                transform: translateX(8px);
+            }
+
+            .social-links {
+                display: flex;
+                gap: 18px;
+                margin-top: 25px;
+            }
+
+            .social-links a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 45px;
+                height: 45px;
+                background: rgba(255, 255, 255, 0.15);
+                border-radius: 50%;
+                color: white;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+            }
+
+            .social-links a:hover {
+                background: var(--primary-accent);
+                transform: translateY(-8px);
+            }
+
+            .contact-info {
+                list-style: none;
+            }
+
+            .contact-info li {
+                display: flex;
+                margin-bottom: 18px;
+                align-items: flex-start;
+                font-size: 16px;
+            }
+
+            .contact-info i {
+                margin-right: 18px;
+                color: var(--primary-accent);
+                font-size: 22px;
+                min-width: 22px;
+            }
+
+            .copyright {
+                text-align: center;
+                padding: 30px 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.15);
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 15px;
+                position: relative;
+                z-index: 2;
+            }
+
+            /* Responsive */
+            @media (max-width: 768px) {
+                .nav-menu {
+                    position: fixed;
+                    top: 90px;
+                    right: -100%;
+                    flex-direction: column;
+                    background: var(--primary-dark);
+                    width: 300px;
+                    height: calc(100vh - 90px);
+                    padding: 20px;
+                    transition: var(--transition);
+                    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                }
+
+                .nav-menu.active {
+                    right: 0;
+                }
+
+                .nav-item {
+                    margin: 10px 0;
+                }
+
+                .submenu {
+                    position: static;
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                    box-shadow: none;
+                    background: rgba(255, 255, 255, 0.05);
+                    margin-top: 5px;
+                    display: none;
+                }
+
+                .nav-item:hover .submenu {
+                    display: block;
+                }
+
+                .mobile-toggle {
+                    display: block;
+                }
+
+                .identity-cards {
+                    grid-template-columns: 1fr;
+                }
+
+                .footer-grid {
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+
+                .footer-col h3::after {
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+
+            /* Responsive */
+            @media (max-width: 992px) {
+                .history-hero {
+                    padding-top: 120px;
+                    min-height: 400px;
+                }
+
+                .history-hero-title {
+                    font-size: 42px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .nav-menu {
+                    position: fixed;
+                    top: 90px;
+                    right: -100%;
+                    flex-direction: column;
+                    background: var(--primary-dark);
+                    width: 300px;
+                    height: calc(100vh - 90px);
+                    padding: 20px;
+                    transition: var(--transition);
+                    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                }
+
+                .nav-menu.active {
+                    right: 0;
+                }
+
+                .nav-item {
+                    margin: 10px 0;
+                }
+
+                .submenu {
+                    position: static;
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                    box-shadow: none;
+                    background: rgba(255, 255, 255, 0.05);
+                    margin-top: 5px;
+                    display: none;
+                }
+
+                .nav-item:hover .submenu {
+                    display: block;
+                }
+
+                .mobile-toggle {
+                    display: block;
+                }
+
+                .timeline::after {
+                    left: 31px;
+                }
+
+                .timeline-item {
+                    width: 100%;
+                    padding-left: 70px;
+                    padding-right: 25px;
+                }
+
+                .timeline-item::after {
+                    left: 15px;
+                }
+
+                .right {
+                    left: 0;
+                }
+            }
+
+            @media (max-width: 576px) {
+                .section {
+                    padding: 60px 0;
+                }
+
+                .history-hero-title {
+                    font-size: 36px;
+                }
+
+                .history-hero-subtitle {
+                    font-size: 18px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header - Mismo que en index.html -->
+        <header>
+            <div class="container header-container">
+                <div class="logo">
+                    <img
+                        src="../images/logo.png"
+                        alt="Logo Colegio La Ninfa"
+                        class="logo-img"
+                    />
+                    <div class="logo-text">Colegio <span>La Ninfa</span></div>
+                </div>
+
+                <nav>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="../../index.html" class="nav-link">Inicio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"
+                                >Colegio <i class="fas fa-chevron-down"></i
+                            ></a>
+                            <ul class="submenu">
+                                <li class="submenu-item">
+                                    <a href="./nosotros.html" class="submenu-link"
+                                        >Nosotros</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./historia.html" class="submenu-link"
+                                        >Historia</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./programas.html" class="submenu-link"
+                                        >Programas</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./reglas.html" class="submenu-link"
+                                        >Normativa Interna</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"
+                                >Publicaciones <i class="fas fa-chevron-down"></i
+                            ></a>
+                            <ul class="submenu">
+                                <li class="submenu-item">
+                                    <a href="./noticias-1.html" class="submenu-link"
+                                        >Noticias</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./eventos-1.html" class="submenu-link"
+                                        >Eventos</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./galeria.html" class="submenu-link"
+                                        >Galería</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./horarios.html" class="submenu-link"
+                                        >Horarios</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./utiles.html" class="submenu-link"
+                                        >Útiles</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"
+                                >Comunidad <i class="fas fa-chevron-down"></i
+                            ></a>
+                            <ul class="submenu">
+                                <li class="submenu-item">
+                                    <a href="./egresados.html" class="submenu-link"
+                                        >Egresados</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./donar.html" class="submenu-link"
+                                        >Apóyanos</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./eventos-2.html" class="submenu-link"
+                                        >Eventos</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./noticias-2.html" class="submenu-link"
+                                        >Noticias</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="./contacto.html" class="nav-link active"
+                                >Contáctanos</a
+                            >
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"
+                                >Intranet <i class="fas fa-chevron-down"></i
+                            ></a>
+                            <ul class="submenu">
+                                <li class="submenu-item">
+                                    <a href="./sesiones-1.html" class="submenu-link"
+                                        >Institución</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./sesiones-1.html" class="submenu-link"
+                                        >Personal</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./sesiones-1.html" class="submenu-link"
+                                        >Representante</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./sesiones-1.html" class="submenu-link"
+                                        >Estudiante</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./sesiones-2.html" class="submenu-link"
+                                        >Egresados</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="mobile-toggle" id="mobileToggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section para Historia -->
+        <section class="history-hero">
+            <div class="history-hero-content">
+                <h1 class="history-hero-title">Nuestra Historia</h1>
+                <p class="history-hero-subtitle">
+                    Más de un siglo formando líderes con valores jesuitas
+                </p>
+                <a href="#timeline" class="btn btn-primary">Explorar Cronología</a>
+            </div>
+        </section>
+
+        <!-- Línea de tiempo histórica -->
+        <section class="section timeline-section" id="timeline">
+            <div class="container">
+                <h2 class="section-title"><u>Un Legado de Excelencia Educativa</u></h2>
+                <div class="timeline">
+                    <!-- Evento 1 -->
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <div class="timeline-year">1900</div>
+                            <h3 class="timeline-title">Fundación del Colegio</h3>
+                            <img
+                                src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Fundación"
+                                class="timeline-image"
+                            />
+                            <p>
+                                El Colegio La Ninfa fue fundado por la Compañía de Jesús
+                                con el objetivo de ofrecer educación de calidad basada en
+                                los valores jesuitas. Inició sus actividades con 50
+                                estudiantes y 5 profesores en una pequeña sede del centro
+                                de Caracas.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Evento 2 -->
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <div class="timeline-year">1925</div>
+                            <h3 class="timeline-title">Expansión y Nuevo Campus</h3>
+                            <img
+                                src="https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
+                                alt="Nuevo Campus"
+                                class="timeline-image"
+                            />
+                            <p>
+                                Debido al crecimiento de la institución, se construyó un
+                                nuevo campus en el sector de La Ninfa, que dio nombre al
+                                colegio. Este nuevo espacio contaba con aulas modernas,
+                                laboratorios y áreas deportivas, convirtiéndose en un
+                                referente educativo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Evento 3 -->
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <div class="timeline-year">1950</div>
+                            <h3 class="timeline-title">
+                                Introducción de Educación Técnica
+                            </h3>
+                            <img
+                                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Laboratorios"
+                                class="timeline-image"
+                            />
+                            <p>
+                                El colegio innovó al incorporar programas técnicos junto
+                                con la formación humanística tradicional. Se crearon los
+                                primeros talleres de mecánica, electricidad y dibujo
+                                técnico, preparando a los estudiantes para los desafíos de
+                                la industrialización.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Evento 4 -->
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <div class="timeline-year">1980</div>
+                            <h3 class="timeline-title">Modernización y Tecnología</h3>
+                            <img
+                                src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Computadoras"
+                                class="timeline-image"
+                            />
+                            <p>
+                                El colegio se convirtió en pionero en la implementación de
+                                tecnología educativa con la creación del primer
+                                laboratorio de computación en Venezuela. También se amplió
+                                la oferta académica con nuevos programas en informática e
+                                ingeniería.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Evento 5 -->
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2005</div>
+                            <h3 class="timeline-title">Reconocimiento Nacional</h3>
+                            <img
+                                src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Premio"
+                                class="timeline-image"
+                            />
+                            <p>
+                                El Ministerio de Educación otorgó al Colegio La Ninfa el
+                                premio a la "Excelencia Educativa" por su innovador
+                                programa de formación integral y sus destacados resultados
+                                académicos a nivel nacional.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Evento 6 -->
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2020</div>
+                            <h3 class="timeline-title">Centenario de Excelencia</h3>
+                            <img
+                                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80"
+                                alt="Centenario"
+                                class="timeline-image"
+                            />
+                            <p>
+                                Celebramos 120 años de trayectoria educativa, renovando
+                                nuestro compromiso con la formación de líderes
+                                comprometidos con el desarrollo del país. Se inauguró el
+                                nuevo Centro de Innovación Tecnológica con laboratorios de
+                                última generación.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fundadores destacados -->
+        <section class="section founders-section">
+            <div class="container">
+                <h2 class="section-title"><u>Nuestros Fundadores</u></h2>
+                <div class="founders-grid">
+                    <div class="founder-card">
+                        <div
+                            class="founder-image"
+                            style="
+                                background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
+                            "
+                        ></div>
+                        <div class="founder-info">
+                            <h3 class="founder-name">Padre Ignacio Sánchez, S.J.</h3>
+                            <p class="founder-role">
+                                Fundador y Primer Rector (1900-1920)
+                            </p>
+                            <p>
+                                Visionario jesuita que impulsó la creación del colegio
+                                basado en el modelo educativo de la Ratio Studiorum.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="founder-card">
+                        <div
+                            class="founder-image"
+                            style="
+                                background-image: url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
+                            "
+                        ></div>
+                        <div class="founder-info">
+                            <h3 class="founder-name">Dr. Carlos Mendoza</h3>
+                            <p class="founder-role">
+                                Co-fundador y Primer Director Académico
+                            </p>
+                            <p>
+                                Destacado educador venezolano que diseñó el plan de
+                                estudios inicial y estableció los primeros programas
+                                técnicos.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="founder-card">
+                        <div
+                            class="founder-image"
+                            style="
+                                background-image: url('https://images.unsplash.com/photo-1590086782792-42dd2350140d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
+                            "
+                        ></div>
+                        <div class="founder-info">
+                            <h3 class="founder-name">Sor María de la Luz</h3>
+                            <p class="founder-role">
+                                Co-fundadora y Primera Directora de Formación
+                            </p>
+                            <p>
+                                Religiosa dedicada a la educación que implementó el
+                                programa de formación en valores que sigue siendo pilar de
+                                nuestra institución.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer - Mismo que en index.html -->
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h3>Colegio La Ninfa</h3>
+                        <p style="margin-bottom: 20px; opacity: 0.8">
+                            Educación jesuita de excelencia desde 1900. Formando líderes
+                            con valores para un mundo mejor.
+                        </p>
+                        <div class="iso-element">
+                            <div class="iso-building">
+                                <div class="iso-window"></div>
+                                <div class="iso-window"></div>
+                                <div class="iso-window"></div>
+                                <div class="iso-window"></div>
+                                <div class="iso-window"></div>
+                                <div class="iso-window"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>Enlaces Rápidos</h3>
+                        <ul class="footer-links">
+                            <li>
+                                <a href="index.html#cupo"
+                                    ><i class="fas fa-chevron-right"></i>Admisiones</a
+                                >
+                            </li>
+                            <li>
+                                <a href="index.html#calendario"
+                                    ><i class="fas fa-chevron-right"></i> Calendario
+                                    Escolar</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#"
+                                    ><i class="fas fa-chevron-right"></i> Trabaja con
+                                    Nosotros</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>Contáctanos</h3>
+                        <ul class="contact-info">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span
+                                    >Av. Principal, Sector La Ninfa, Caracas,
+                                    Venezuela</span
+                                >
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <span>+58 212 555 1234</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>info@colegiolaninfa.edu.ve</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Lunes a Viernes: 7:00 AM - 4:00 PM</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>Síguenos</h3>
+                        <p style="margin-bottom: 20px; opacity: 0.8">
+                            Mantente conectado con nuestra comunidad a través de las redes
+                            sociales.
+                        </p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <div class="container">
+                    &copy; 2025 Unidad Educativa Colegio La Ninfa. Todos los derechos
+                    reservados.
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Menú móvil
+            const mobileToggle = document.getElementById('mobileToggle');
+            const navMenu = document.querySelector('.nav-menu');
+
+            mobileToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                mobileToggle.querySelector('i').classList.toggle('fa-bars');
+                mobileToggle.querySelector('i').classList.toggle('fa-times');
+            });
+
+            // Animación para la línea de tiempo
+            document.addEventListener('DOMContentLoaded', function () {
+                const timelineItems = document.querySelectorAll('.timeline-item');
+
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.style.opacity = 1;
+                                entry.target.style.transform = 'translateY(0)';
+                            }
+                        });
+                    },
+                    { threshold: 0.1 },
+                );
+
+                timelineItems.forEach((item) => {
+                    item.style.opacity = 0;
+                    item.style.transform = 'translateY(30px)';
+                    item.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    observer.observe(item);
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Inicio de Sesión - Colegio La Ninfa</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                /* Paleta de colores */
+                --primary-dark: #003366;
+                --primary-accent: #d4af37;
+                --background-light: #f8f9fa;
+                --tech-accent: #20b2aa;
+                --text-gray: #5a6d7b;
+                --dynamic-coral: #ff6b6b;
+                --dark-section: #1e3d59;
+
+                /* Sombras */
+                --shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+                --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.2);
+
+                /* Transiciones */
+                --transition: all 0.4s ease;
+
+                /* Bordes redondeados */
+                --border-radius-lg: 30px;
+                --border-radius-xl: 50px;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Open Sans', sans-serif;
+                color: var(--text-gray);
+                background-color: var(--background-light);
+                line-height: 1.6;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5 {
+                font-family: 'Montserrat', sans-serif;
+                color: var(--primary-dark);
+                font-weight: 700;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            .btn {
+                display: inline-block;
+                padding: 14px 32px;
+                border-radius: var(--border-radius-xl);
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 16px;
+                transition: var(--transition);
+                cursor: pointer;
+                border: none;
+                font-family: 'Montserrat', sans-serif;
+                box-shadow: var(--shadow);
+            }
+
+            .btn-primary {
+                background: var(--dynamic-coral);
+                color: white;
+            }
+
+            .btn-primary:hover {
+                background: var(--tech-accent);
+                transform: translateY(-5px);
+                box-shadow: var(--shadow-hover);
+            }
+
+            .btn-secondary {
+                background: var(--tech-accent);
+                color: white;
+            }
+
+            .btn-secondary:hover {
+                background: var(--dynamic-coral);
+                transform: translateY(-5px);
+                box-shadow: var(--shadow-hover);
+            }
+
+            .section {
+                padding: 80px 0;
+                position: relative;
+            }
+
+            .section-title {
+                text-align: center;
+                margin-bottom: 50px;
+                position: relative;
+            }
+
+            /* Header */
+            header {
+                background: linear-gradient(
+                    135deg,
+                    var(--primary-dark) 0%,
+                    var(--dark-section) 100%
+                );
+                padding: 15px 0;
+                position: fixed;
+                width: 100%;
+                top: 0;
+                z-index: 1000;
+                box-shadow: var(--shadow);
+            }
+
+            .header-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .logo {
+                display: flex;
+                align-items: center;
+            }
+
+            .logo-img {
+                height: 60px;
+                width: auto;
+                margin-right: 15px;
+                border-radius: 10px;
+            }
+
+            .logo-text {
+                color: white;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 24px;
+                font-weight: 700;
+            }
+
+            .logo-text span {
+                color: var(--primary-accent);
+                font-weight: 600;
+            }
+
+            /* Navegación */
+            .nav-menu {
+                display: flex;
+                list-style: none;
+            }
+
+            .nav-item {
+                position: relative;
+                margin: 0 10px;
+            }
+
+            .nav-link {
+                color: white;
+                text-decoration: none;
+                padding: 10px 15px;
+                border-radius: var(--border-radius-lg);
+                font-weight: 500;
+                transition: var(--transition);
+                display: flex;
+                align-items: center;
+            }
+
+            .nav-link i {
+                margin-left: 5px;
+                font-size: 14px;
+            }
+
+            .nav-link:hover {
+                background: rgba(255, 255, 255, 0.15);
+            }
+
+            .submenu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: white;
+                min-width: 200px;
+                border-radius: var(--border-radius-lg);
+                box-shadow: var(--shadow);
+                list-style: none;
+                padding: 10px 0;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(15px);
+                transition: var(--transition);
+                z-index: 100;
+            }
+
+            .submenu-item {
+                padding: 8px 25px;
+            }
+
+            .submenu-link {
+                color: var(--text-gray);
+                text-decoration: none;
+                transition: var(--transition);
+                display: block;
+                font-size: 15px;
+                padding: 5px 0;
+            }
+
+            .submenu-link:hover {
+                color: var(--primary-dark);
+                transform: translateX(8px);
+            }
+
+            .nav-item:hover .submenu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .mobile-toggle {
+                display: none;
+                font-size: 28px;
+                color: white;
+                cursor: pointer;
+            }
+
+            /* Login Section */
+            .login-section {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-top: 100px;
+                padding-bottom: 80px;
+            }
+
+            .login-container {
+                background: white;
+                border-radius: var(--border-radius-lg);
+                box-shadow: var(--shadow-hover);
+                overflow: hidden;
+                display: flex;
+                max-width: 1000px;
+                width: 100%;
+            }
+
+            .login-image {
+                flex: 1;
+                background: linear-gradient(
+                    135deg,
+                    var(--primary-dark) 0%,
+                    var(--dark-section) 100%
+                );
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 40px;
+                color: white;
+                text-align: center;
+            }
+
+            .login-image-content {
+                max-width: 400px;
+            }
+
+            .login-image h2 {
+                font-size: 36px;
+                margin-bottom: 20px;
+                color: white;
+            }
+
+            .login-image p {
+                margin-bottom: 30px;
+                font-size: 18px;
+            }
+
+            .login-image img {
+                max-width: 100%;
+                height: auto;
+                margin-top: 20px;
+            }
+
+            .login-form-container {
+                flex: 1;
+                padding: 50px;
+                background: white;
+            }
+
+            .login-form-header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
+            .login-form-header h2 {
+                font-size: 32px;
+                margin-bottom: 10px;
+            }
+
+            .login-form-header p {
+                color: var(--text-gray);
+            }
+
+            .login-form {
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+            }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 10px;
+                font-weight: 600;
+                color: var(--primary-dark);
+                font-size: 17px;
+            }
+
+            .form-control {
+                width: 100%;
+                padding: 14px 18px;
+                border: 1px solid #ddd;
+                border-radius: 15px;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 17px;
+                transition: var(--transition);
+            }
+
+            .form-control:focus {
+                border-color: var(--tech-accent);
+                outline: none;
+                box-shadow: 0 0 0 4px rgba(32, 178, 170, 0.3);
+            }
+
+            .password-container {
+                position: relative;
+            }
+
+            .password-toggle {
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+                color: var(--text-gray);
+            }
+
+            .captcha-container {
+                background: #f5f5f5;
+                border-radius: 15px;
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                margin-bottom: 15px;
+            }
+
+            .captcha-box {
+                flex: 1;
+                background: white;
+                border-radius: 10px;
+                padding: 15px;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 24px;
+                font-weight: 600;
+                letter-spacing: 3px;
+                text-align: center;
+                color: var(--primary-dark);
+                border: 2px dashed var(--primary-accent);
+            }
+
+            .captcha-refresh {
+                background: var(--primary-accent);
+                color: white;
+                border: none;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: var(--transition);
+            }
+
+            .captcha-refresh:hover {
+                transform: rotate(90deg);
+            }
+
+            .form-footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            .remember-me {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .remember-me input {
+                width: 18px;
+                height: 18px;
+            }
+
+            .forgot-password {
+                color: var(--tech-accent);
+                text-decoration: none;
+                transition: var(--transition);
+            }
+
+            .forgot-password:hover {
+                color: var(--dynamic-coral);
+                text-decoration: underline;
+            }
+
+            .login-btn {
+                background: var(--primary-dark);
+                color: white;
+                border: none;
+                padding: 18px;
+                font-size: 20px;
+                border-radius: var(--border-radius-lg);
+                cursor: pointer;
+                transition: var(--transition);
+                width: 100%;
+                font-weight: 600;
+                box-shadow: var(--shadow);
+                margin-top: 15px;
+            }
+
+            .login-btn:hover {
+                background: var(--primary-accent);
+                transform: translateY(-5px);
+                box-shadow: var(--shadow-hover);
+            }
+
+            .login-divider {
+                text-align: center;
+                margin: 25px 0;
+                position: relative;
+            }
+
+            .login-divider::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: #ddd;
+                z-index: 1;
+            }
+
+            .login-divider span {
+                background: white;
+                position: relative;
+                z-index: 2;
+                padding: 0 15px;
+                color: var(--text-gray);
+            }
+
+            .social-login {
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+            }
+
+            .social-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                color: white;
+                font-size: 20px;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+            }
+
+            .social-btn.google {
+                background: #db4437;
+            }
+
+            .social-btn.facebook {
+                background: #4267b2;
+            }
+
+            .social-btn.microsoft {
+                background: #0078d7;
+            }
+
+            .social-btn:hover {
+                transform: translateY(-5px);
+                box-shadow: var(--shadow-hover);
+            }
+
+            .register-link {
+                text-align: center;
+                margin-top: 30px;
+                font-size: 17px;
+            }
+
+            .register-link a {
+                color: var(--tech-accent);
+                text-decoration: none;
+                font-weight: 600;
+                transition: var(--transition);
+            }
+
+            .register-link a:hover {
+                color: var(--dynamic-coral);
+                text-decoration: underline;
+            }
+
+            /* Footer */
+            footer {
+                padding: 70px 0 0;
+                background-image: url('https://placehold.co/1920x1080/003366/FFFFFF?text=Personal+del+Colegio');
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                position: relative;
+                color: white;
+            }
+
+            footer::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.6);
+                z-index: 1;
+            }
+
+            .footer-grid {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                gap: 40px;
+                margin-bottom: 50px;
+            }
+
+            .footer-col {
+                flex: 1;
+                min-width: 250px;
+                position: relative;
+                z-index: 2;
+            }
+
+            .footer-col h3 {
+                color: white;
+                margin-bottom: 25px;
+                font-size: 22px;
+                position: relative;
+                padding-bottom: 10px;
+            }
+
+            .footer-col h3::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 60px;
+                height: 3px;
+                background: var(--primary-accent);
+            }
+
+            .footer-links {
+                list-style: none;
+            }
+
+            .footer-links li {
+                margin-bottom: 14px;
+            }
+
+            .footer-links a {
+                color: rgba(255, 255, 255, 0.8);
+                text-decoration: none;
+                transition: var(--transition);
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+            }
+
+            .footer-links a i {
+                margin-right: 12px;
+                font-size: 15px;
+            }
+
+            .footer-links a:hover {
+                color: white;
+                transform: translateX(8px);
+            }
+
+            .social-links {
+                display: flex;
+                gap: 18px;
+                margin-top: 25px;
+            }
+
+            .social-links a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 45px;
+                height: 45px;
+                background: rgba(255, 255, 255, 0.15);
+                border-radius: 50%;
+                color: white;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+            }
+
+            .social-links a:hover {
+                background: var(--primary-accent);
+                transform: translateY(-8px);
+            }
+
+            .contact-info {
+                list-style: none;
+            }
+
+            .contact-info li {
+                display: flex;
+                margin-bottom: 18px;
+                align-items: flex-start;
+                font-size: 16px;
+            }
+
+            .contact-info i {
+                margin-right: 18px;
+                color: var(--primary-accent);
+                font-size: 22px;
+                min-width: 22px;
+            }
+
+            .copyright {
+                text-align: center;
+                padding: 30px 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.15);
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 15px;
+                position: relative;
+                z-index: 2;
+            }
+
+            /* Responsive */
+            @media (max-width: 992px) {
+                .login-container {
+                    flex-direction: column;
+                    max-width: 600px;
+                }
+
+                .login-image {
+                    padding: 30px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .nav-menu {
+                    position: fixed;
+                    top: 90px;
+                    right: -100%;
+                    flex-direction: column;
+                    background: var(--primary-dark);
+                    width: 300px;
+                    height: calc(100vh - 90px);
+                    padding: 20px;
+                    transition: var(--transition);
+                    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                }
+
+                .nav-menu.active {
+                    right: 0;
+                }
+
+                .nav-item {
+                    margin: 10px 0;
+                }
+
+                .submenu {
+                    position: static;
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                    box-shadow: none;
+                    background: rgba(255, 255, 255, 0.05);
+                    margin-top: 5px;
+                    display: none;
+                }
+
+                .nav-item:hover .submenu {
+                    display: block;
+                }
+
+                .mobile-toggle {
+                    display: block;
+                }
+
+                .form-footer {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 15px;
+                }
+
+                .footer-grid {
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+
+                .footer-col h3::after {
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+
+            @media (max-width: 576px) {
+                .section {
+                    padding: 60px 0;
+                }
+
+                .login-form-container {
+                    padding: 30px;
+                }
+
+                .login-image h2 {
+                    font-size: 28px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <div class="container header-container">
+                <div class="logo">
+                    <img
+                        src="../images/logo.png"
+                        alt="Logo Colegio La Ninfa"
+                        class="logo-img"
+                    />
+                    <div class="logo-text">Colegio <span>La Ninfa</span></div>
+                </div>
+
+                <nav>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="../../index.html" class="nav-link">Inicio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"
+                                >Colegio <i class="fas fa-chevron-down"></i
+                            ></a>
+                            <ul class="submenu">
+                                <li class="submenu-item">
+                                    <a href="./nosotros.html" class="submenu-link"
+                                        >Nosotros</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./historia.html" class="submenu-link"
+                                        >Historia</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./programas.html" class="submenu-link"
+                                        >Programas</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./reglas.html" class="submenu-link"
+                                        >Normativa Interna</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"
+                                >Publicaciones <i class="fas fa-chevron-down"></i
+                            ></a>
+                            <ul class="submenu">
+                                <li class="submenu-item">
+                                    <a href="./noticias-1.html" class="submenu-link"
+                                        >Noticias</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./eventos-1.html" class="submenu-link"
+                                        >Eventos</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./galeria.html" class="submenu-link"
+                                        >Galería</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./horarios.html" class="submenu-link"
+                                        >Horarios</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./utiles.html" class="submenu-link"
+                                        >Útiles</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"
+                                >Comunidad <i class="fas fa-chevron-down"></i
+                            ></a>
+                            <ul class="submenu">
+                                <li class="submenu-item">
+                                    <a href="./egresados.html" class="submenu-link"
+                                        >Egresados</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./donar.html" class="submenu-link"
+                                        >Apóyanos</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./eventos-2.html" class="submenu-link"
+                                        >Eventos</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./noticias-2.html" class="submenu-link"
+                                        >Noticias</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="./contacto.html" class="nav-link active"
+                                >Contáctanos</a
+                            >
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"
+                                >Intranet <i class="fas fa-chevron-down"></i
+                            ></a>
+                            <ul class="submenu">
+                                <li class="submenu-item">
+                                    <a href="./sesiones-1.html" class="submenu-link"
+                                        >Institución</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./sesiones-1.html" class="submenu-link"
+                                        >Personal</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./sesiones-1.html" class="submenu-link"
+                                        >Representante</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./sesiones-1.html" class="submenu-link"
+                                        >Estudiante</a
+                                    >
+                                </li>
+                                <li class="submenu-item">
+                                    <a href="./sesiones-2.html" class="submenu-link"
+                                        >Egresados</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="mobile-toggle" id="mobileToggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Login Section -->
+        <section class="login-section">
+            <div class="login-container">
+                <div class="login-image">
+                    <div class="login-image-content">
+                        <h2>Accede a la Intranet Educativa</h2>
+                        <p>
+                            Para estudiantes, personal docente y administrativo. Accede a
+                            recursos educativos, calificaciones y herramientas de gestión.
+                        </p>
+                        <img
+                            src="https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Educación tecnológica"
+                        />
+                    </div>
+                </div>
+
+                <div class="login-form-container">
+                    <div class="login-form-header">
+                        <h2>Iniciar Sesión</h2>
+                        <p>Ingresa tus credenciales para acceder al sistema</p>
+                    </div>
+
+                    <form class="login-form" id="loginForm">
+                        <div class="form-group">
+                            <label for="username">Usuario o Correo Electrónico</label>
+                            <input
+                                type="text"
+                                id="username"
+                                class="form-control"
+                                placeholder="Ingresa tu usuario o correo"
+                                required
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Contraseña</label>
+                            <div class="password-container">
+                                <input
+                                    type="password"
+                                    id="password"
+                                    class="form-control"
+                                    placeholder="Ingresa tu contraseña"
+                                    required
+                                />
+                                <span class="password-toggle" id="passwordToggle">
+                                    <i class="far fa-eye"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="captcha">Verificación de Seguridad</label>
+                            <div class="captcha-container">
+                                <div class="captcha-box" id="captchaText">A3B7K</div>
+                                <button
+                                    type="button"
+                                    class="captcha-refresh"
+                                    id="refreshCaptcha"
+                                >
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                            </div>
+                            <input
+                                type="text"
+                                id="captcha"
+                                class="form-control"
+                                placeholder="Ingresa el texto de arriba"
+                                required
+                            />
+                        </div>
+
+                        <div class="form-footer">
+                            <div class="remember-me">
+                                <input type="checkbox" id="remember" />
+                                <label for="remember">Recordar mi sesión</label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="login-btn">Iniciar Sesión</button>
+
+                        <div class="register-link">
+                            ¿No tienes una cuenta? <a href="#">Regístrate aquí</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h3>Colegio La Ninfa</h3>
+                        <p style="margin-bottom: 20px; opacity: 0.8">
+                            Educación jesuita de excelencia desde 1900. Formando líderes
+                            con valores para un mundo mejor.
+                        </p>
+                        <div class="iso-element">
+                            <div class="iso-building">
+                                <div class="iso-window"></div>
+                                <div class="iso-window"></div>
+                                <div class="iso-window"></div>
+                                <div class="iso-window"></div>
+                                <div class="iso-window"></div>
+                                <div class="iso-window"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>Enlaces Rápidos</h3>
+                        <ul class="footer-links">
+                            <li>
+                                <a href="index.html#cupo"
+                                    ><i class="fas fa-chevron-right"></i> Admisiones</a
+                                >
+                            </li>
+                            <li>
+                                <a href="index.html#calendario"
+                                    ><i class="fas fa-chevron-right"></i> Calendario
+                                    Escolar</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#"
+                                    ><i class="fas fa-chevron-right"></i> Trabaja con
+                                    Nosotros</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>Contáctanos</h3>
+                        <ul class="contact-info">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span
+                                    >Av. Principal, Sector La Ninfa, Caracas,
+                                    Venezuela</span
+                                >
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <span>+58 212 555 1234</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>info@colegiolaninfa.edu.ve</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Lunes a Viernes: 7:00 AM - 4:00 PM</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>Síguenos</h3>
+                        <p style="margin-bottom: 20px; opacity: 0.8">
+                            Mantente conectado con nuestra comunidad a través de las redes
+                            sociales.
+                        </p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <div class="container">
+                    &copy; 2025 Unidad Educativa Colegio La Ninfa. Todos los derechos
+                    reservados.
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Menú móvil
+            const mobileToggle = document.getElementById('mobileToggle');
+            const navMenu = document.querySelector('.nav-menu');
+
+            mobileToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                mobileToggle.querySelector('i').classList.toggle('fa-bars');
+                mobileToggle.querySelector('i').classList.toggle('fa-times');
+            });
+
+            // Toggle para mostrar/ocultar contraseña
+            const passwordToggle = document.getElementById('passwordToggle');
+            const passwordInput = document.getElementById('password');
+
+            passwordToggle.addEventListener('click', () => {
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    passwordToggle.innerHTML = '<i class="far fa-eye-slash"></i>';
+                } else {
+                    passwordInput.type = 'password';
+                    passwordToggle.innerHTML = '<i class="far fa-eye"></i>';
+                }
+            });
+
+            // Generador de CAPTCHA
+            function generateCaptcha() {
+                const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+                let captcha = '';
+                for (let i = 0; i < 5; i++) {
+                    captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                return captcha;
+            }
+
+            // Actualizar CAPTCHA
+            function updateCaptcha() {
+                const captchaText = document.getElementById('captchaText');
+                captchaText.textContent = generateCaptcha();
+            }
+
+            // Botón para actualizar CAPTCHA
+            const refreshCaptcha = document.getElementById('refreshCaptcha');
+            refreshCaptcha.addEventListener('click', updateCaptcha);
+
+            // Inicializar CAPTCHA
+            updateCaptcha();
+
+            // Validación del formulario
+            const loginForm = document.getElementById('loginForm');
+
+            loginForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                const captchaInput = document.getElementById('captcha').value;
+                const captchaText = document.getElementById('captchaText').textContent;
+
+                if (captchaInput !== captchaText) {
+                    alert(
+                        'El código de verificación no coincide. Por favor, inténtalo de nuevo.',
+                    );
+                    updateCaptcha();
+                    return;
+                }
+
+                // Aquí iría la lógica real de autenticación
+                alert(`Inicio de sesión exitoso para: ${username}`);
+                loginForm.reset();
+                updateCaptcha();
+            });
+        </script>
+    </body>
+</html>
