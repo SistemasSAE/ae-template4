@@ -1,0 +1,8 @@
+/* ----- ----- Variables modificables de bootstrap ----- ----- */
+@import './variables';
+
+/* ----- ----- Libreria completa de bootstrap ----- ----- */
+@import './../../node_modules/bootstrap/scss/bootstrap';
+
+/* ----- ----- Codigo adicional ----- ----- */
+@import './generales';
