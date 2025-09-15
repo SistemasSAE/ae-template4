@@ -1,0 +1,53 @@
+.bg-parallax {
+    --bg-image: url('../images/imagen-1.png');
+
+    background-image: var(--bg-image);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carousel {
+    &__contenedor {
+        position: relative;
+    }
+    &__botones {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+    &__anterior,
+    &__siguiente {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.5rem;
+        border: 2px solid $warning;
+        text-align: center;
+        background-color: $white;
+        color: $primary;
+        border-radius: 50rem;
+    }
+
+    &__indicadores {
+        width: 100%;
+        position: absolute;
+        bottom: 1rem;
+        left: 0;
+
+        .glider-dot {
+            --bs-bg-opacity: 0.5;
+            background: rgba(var(--bs-white-rgb), var(--bs-bg-opacity));
+            &.active {
+                --bs-bg-opacity: 1;
+                background: rgba(var(--bs-white-rgb), var(--bs-bg-opacity));
+            }
+        }
+    }
+}
