@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="shortcut icon"
+            href="../images/logo.png"
+            type="image/x-icon"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/css/fontawesome.min.css"
+        />
+        <link rel="stylesheet" href="../css/estilos.min.css" />
+        <title>Programas Académicos - Colegio La Ninfa</title>
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="bg-primary d-none fixed-top" id="mainNavbar">
+            <nav class="navbar navbar-dark navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="../../index.html">
+                        <img
+                            src="../images/logo.png"
+                            alt="Logo Colegio La Ninfa"
+                            class="logo-img"
+                            width="50"
+                            height="50"
+                        />
+                        Colegio <span class="text-warning">La Ninfa</span>
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar"
+                        aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="offcanvas offcanvas-end"
+                        tabindex="-1"
+                        id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel"
+                    >
+                        <div class="offcanvas-header">
+                            <h5
+                                class="offcanvas-title"
+                                id="offcanvasNavbarLabel"
+                            >
+                                Offcanvas
+                            </h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="offcanvas"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul
+                                class="navbar-nav justify-content-end flex-grow-1 pe-3"
+                            >
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="../../index.html"
+                                        >Inicio</a
+                                    >
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Colegio
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./nosotros.html"
+                                                >Nosotros</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./historia.html"
+                                                >Historia</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./programas.html"
+                                                >Programas</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./reglas.html"
+                                                >Normativa Interna</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Publicaciones
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./noticias-1.html"
+                                                >Noticias</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./eventos-1.html"
+                                                >Eventos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./galeria.html"
+                                                >Galería</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./horarios.html"
+                                                >Horarios</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./utiles.html"
+                                                >Útiles</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Comunidad
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./egresados.html"
+                                                >Egresados</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./donar.html"
+                                                >Apóyanos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./eventos-2.html"
+                                                >Eventos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./noticias-2.html"
+                                                >Noticias</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="./contacto.html"
+                                        >Contáctanos</a
+                                    >
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Intranet
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Institución</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Personal</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Representante</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Estudiante</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-2.html"
+                                                >Egresados</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <header class="bg-primary">
+            <nav class="navbar navbar-dark navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="../../index.html">
+                        <img
+                            src="../images/logo.png"
+                            alt="Logo Colegio La Ninfa"
+                            class="logo-img"
+                            width="50"
+                            height="50"
+                        />
+                        Colegio <span class="text-warning">La Ninfa</span>
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar"
+                        aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="offcanvas offcanvas-end"
+                        tabindex="-1"
+                        id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel"
+                    >
+                        <div class="offcanvas-header">
+                            <h5
+                                class="offcanvas-title"
+                                id="offcanvasNavbarLabel"
+                            >
+                                Offcanvas
+                            </h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="offcanvas"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul
+                                class="navbar-nav justify-content-end flex-grow-1 pe-3"
+                            >
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="../../index.html"
+                                        >Inicio</a
+                                    >
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Colegio
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./nosotros.html"
+                                                >Nosotros</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./historia.html"
+                                                >Historia</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./programas.html"
+                                                >Programas</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./reglas.html"
+                                                >Normativa Interna</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Publicaciones
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./noticias-1.html"
+                                                >Noticias</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./eventos-1.html"
+                                                >Eventos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./galeria.html"
+                                                >Galería</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./horarios.html"
+                                                >Horarios</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./utiles.html"
+                                                >Útiles</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Comunidad
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./egresados.html"
+                                                >Egresados</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./donar.html"
+                                                >Apóyanos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./eventos-2.html"
+                                                >Eventos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./noticias-2.html"
+                                                >Noticias</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="./contacto.html"
+                                        >Contáctanos</a
+                                    >
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Intranet
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Institución</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Personal</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Representante</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Estudiante</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-2.html"
+                                                >Egresados</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hero de Programas -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="display-6 mb-4 text-center text-primary fw-semibold">
+                    Nuestros Programas Académicos
+                </h2>
+                <div class="px-lg-6">
+                    <p class="fs-5 text-center">
+                        En el Colegio La Ninfa ofrecemos una educación integral
+                        que combina excelencia académica con formación en
+                        valores. Nuestros programas están diseñados para
+                        desarrollar el potencial de cada estudiante,
+                        preparándolos para los desafíos del futuro.
+                    </p>
+                    <div
+                        class="d-flex justify-content-center align-items-center gap-3"
+                    >
+                        <button class="btn btn-primary">
+                            Todos los niveles
+                        </button>
+                        <button class="btn btn-outline-primary">
+                            Primaria
+                        </button>
+                        <button class="btn btn-outline-primary">
+                            Secundaria
+                        </button>
+                        <button class="btn btn-outline-primary">
+                            Técnicos
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programas de Primaria y Secundaria -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-lg-2">
+                    <!-- Primaria -->
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Educación Primaria</h3>
+                                <p>Grados 1° al 6°</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                class="accordion-button"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne"
+                                                aria-expanded="true"
+                                                aria-controls="collapseOne"
+                                            >
+                                                Primer Grado
+                                            </button>
+                                        </h2>
+                                        <div
+                                            id="collapseOne"
+                                            class="accordion-collapse collapse show"
+                                            data-bs-parent="#accordionExample"
+                                        >
+                                            <div class="accordion-body">
+                                                <div
+                                                    class="row row-cols-1 row-cols-lg-3 g-3"
+                                                >
+                                                    <div
+                                                        class="bg-info-subtle rounded-pill p-2 fs-7 d-flex align-items-center justify-content-center"
+                                                    >
+                                                        Matemáticas
+                                                    </div>
+                                                    <div
+                                                        class="bg-info-subtle rounded-pill p-2 fs-7 d-flex align-items-center justify-content-center"
+                                                    >
+                                                        Lengua
+                                                    </div>
+                                                    <div
+                                                        class="bg-info-subtle rounded-pill p-2 fs-7 d-flex align-items-center justify-content-center"
+                                                    >
+                                                        Ciencias Naturales
+                                                    </div>
+                                                    <div
+                                                        class="bg-info-subtle rounded-pill p-2 fs-7 d-flex align-items-center justify-content-center"
+                                                    >
+                                                        Ciencias Sociales
+                                                    </div>
+                                                    <div
+                                                        class="bg-info-subtle rounded-pill p-2 fs-7 d-flex align-items-center justify-content-center"
+                                                    >
+                                                        Educación Física
+                                                    </div>
+                                                    <div
+                                                        class="bg-info-subtle rounded-pill p-2 fs-7 d-flex align-items-center justify-content-center"
+                                                    >
+                                                        Arte
+                                                    </div>
+                                                    <div
+                                                        class="bg-info-subtle rounded-pill p-2 fs-7 d-flex align-items-center justify-content-center"
+                                                    >
+                                                        Valores
+                                                    </div>
+                                                    <div
+                                                        class="bg-info-subtle rounded-pill p-2 fs-7 d-flex align-items-center justify-content-center"
+                                                    >
+                                                        Inglés Básico
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapseTwo"
+                                                aria-expanded="false"
+                                                aria-controls="collapseTwo"
+                                            >
+                                                Accordion Item #2
+                                            </button>
+                                        </h2>
+                                        <div
+                                            id="collapseTwo"
+                                            class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionExample"
+                                        >
+                                            <div class="accordion-body">
+                                                <strong
+                                                    >This is the second item’s
+                                                    accordion body.</strong
+                                                >
+                                                It is hidden by default, until
+                                                the collapse plugin adds the
+                                                appropriate classes that we use
+                                                to style each element. These
+                                                classes control the overall
+                                                appearance, as well as the
+                                                showing and hiding via CSS
+                                                transitions. You can modify any
+                                                of this with custom CSS or
+                                                overriding our default
+                                                variables. It’s also worth
+                                                noting that just about any HTML
+                                                can go within the
+                                                <code>.accordion-body</code>,
+                                                though the transition does limit
+                                                overflow.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapseThree"
+                                                aria-expanded="false"
+                                                aria-controls="collapseThree"
+                                            >
+                                                Accordion Item #3
+                                            </button>
+                                        </h2>
+                                        <div
+                                            id="collapseThree"
+                                            class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionExample"
+                                        >
+                                            <div class="accordion-body">
+                                                <strong
+                                                    >This is the third item’s
+                                                    accordion body.</strong
+                                                >
+                                                It is hidden by default, until
+                                                the collapse plugin adds the
+                                                appropriate classes that we use
+                                                to style each element. These
+                                                classes control the overall
+                                                appearance, as well as the
+                                                showing and hiding via CSS
+                                                transitions. You can modify any
+                                                of this with custom CSS or
+                                                overriding our default
+                                                variables. It’s also worth
+                                                noting that just about any HTML
+                                                can go within the
+                                                <code>.accordion-body</code>,
+                                                though the transition does limit
+                                                overflow.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Grado 1 -->
+                                <div class="grade">
+                                    <div class="grade-title">
+                                        <h4>Primer Grado</h4>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="subjects-list">
+                                        <div class="subject">Matemáticas</div>
+                                        <div class="subject">Lengua</div>
+                                        <div class="subject">
+                                            Ciencias Naturales
+                                        </div>
+                                        <div class="subject">
+                                            Ciencias Sociales
+                                        </div>
+                                        <div class="subject">
+                                            Educación Física
+                                        </div>
+                                        <div class="subject">Arte</div>
+                                        <div class="subject">Valores</div>
+                                        <div class="subject">Inglés Básico</div>
+                                    </div>
+                                </div>
+                                <!-- Grado 2 -->
+                                <div class="grade">
+                                    <div class="grade-title">
+                                        <h4>Segundo Grado</h4>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="subjects-list">
+                                        <div class="subject">Matemáticas</div>
+                                        <div class="subject">
+                                            Lengua y Literatura
+                                        </div>
+                                        <div class="subject">
+                                            Ciencias Naturales
+                                        </div>
+                                        <div class="subject">
+                                            Ciencias Sociales
+                                        </div>
+                                        <div class="subject">
+                                            Educación Física
+                                        </div>
+                                        <div class="subject">Arte y Música</div>
+                                        <div class="subject">Valores</div>
+                                        <div class="subject">Inglés</div>
+                                    </div>
+                                </div>
+                                <!-- Grado 3 -->
+                                <div class="grade">
+                                    <div class="grade-title">
+                                        <h4>Tercer Grado</h4>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="subjects-list">
+                                        <div class="subject">Matemáticas</div>
+                                        <div class="subject">
+                                            Lengua y Literatura
+                                        </div>
+                                        <div class="subject">
+                                            Ciencias Naturales
+                                        </div>
+                                        <div class="subject">Historia</div>
+                                        <div class="subject">Geografía</div>
+                                        <div class="subject">
+                                            Educación Física
+                                        </div>
+                                        <div class="subject">Arte</div>
+                                        <div class="subject">Inglés</div>
+                                        <div class="subject">Valores</div>
+                                    </div>
+                                </div>
+                                <!-- Grado 4 -->
+                                <div class="grade">
+                                    <div class="grade-title">
+                                        <h4>Cuarto Grado</h4>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="subjects-list">
+                                        <div class="subject">Matemáticas</div>
+                                        <div class="subject">
+                                            Lengua y Literatura
+                                        </div>
+                                        <div class="subject">
+                                            Ciencias Naturales
+                                        </div>
+                                        <div class="subject">Historia</div>
+                                        <div class="subject">Geografía</div>
+                                        <div class="subject">
+                                            Educación Física
+                                        </div>
+                                        <div class="subject">Arte</div>
+                                        <div class="subject">Inglés</div>
+                                        <div class="subject">Valores</div>
+                                        <div class="subject">
+                                            Tecnología Básica
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Grado 5 -->
+                                <div class="grade">
+                                    <div class="grade-title">
+                                        <h4>Quinto Grado</h4>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="subjects-list">
+                                        <div class="subject">Matemáticas</div>
+                                        <div class="subject">
+                                            Lengua y Literatura
+                                        </div>
+                                        <div class="subject">
+                                            Ciencias Naturales
+                                        </div>
+                                        <div class="subject">Historia</div>
+                                        <div class="subject">Geografía</div>
+                                        <div class="subject">
+                                            Educación Física
+                                        </div>
+                                        <div class="subject">Arte</div>
+                                        <div class="subject">Inglés</div>
+                                        <div class="subject">Valores</div>
+                                        <div class="subject">Tecnología</div>
+                                    </div>
+                                </div>
+                                <!-- Grado 6 -->
+                                <div class="grade">
+                                    <div class="grade-title">
+                                        <h4>Sexto Grado</h4>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="subjects-list">
+                                        <div class="subject">Matemáticas</div>
+                                        <div class="subject">
+                                            Lengua y Literatura
+                                        </div>
+                                        <div class="subject">
+                                            Ciencias Naturales
+                                        </div>
+                                        <div class="subject">Historia</div>
+                                        <div class="subject">Geografía</div>
+                                        <div class="subject">
+                                            Educación Física
+                                        </div>
+                                        <div class="subject">Arte</div>
+                                        <div class="subject">Inglés</div>
+                                        <div class="subject">Valores</div>
+                                        <div class="subject">Tecnología</div>
+                                        <div class="subject">Orientación</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Secundaria -->
+                    <div class="col">
+                        <div class="card">
+                            <div class="level-header">
+                                <h3>Educación Secundaria</h3>
+                                <p>Años 1° al 5°</p>
+                            </div>
+                            <div class="level-content">
+                                <!-- Año 1 -->
+                                <div class="grade">
+                                    <div class="grade-title">
+                                        <h4>Primer Año</h4>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="subjects-list">
+                                        <div class="subject">Matemáticas</div>
+                                        <div class="subject">
+                                            Lengua y Literatura
+                                        </div>
+                                        <div class="subject">Inglés</div>
+                                        <div class="subject">
+                                            Ciencias Naturales
+                                        </div>
+                                        <div class="subject">
+                                            Ciencias Sociales
+                                        </div>
+                                        <div class="subject">
+                                            Educación Física
+                                        </div>
+                                        <div class="subject">Arte</div>
+                                        <div class="subject">Tecnología</div>
+                                        <div class="subject">
+                                            Formación Ciudadana
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Año 2 -->
+                                <div class="grade">
+                                    <div class="grade-title">
+                                        <h4>Segundo Año</h4>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="subjects-list">
+                                        <div class="subject">Matemáticas</div>
+                                        <div class="subject">
+                                            Lengua y Literatura
+                                        </div>
+                                        <div class="subject">Inglés</div>
+                                        <div class="subject">Física</div>
+                                        <div class="subject">Química</div>
+                                        <div class="subject">Biología</div>
+                                        <div class="subject">Historia</div>
+                                        <div class="subject">Geografía</div>
+                                        <div class="subject">
+                                            Educación Física
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Año 3 -->
+                                <div class="grade">
+                                    <div class="grade-title">
+                                        <h4>Tercer año</h4>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="subjects-list">
+                                        <div class="subject">Matemáticas</div>
+                                        <div class="subject">
+                                            Lengua y Literatura
+                                        </div>
+                                        <div class="subject">Inglés</div>
+                                        <div class="subject">Física</div>
+                                        <div class="subject">Química</div>
+                                        <div class="subject">Biología</div>
+                                        <div class="subject">
+                                            Historia Contemporánea
+                                        </div>
+                                        <div class="subject">
+                                            Educación Física
+                                        </div>
+                                        <div class="subject">Filosofía</div>
+                                        <div class="subject">Informática</div>
+                                    </div>
+                                </div>
+                                <!-- Año 4 -->
+                                <div class="grade">
+                                    <div class="grade-title">
+                                        <h4>
+                                            Especialidad disponibles a partir de
+                                            cuarto Año
+                                        </h4>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="subjects-list">
+                                        <div class="subject" href="#tech">
+                                            Tecnología e Informática
+                                        </div>
+                                        <div class="subject" href="#ing">
+                                            Ingeniería Industrial
+                                        </div>
+                                        <div class="subject" href="#ciencias">
+                                            Ciencias Básicas
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Programas Técnicos -->
+                </div>
+                <div class="">
+                    <h2>Programas Técnicos</h2>
+                    <div class="tech-grid">
+                        <!-- Tecnología e Informática -->
+                        <div class="tech-card" id="tech">
+                            <div class="tech-header">
+                                <h3>Tecnología e Informática</h3>
+                            </div>
+                            <div class="tech-content">
+                                <p class="tech-description">
+                                    Programa de vanguardia en desarrollo de
+                                    software, redes y sistemas computacionales.
+                                    Formamos profesionales capaces de enfrentar
+                                    los desafíos tecnológicos del siglo XXI.
+                                </p>
+                                <h4>Materias Principales:</h4>
+                                <div class="tech-subjects">
+                                    <div class="tech-subject">
+                                        Programación I
+                                    </div>
+                                    <div class="tech-subject">
+                                        Base de Datos
+                                    </div>
+                                    <div class="tech-subject">Redes</div>
+                                    <div class="tech-subject">
+                                        Desarrollo Web
+                                    </div>
+                                    <div class="tech-subject">
+                                        Sistemas Operativos
+                                    </div>
+                                    <div class="tech-subject">
+                                        Programación II
+                                    </div>
+                                    <div class="tech-subject">
+                                        Seguridad Informática
+                                    </div>
+                                    <div class="tech-subject">
+                                        Inteligencia Artificial
+                                    </div>
+                                </div>
+                                <a
+                                    href="#"
+                                    class="btn btn-primary"
+                                    style="margin-top: 20px; width: 100%"
+                                    >Ver plan completo</a
+                                >
+                            </div>
+                        </div>
+                        <!-- Ingeniería Industrial -->
+                        <div class="tech-card" id="ing">
+                            <div class="tech-header">
+                                <h3>Ingeniería Industrial</h3>
+                            </div>
+                            <div class="tech-content">
+                                <p class="tech-description">
+                                    Formación en procesos de producción, gestión
+                                    de calidad y optimización industrial.
+                                    Preparamos profesionales para mejorar la
+                                    eficiencia en sistemas productivos.
+                                </p>
+                                <h4>Materias Principales:</h4>
+                                <div class="tech-subjects">
+                                    <div class="tech-subject">
+                                        Procesos Industriales
+                                    </div>
+                                    <div class="tech-subject">
+                                        Gestión de Calidad
+                                    </div>
+                                    <div class="tech-subject">
+                                        Seguridad Industrial
+                                    </div>
+                                    <div class="tech-subject">Logística</div>
+                                    <div class="tech-subject">Producción</div>
+                                    <div class="tech-subject">Optimización</div>
+                                    <div class="tech-subject">
+                                        Control de Procesos
+                                    </div>
+                                    <div class="tech-subject">
+                                        Automatización
+                                    </div>
+                                </div>
+                                <a
+                                    href="#"
+                                    class="btn btn-primary"
+                                    style="margin-top: 20px; width: 100%"
+                                    >Ver plan completo</a
+                                >
+                            </div>
+                        </div>
+                        <!-- Ciencias Básicas -->
+                        <div class="tech-card" id="ciencias">
+                            <div class="tech-header">
+                                <h3>Ciencias Básicas</h3>
+                            </div>
+                            <div class="tech-content">
+                                <p class="tech-description">
+                                    Programa integral en matemáticas, física y
+                                    química con aplicaciones tecnológicas.
+                                    Formamos científicos con capacidad de
+                                    investigación e innovación.
+                                </p>
+                                <h4>Materias Principales:</h4>
+                                <div class="tech-subjects">
+                                    <div class="tech-subject">
+                                        Matemáticas Avanzadas
+                                    </div>
+                                    <div class="tech-subject">Física</div>
+                                    <div class="tech-subject">Química</div>
+                                    <div class="tech-subject">Laboratorio</div>
+                                    <div class="tech-subject">Cálculo</div>
+                                    <div class="tech-subject">Estadística</div>
+                                    <div class="tech-subject">
+                                        Física Moderna
+                                    </div>
+                                    <div class="tech-subject">
+                                        Química Analítica
+                                    </div>
+                                </div>
+                                <a
+                                    href="#"
+                                    class="btn btn-primary"
+                                    style="margin-top: 20px; width: 100%"
+                                    >Ver plan completo</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-primary text-white">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-lg-4 py-5">
+                    <div class="col">
+                        <h3>Colegio La Ninfa</h3>
+                        <p>
+                            Educación jesuita de excelencia desde 1900. Formando
+                            líderes con valores para un mundo mejor.
+                        </p>
+                    </div>
+                    <div class="col">
+                        <h3>Enlaces Rápidos</h3>
+                        <ul>
+                            <li>
+                                <a href="#cupo" class="link-light">
+                                    Admisiones</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#calendario" class="link-light">
+                                    Calendario Escolar</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" class="link-light">
+                                    Trabaja con Nosotros</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3>Contáctanos</h3>
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span
+                                    >Av. Principal, Sector La Ninfa, Caracas,
+                                    Venezuela</span
+                                >
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <a
+                                    href="tel:+582125551234"
+                                    class="link-light text-decoration-none"
+                                    >+58 212 555 1234</a
+                                >
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <a
+                                    href="mailto:info@colegiolaninfa.edu.ve"
+                                    class="link-light text-decoration-none"
+                                    >info@colegiolaninfa.edu.ve</a
+                                >
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Lunes a Viernes: 7:00 AM - 4:00 PM</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3>Síguenos</h3>
+                        <p>
+                            Mantente conectado con nuestra comunidad a través de
+                            las redes sociales.
+                        </p>
+                        <div class="social">
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-facebook-f"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-twitter"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-instagram"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-linkedin-in"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-youtube"></i
+                            ></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="py-3 border-top border-white">
+                <p class="text-white text-center m-0">
+                    &copy; 2025 Unidad Educativa Colegio La Ninfa. Todos los
+                    derechos reservados.
+                </p>
+            </div>
+        </footer>
+
+        <script src="../js/app.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/js/all.min.js"></script>
+    </body>
+</html>
