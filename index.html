@@ -3,1543 +3,670 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="shortcut icon" href="./src/images/logo.png" type="image/x-icon" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/css/fontawesome.min.css"
+        />
+        <link rel="stylesheet" href="./src/css/estilos.min.css" />
         <title>Unidad Educativa Colegio La Ninfa</title>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
-            rel="stylesheet"
-        />
-        <style>
-            :root {
-                /* Paleta de colores */
-                --primary-dark: #003366;
-                --primary-accent: #d4af37;
-                --background-light: #f8f9fa;
-                --tech-accent: #20b2aa;
-                --text-gray: #5a6d7b;
-                --dynamic-coral: #ff6b6b;
-                --dark-section: #1e3d59;
-
-                /* Sombras */
-                --shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-                --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.2);
-
-                /* Transiciones */
-                --transition: all 0.4s ease;
-
-                /* Bordes redondeados */
-                --border-radius-lg: 30px;
-                --border-radius-xl: 50px;
-            }
-
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-
-            body {
-                font-family: 'Open Sans', sans-serif;
-                color: var(--text-gray);
-                background-color: var(--background-light);
-                line-height: 1.6;
-            }
-
-            h1,
-            h2,
-            h3,
-            h4,
-            h5 {
-                font-family: 'Montserrat', sans-serif;
-                color: var(--primary-dark);
-                font-weight: 700;
-            }
-
-            .container {
-                width: 100%;
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 20px;
-            }
-
-            .btn {
-                display: inline-block;
-                padding: 14px 32px;
-                border-radius: var(--border-radius-xl);
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 16px;
-                transition: var(--transition);
-                cursor: pointer;
-                border: none;
-                font-family: 'Montserrat', sans-serif;
-                box-shadow: var(--shadow);
-            }
-
-            .btn-primary {
-                background: var(--dynamic-coral);
-                color: white;
-            }
-
-            .btn-primary:hover {
-                background: var(--tech-accent);
-                transform: translateY(-5px);
-                box-shadow: var(--shadow-hover);
-            }
-
-            .btn-secondary {
-                background: var(--tech-accent);
-                color: white;
-            }
-
-            .btn-secondary:hover {
-                background: var(--dynamic-coral);
-                transform: translateY(-5px);
-                box-shadow: var(--shadow-hover);
-            }
-
-            .section {
-                padding: 80px 0;
-                position: relative;
-            }
-
-            .section-title {
-                text-align: center;
-                margin-bottom: 50px;
-                position: relative;
-            }
-
-            /* Header */
-            header {
-                background: linear-gradient(
-                    135deg,
-                    var(--primary-dark) 0%,
-                    var(--dark-section) 100%
-                );
-                padding: 15px 0;
-                position: fixed;
-                width: 100%;
-                top: 0;
-                z-index: 1000;
-                box-shadow: var(--shadow);
-            }
-
-            .header-container {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            .logo {
-                display: flex;
-                align-items: center;
-            }
-
-            .logo-img {
-                height: 60px;
-                width: auto;
-                margin-right: 15px;
-                border-radius: 10px;
-            }
-
-            .logo-text {
-                color: white;
-                font-family: 'Montserrat', sans-serif;
-                font-size: 24px;
-                font-weight: 700;
-            }
-
-            .logo-text span {
-                color: var(--primary-accent);
-                font-weight: 600;
-            }
-
-            /* Navegación */
-            .nav-menu {
-                display: flex;
-                list-style: none;
-            }
-
-            .nav-item {
-                position: relative;
-                margin: 0 10px;
-            }
-
-            .nav-link {
-                color: white;
-                text-decoration: none;
-                padding: 10px 15px;
-                border-radius: var(--border-radius-lg);
-                font-weight: 500;
-                transition: var(--transition);
-                display: flex;
-                align-items: center;
-            }
-
-            .nav-link i {
-                margin-left: 5px;
-                font-size: 14px;
-            }
-
-            .nav-link:hover {
-                background: rgba(255, 255, 255, 0.15);
-            }
-
-            .submenu {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                background: white;
-                min-width: 200px;
-                border-radius: var(--border-radius-lg);
-                box-shadow: var(--shadow);
-                list-style: none;
-                padding: 10px 0;
-                opacity: 0;
-                visibility: hidden;
-                transform: translateY(15px);
-                transition: var(--transition);
-                z-index: 100;
-            }
-
-            .submenu-item {
-                padding: 8px 25px;
-            }
-
-            .submenu-link {
-                color: var(--text-gray);
-                text-decoration: none;
-                transition: var(--transition);
-                display: block;
-                font-size: 15px;
-                padding: 5px 0;
-            }
-
-            .submenu-link:hover {
-                color: var(--primary-dark);
-                transform: translateX(8px);
-            }
-
-            .nav-item:hover .submenu {
-                opacity: 1;
-                visibility: visible;
-                transform: translateY(0);
-            }
-
-            .mobile-toggle {
-                display: none;
-                font-size: 28px;
-                color: white;
-                cursor: pointer;
-            }
-
-            /* Hero Section - MEJORADO */
-            .hero {
-                padding-top: 100px;
-                background-size: cover;
-                background-position: center;
-                min-height: 650px;
-                display: flex;
-                align-items: center;
-                color: var(--primary-dark);
-                position: relative;
-                overflow: hidden;
-            }
-
-            .hero::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.1);
-                z-index: 1;
-            }
-
-            .hero-content {
-                max-width: 700px;
-                position: relative;
-                z-index: 2;
-                padding: 30px;
-            }
-
-            /* Contenedor para títulos animados */
-            .hero-titles-container {
-                height: 140px;
-                position: relative;
-                overflow: hidden;
-                margin-bottom: 25px;
-            }
-
-            .hero-title {
-                font-size: 52px;
-                margin-bottom: 0;
-                color: var(--primary-dark);
-                line-height: 1.2;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                opacity: 0;
-                transform: translateX(100%);
-                transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
-                    opacity 0.8s ease;
-            }
-
-            .hero-title.active {
-                opacity: 1;
-                transform: translateX(0);
-            }
-
-            .hero-title.exit {
-                transform: translateX(-100%);
-            }
-
-            /* Contenedor para subtítulos animados */
-            .hero-subtitles-container {
-                height: 100px;
-                position: relative;
-                overflow: hidden;
-                margin-bottom: 35px;
-            }
-
-            .hero-subtitle {
-                font-size: 22px;
-                margin-bottom: 0;
-                color: var(--text-gray);
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                opacity: 0;
-                transform: translateX(100%);
-                transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1),
-                    opacity 0.8s ease;
-            }
-
-            .hero-subtitle.active {
-                opacity: 1;
-                transform: translateX(0);
-            }
-
-            .hero-subtitle.exit {
-                transform: translateX(-100%);
-            }
-
-            .hero-buttons {
-                display: flex;
-                gap: 20px;
-            }
-
-            .carousel-controls {
-                position: absolute;
-                bottom: 40px;
-                right: 40px;
-                display: flex;
-                gap: 15px;
-                z-index: 10;
-            }
-
-            .carousel-btn {
-                width: 45px;
-                height: 45px;
-                background: rgba(255, 255, 255, 0.9);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                transition: var(--transition);
-                border: 2px solid var(--primary-accent);
-                color: var(--primary-dark);
-                box-shadow: var(--shadow);
-            }
-
-            .carousel-btn:hover {
-                background: var(--primary-accent);
-                color: white;
-                transform: scale(1.1);
-            }
-
-            .image-selector {
-                position: absolute;
-                bottom: 40px;
-                left: 50%;
-                transform: translateX(-50%);
-                display: flex;
-                gap: 12px;
-                z-index: 10;
-            }
-
-            .selector-dot {
-                width: 14px;
-                height: 14px;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.6);
-                cursor: pointer;
-                transition: var(--transition);
-                border: 2px solid var(--primary-accent);
-            }
-
-            .selector-dot.active {
-                background: var(--primary-accent);
-                transform: scale(1.3);
-            }
-
-            /* Sección Nosotros */
-            .about-container {
-                display: flex;
-                align-items: center;
-                gap: 60px;
-            }
-
-            .about-image {
-                flex: 1;
-                border-radius: var(--border-radius-lg);
-                overflow: hidden;
-                box-shadow: var(--shadow);
-                position: relative;
-            }
-
-            .about-image::before {
-                content: '';
-                position: absolute;
-                top: -15px;
-                left: -15px;
-                right: -15px;
-                bottom: -15px;
-                background: var(--primary-accent);
-                opacity: 0.15;
-                border-radius: calc(var(--border-radius-lg) + 5px);
-                z-index: -1;
-            }
-
-            .about-image img {
-                width: 100%;
-                height: auto;
-                display: block;
-                border-radius: var(--border-radius-lg);
-                transition: var(--transition);
-            }
-
-            .about-image:hover img {
-                transform: scale(1.08);
-            }
-
-            .about-content {
-                flex: 1;
-            }
-
-            .about-title {
-                font-size: 40px;
-                margin-bottom: 25px;
-            }
-
-            .about-text {
-                margin-bottom: 35px;
-                font-size: 17px;
-            }
-
-            /* Sección Programas */
-            .programs {
-                background: linear-gradient(
-                    to bottom,
-                    var(--background-light) 0%,
-                    #ffffff 100%
-                );
-            }
-
-            .programs-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 40px;
-            }
-
-            .program-card {
-                background: white;
-                border-radius: var(--border-radius-lg);
-                overflow: hidden;
-                box-shadow: var(--shadow);
-                transition: var(--transition);
-            }
-
-            .program-card:hover {
-                transform: translateY(-15px);
-                box-shadow: var(--shadow-hover);
-            }
-
-            .program-image {
-                height: 200px;
-                background-color: var(--tech-accent);
-                background-size: cover;
-                background-position: center;
-                position: relative;
-            }
-
-            .program-content {
-                padding: 30px;
-            }
-
-            .program-title {
-                font-size: 22px;
-                margin-bottom: 12px;
-            }
-
-            /* Equipo Directivo, Información de Interés, Footer - Fondos de imagen */
-            .team-section,
-            .info-section,
-            footer {
-                background-size: cover;
-                background-position: center;
-                background-attachment: fixed;
-                position: relative;
-                color: rgb(0, 0, 0);
-            }
-
-            .team-section::before,
-            .info-section::before,
-            footer::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.6);
-                z-index: 1;
-            }
-
-            .team-section .container,
-            .info-section .container,
-            footer .container {
-                position: relative;
-                z-index: 2;
-            }
-
-            .team-section .section-title,
-            .info-section .section-title,
-            footer h3,
-            footer p,
-            footer a,
-            footer ul {
-                color: white;
-            }
-
-            .team-section .section-title::after,
-            .info-section .section-title::after,
-            .footer-col h3::after {
-                background: var(--primary-accent);
-            }
-
-            /* Equipo Directivo */
-            .team-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 40px;
-            }
-
-            .team-member {
-                background: rgba(255, 255, 255, 0.95);
-                border-radius: var(--border-radius-lg);
-                overflow: hidden;
-                box-shadow: var(--shadow);
-                transition: var(--transition);
-                text-align: center;
-            }
-
-            .team-member:hover {
-                transform: translateY(-15px);
-                box-shadow: var(--shadow-hover);
-            }
-
-            .team-photo {
-                height: 280px;
-                background-color: var(--primary-dark);
-                background-size: cover;
-                background-position: center;
-            }
-
-            .team-info {
-                padding: 25px;
-            }
-
-            .team-name {
-                font-size: 20px;
-                margin-bottom: 8px;
-            }
-
-            .team-position {
-                color: var(--tech-accent);
-                font-size: 15px;
-                margin-bottom: 18px;
-            }
-
-            /* Noticias y Eventos - Nuevo Layout */
-            .news-events-calendar-grid {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 40px;
-            }
-
-            .news-events-column {
-                flex: 2;
-                min-width: 300px;
-            }
-
-            .calendar-column {
-                flex: 1;
-                min-width: 280px;
-                background: white;
-                border-radius: var(--border-radius-lg);
-                box-shadow: var(--shadow);
-                padding: 30px;
-                height: fit-content;
-                position: sticky;
-                top: 100px;
-            }
-
-            .calendar-column h3 {
-                font-size: 24px;
-                color: var(--primary-dark);
-                margin-bottom: 20px;
-                text-align: center;
-            }
-
-            .calendar-column ul {
-                list-style: none;
-                padding: 0;
-            }
-
-            .calendar-column li {
-                padding: 10px 0;
-                border-bottom: 1px solid #eee;
-                font-size: 16px;
-                color: var(--text-gray);
-            }
-
-            .calendar-column li:last-child {
-                border-bottom: none;
-            }
-
-            .calendar-column li strong {
-                color: var(--primary-accent);
-                margin-right: 5px;
-            }
-
-            /* Full Calendar Styling - MEJORADO */
-            .full-calendar-container {
-                margin-top: 30px;
-                border-radius: var(--border-radius-lg);
-                overflow: hidden;
-                box-shadow: var(--shadow);
-                border: 1px solid rgba(0, 0, 0, 0.1);
-                background: white;
-            }
-
-            .fc .fc-toolbar {
-                position: relative;
-                height: 40px; /* Altura fija para la barra */
-                margin-bottom: 10px; /* Menor espacio debajo */
-            }
-
-            .fc .fc-toolbar.fc-header-toolbar {
-                margin-bottom: 0.5em; /* Reducimos el margen inferior */
-            }
-
-            /* Botones de navegación */
-            .fc .fc-toolbar .fc-prev-button,
-            .fc .fc-toolbar .fc-next-button {
-                position: absolute;
-                top: 0;
-                z-index: 2;
-                padding: 6px 12px !important; /* Botones más pequeños */
-            }
-
-            .fc .fc-toolbar .fc-prev-button {
-                left: 0;
-            }
-
-            .fc .fc-toolbar .fc-next-button {
-                right: 0;
-            }
-
-            /* Título del calendario (mes y año) */
-            .fc .fc-toolbar .fc-toolbar-title {
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                top: 8px; /* Ajuste fino para la posición vertical */
-                margin: 0;
-                font-size: 1.2rem !important; /* Tamaño de fuente reducido */
-            }
-
-            /* Celdas más pequeñas */
-            .fc .fc-daygrid-day-frame {
-                min-height: 40px; /* Altura reducida de las celdas */
-                padding: 2px; /* Menor padding */
-            }
-
-            .fc .fc-daygrid-day-number {
-                font-size: 0.9rem; /* Tamaño de fuente más pequeño */
-                padding: 2px; /* Menor padding */
-            }
-
-            .fc .fc-daygrid-day-top {
-                justify-content: center; /* Centrar el número del día */
-            }
-
-            /* Eventos más pequeños */
-            .fc .fc-event {
-                font-size: 0.7rem; /* Tamaño de fuente reducido */
-                padding: 2px 4px; /* Menor padding */
-                margin: 1px 2px; /* Menor margen */
-            }
-
-            .fc .fc-col-header-cell {
-                padding: 4px 0; /* Menor altura en los encabezados */
-            }
-
-            .fc .fc-col-header-cell-cushion {
-                font-size: 0.9rem; /* Tamaño de fuente reducido */
-                padding: 2px 0; /* Menor padding */
-            }
-
-            /* Eliminar vistas innecesarias */
-            .fc .fc-toolbar .fc-today-button,
-            .fc .fc-toolbar .fc-dayGridMonth-button,
-            .fc .fc-toolbar .fc-timeGridWeek-button,
-            .fc .fc-toolbar .fc-timeGridDay-button {
-                display: none !important;
-            }
-
-            /* Eventos con etiquetas de colores diferentes */
-            .fc-event-noticia {
-                background-color: var(--tech-accent) !important;
-                border-color: var(--tech-accent) !important;
-            }
-
-            .fc-event-importante {
-                background-color: var(--primary-accent) !important;
-                border-color: var(--primary-accent) !important;
-            }
-
-            .fc-event-escolar {
-                background-color: var(--primary-dark) !important;
-                border-color: var(--primary-dark) !important;
-            }
-
-            /* Noticias y Eventos - Cards Horizontales */
-            .news-grid,
-            .events-grid {
-                display: flex;
-                flex-direction: column;
-                gap: 30px;
-            }
-
-            .news-card,
-            .event-card {
-                background: white;
-                border-radius: var(--border-radius-lg);
-                overflow: hidden;
-                box-shadow: var(--shadow);
-                transition: var(--transition);
-                display: flex;
-                align-items: center;
-                padding: 20px;
-            }
-
-            .news-card:hover,
-            .event-card:hover {
-                transform: translateY(-8px);
-                box-shadow: var(--shadow-hover);
-            }
-
-            .news-image,
-            .event-image {
-                min-width: 220px;
-                height: 180px;
-                background-color: var(--text-gray);
-                background-size: cover;
-                background-position: center;
-                border-radius: var(--border-radius-lg);
-                overflow: hidden;
-            }
-
-            .news-content,
-            .event-content {
-                flex: 1;
-                padding: 0 20px;
-            }
-
-            .news-card .news-image {
-                order: 2;
-                margin-left: 20px;
-            }
-
-            .news-card .news-content {
-                order: 1;
-            }
-
-            .event-card .event-image {
-                order: 1;
-                margin-right: 20px;
-            }
-
-            .event-card .event-content {
-                order: 2;
-            }
-
-            .news-date,
-            .event-date {
-                color: var(--tech-accent);
-                font-size: 14px;
-                margin-bottom: 10px;
-            }
-
-            .news-title,
-            .event-title {
-                font-size: 20px;
-                margin-bottom: 10px;
-            }
-
-            .news-excerpt,
-            .event-excerpt {
-                font-size: 15px;
-                margin-bottom: 15px;
-            }
-
-            /* Galería */
-            .gallery {
-                background: var(--dark-section);
-                color: white;
-            }
-
-            .gallery .section-title {
-                color: white;
-            }
-
-            .gallery-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                gap: 30px;
-            }
-
-            .gallery-album-card {
-                background: rgba(255, 255, 255, 0.1);
-                border-radius: var(--border-radius-lg);
-                overflow: hidden;
-                box-shadow: var(--shadow);
-                transition: var(--transition);
-                text-align: center;
-                padding-bottom: 20px;
-            }
-
-            .gallery-album-card:hover {
-                transform: translateY(-10px);
-                box-shadow: var(--shadow-hover);
-            }
-
-            .gallery-album-card img {
-                width: 100%;
-                height: 220px;
-                object-fit: cover;
-                border-top-left-radius: var(--border-radius-lg);
-                border-top-right-radius: var(--border-radius-lg);
-                margin-bottom: 15px;
-                transition: var(--transition);
-            }
-
-            .gallery-album-card:hover img {
-                transform: scale(1.05);
-            }
-
-            .gallery-album-card h3 {
-                color: white;
-                font-size: 22px;
-                margin-bottom: 15px;
-            }
-
-            /* Información de Interés */
-            .info-cards {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 40px;
-            }
-
-            .info-card {
-                background: rgba(255, 255, 255, 0.747);
-                border-radius: var(--border-radius-lg);
-                padding: 35px;
-                box-shadow: var(--shadow);
-                text-align: center;
-                transition: var(--transition);
-            }
-
-            .info-card:hover {
-                transform: translateY(-15px);
-                box-shadow: var(--shadow-hover);
-            }
-
-            .info-icon {
-                width: 75px;
-                height: 75px;
-                background: var(--primary-accent);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin: 0 auto 25px;
-                font-size: 32px;
-                color: var(--primary-dark);
-                box-shadow: var(--shadow);
-            }
-
-            .info-title {
-                font-size: 22px;
-                margin-bottom: 18px;
-            }
-
-            /* Egresados Destacados */
-            .alumni-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 40px;
-            }
-
-            .alumni-card {
-                background: white;
-                border-radius: var(--border-radius-lg);
-                overflow: hidden;
-                box-shadow: var(--shadow);
-                transition: var(--transition);
-            }
-
-            .alumni-card:hover {
-                transform: translateY(-15px);
-                box-shadow: var(--shadow-hover);
-            }
-
-            .alumni-photo {
-                height: 250px;
-                background-color: var(--primary-dark);
-                background-size: cover;
-                background-position: center;
-            }
-
-            .alumni-info {
-                padding: 25px;
-                text-align: center;
-            }
-
-            .alumni-name {
-                font-size: 20px;
-                margin-bottom: 8px;
-            }
-
-            .alumni-career {
-                color: var(--tech-accent);
-                font-size: 15px;
-                margin-bottom: 12px;
-            }
-
-            .alumni-achievement {
-                font-size: 15px;
-                font-style: italic;
-            }
-
-            /* Contacto */
-            .contact-form {
-                background: white;
-                border-radius: var(--border-radius-lg);
-                padding: 45px;
-                box-shadow: var(--shadow);
-            }
-
-            .form-row {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 25px;
-                margin-bottom: 25px;
-            }
-
-            .form-group {
-                flex: 1;
-                min-width: 280px;
-            }
-
-            .form-group label {
-                display: block;
-                margin-bottom: 10px;
-                font-weight: 600;
-                color: var(--primary-dark);
-                font-size: 17px;
-            }
-
-            .form-control {
-                width: 100%;
-                padding: 14px 18px;
-                border: 1px solid #ccc;
-                border-radius: 15px;
-                font-family: 'Open Sans', sans-serif;
-                font-size: 17px;
-                transition: var(--transition);
-            }
-
-            .form-control:focus {
-                border-color: var(--tech-accent);
-                outline: none;
-                box-shadow: 0 0 0 4px rgba(32, 178, 170, 0.3);
-            }
-
-            textarea.form-control {
-                min-height: 180px;
-                resize: vertical;
-            }
-
-            .submit-btn {
-                background: var(--dynamic-coral);
-                color: white;
-                border: none;
-                padding: 18px 45px;
-                font-size: 20px;
-                border-radius: var(--border-radius-xl);
-                cursor: pointer;
-                transition: var(--transition);
-                display: block;
-                margin: 35px auto 0;
-                box-shadow: var(--shadow);
-            }
-
-            .submit-btn:hover {
-                background: var(--tech-accent);
-                transform: translateY(-5px);
-                box-shadow: var(--shadow-hover);
-            }
-
-            /* Footer */
-            footer {
-                padding: 70px 0 0;
-                background-image: url('https://placehold.co/1920x1080/003366/FFFFFF?text=Personal+del+Colegio');
-            }
-
-            .footer-grid {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-around;
-                gap: 40px;
-                margin-bottom: 50px;
-            }
-
-            .footer-col {
-                flex: 1;
-                min-width: 250px;
-            }
-
-            .footer-col h3 {
-                color: white;
-                margin-bottom: 25px;
-                font-size: 22px;
-                position: relative;
-                padding-bottom: 10px;
-            }
-
-            .footer-col h3::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 60px;
-                height: 3px;
-                background: var(--primary-accent);
-            }
-
-            .footer-links {
-                list-style: none;
-            }
-
-            .footer-links li {
-                margin-bottom: 14px;
-            }
-
-            .footer-links a {
-                color: rgba(255, 255, 255, 0.8);
-                text-decoration: none;
-                transition: var(--transition);
-                display: flex;
-                align-items: center;
-                font-size: 16px;
-            }
-
-            .footer-links a i {
-                margin-right: 12px;
-                font-size: 15px;
-            }
-
-            .footer-links a:hover {
-                color: white;
-                transform: translateX(8px);
-            }
-
-            .social-links {
-                display: flex;
-                gap: 18px;
-                margin-top: 25px;
-            }
-
-            .social-links a {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 45px;
-                height: 45px;
-                background: rgba(255, 255, 255, 0.15);
-                border-radius: 50%;
-                color: white;
-                transition: var(--transition);
-                box-shadow: var(--shadow);
-            }
-
-            .social-links a:hover {
-                background: var(--primary-accent);
-                transform: translateY(-8px);
-            }
-
-            .contact-info {
-                list-style: none;
-            }
-
-            .contact-info li {
-                display: flex;
-                margin-bottom: 18px;
-                align-items: flex-start;
-                font-size: 16px;
-            }
-
-            .contact-info i {
-                margin-right: 18px;
-                color: var(--primary-accent);
-                font-size: 22px;
-                min-width: 22px;
-            }
-
-            .copyright {
-                text-align: center;
-                padding: 30px 0;
-                border-top: 1px solid rgba(255, 255, 255, 0.15);
-                color: rgba(255, 255, 255, 0.7);
-                font-size: 15px;
-            }
-
-            /* Responsive */
-            @media (max-width: 992px) {
-                .about-container {
-                    flex-direction: column;
-                }
-
-                .hero-title {
-                    font-size: 42px;
-                }
-
-                .news-events-calendar-grid {
-                    flex-direction: column;
-                }
-
-                .calendar-column {
-                    position: static;
-                    width: 100%;
-                }
-
-                .news-card,
-                .event-card {
-                    flex-direction: column;
-                    align-items: flex-start;
-                }
-
-                .news-card .news-image,
-                .event-card .event-image {
-                    width: 100%;
-                    min-width: unset;
-                    height: 200px;
-                    margin: 0 0 20px 0;
-                }
-
-                .news-card .news-content,
-                .event-card .event-content {
-                    padding: 0;
-                }
-
-                .news-card .news-image {
-                    order: unset;
-                }
-
-                .news-card .news-content {
-                    order: unset;
-                }
-
-                .event-card .event-image {
-                    order: unset;
-                }
-
-                .event-card .event-content {
-                    order: unset;
-                }
-            }
-
-            @media (max-width: 768px) {
-                .nav-menu {
-                    position: fixed;
-                    top: 90px;
-                    right: -100%;
-                    flex-direction: column;
-                    background: var(--primary-dark);
-                    width: 300px;
-                    height: calc(100vh - 90px);
-                    padding: 20px;
-                    transition: var(--transition);
-                    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-                }
-
-                .nav-menu.active {
-                    right: 0;
-                }
-
-                .nav-item {
-                    margin: 10px 0;
-                }
-
-                .submenu {
-                    position: static;
-                    opacity: 1;
-                    visibility: visible;
-                    transform: translateY(0);
-                    box-shadow: none;
-                    background: rgba(255, 255, 255, 0.05);
-                    margin-top: 5px;
-                    display: none;
-                }
-
-                .nav-item:hover .submenu {
-                    display: block;
-                }
-
-                .mobile-toggle {
-                    display: block;
-                }
-
-                .hero-buttons {
-                    flex-direction: column;
-                }
-
-                .hero {
-                    min-height: 550px;
-                }
-
-                .carousel-controls {
-                    bottom: 25px;
-                    right: 25px;
-                }
-
-                .image-selector {
-                    bottom: 25px;
-                }
-
-                .footer-grid {
-                    flex-direction: column;
-                    align-items: center;
-                    text-align: center;
-                }
-
-                .footer-col h3::after {
-                    left: 50%;
-                    transform: translateX(-50%);
-                }
-            }
-
-            @media (max-width: 576px) {
-                .section {
-                    padding: 60px 0;
-                }
-
-                .hero-title {
-                    font-size: 36px;
-                }
-
-                .hero-subtitle {
-                    font-size: 18px;
-                }
-
-                .form-row {
-                    flex-direction: column;
-                    gap: 15px;
-                }
-            }
-        </style>
-        <!-- FullCalendar CSS -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/main.min.css"
-            rel="stylesheet"
-        />
     </head>
     <body>
         <!-- Header -->
-        <header>
-            <div class="container header-container">
-                <div class="logo">
-                    <img
-                        src="./src/images/logo.png"
-                        alt="Logo Colegio La Ninfa"
-                        class="logo-img"
-                    />
-                    <div class="logo-text">Colegio <span>La Ninfa</span></div>
-                </div>
-
-                <nav>
-                    <ul class="nav-menu">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Inicio</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link"
-                                >Colegio <i class="fas fa-chevron-down"></i
-                            ></a>
-                            <ul class="submenu">
-                                <li class="submenu-item">
+        <header class="bg-primary d-none fixed-top" id="mainNavbar">
+            <nav class="navbar navbar-dark navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <img
+                            src="./src/images/logo.png"
+                            alt="Logo Colegio La Ninfa"
+                            class="logo-img"
+                            width="50"
+                            height="50"
+                        />
+                        Colegio <span class="text-warning">La Ninfa</span>
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar"
+                        aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="offcanvas offcanvas-end"
+                        tabindex="-1"
+                        id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel"
+                    >
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                                Offcanvas
+                            </h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="offcanvas"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li class="nav-item">
                                     <a
-                                        href="./src/pages/nosotros.html"
-                                        class="submenu-link"
-                                        >Nosotros</a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="#"
+                                        >Inicio</a
                                     >
                                 </li>
-                                <li class="submenu-item">
+                                <li class="nav-item dropdown">
                                     <a
-                                        href="./src/pages/historia.html"
-                                        class="submenu-link"
-                                        >Historia</a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Colegio
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/nosotros.html"
+                                                >Nosotros</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/historia.html"
+                                                >Historia</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/programas.html"
+                                                >Programas</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/reglas.html"
+                                                >Normativa Interna</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Publicaciones
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/noticias-1.html"
+                                                >Noticias</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/eventos-1.html"
+                                                >Eventos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/galeria.html"
+                                                >Galería</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/horarios.html"
+                                                >Horarios</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/utiles.html"
+                                                >Útiles</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Comunidad
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/egresados.html"
+                                                >Egresados</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/donar.html"
+                                                >Apóyanos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/eventos-2.html"
+                                                >Eventos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/noticias-2.html"
+                                                >Noticias</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="./src/pages/contacto.html"
+                                        >Contáctanos</a
                                     >
                                 </li>
-                                <li class="submenu-item">
+                                <li class="nav-item dropdown">
                                     <a
-                                        href="./src/pages/programas.html"
-                                        class="submenu-link"
-                                        >Programas</a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
                                     >
-                                </li>
-                                <li class="submenu-item">
-                                    <a href="./src/pages/reglas.html" class="submenu-link"
-                                        >Normativa Interna</a
-                                    >
+                                        Intranet
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/sesiones-1.html"
+                                                >Institución</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/sesiones-1.html"
+                                                >Personal</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/sesiones-1.html"
+                                                >Representante</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/sesiones-1.html"
+                                                >Estudiante</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/sesiones-2.html"
+                                                >Egresados</a
+                                            >
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link"
-                                >Publicaciones <i class="fas fa-chevron-down"></i
-                            ></a>
-                            <ul class="submenu">
-                                <li class="submenu-item">
-                                    <a
-                                        href="./src/pages/noticias-1.html"
-                                        class="submenu-link"
-                                        >Noticias</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./src/pages/eventos-1.html"
-                                        class="submenu-link"
-                                        >Eventos</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./src/pages/galeria.html"
-                                        class="submenu-link"
-                                        >Galería</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./src/pages/horarios.html"
-                                        class="submenu-link"
-                                        >Horarios</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a href="./src/pages/utiles.html" class="submenu-link"
-                                        >Útiles</a
-                                    >
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link"
-                                >Comunidad <i class="fas fa-chevron-down"></i
-                            ></a>
-                            <ul class="submenu">
-                                <li class="submenu-item">
-                                    <a
-                                        href="./src/pages/egresados.html"
-                                        class="submenu-link"
-                                        >Egresados</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a href="./src/pages/donar.html" class="submenu-link"
-                                        >Apóyanos</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./src/pages/eventos-2.html"
-                                        class="submenu-link"
-                                        >Eventos</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./src/pages/noticias-2.html"
-                                        class="submenu-link"
-                                        >Noticias</a
-                                    >
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="./src/pages/contacto.html" class="nav-link"
-                                >Contáctanos</a
-                            >
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link"
-                                >Intranet <i class="fas fa-chevron-down"></i
-                            ></a>
-                            <ul class="submenu">
-                                <li class="submenu-item">
-                                    <a
-                                        href="./src/pages/sesiones-1.html"
-                                        class="submenu-link"
-                                        >Institución</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./src/pages/sesiones-1.html"
-                                        class="submenu-link"
-                                        >Personal</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./src/pages/sesiones-1.html"
-                                        class="submenu-link"
-                                        >Representante</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./src/pages/sesiones-1.html"
-                                        class="submenu-link"
-                                        >Estudiante</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./src/pages/sesiones-2.html"
-                                        class="submenu-link"
-                                        >Egresados</a
-                                    >
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <div class="mobile-toggle" id="mobileToggle">
-                        <i class="fas fa-bars"></i>
+                        </div>
                     </div>
-                </nav>
-            </div>
+                </div>
+            </nav>
+        </header>
+
+        <header class="bg-primary">
+            <nav class="navbar navbar-dark navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <img
+                            src="./src/images/logo.png"
+                            alt="Logo Colegio La Ninfa"
+                            class="logo-img"
+                            width="50"
+                            height="50"
+                        />
+                        Colegio <span class="text-warning">La Ninfa</span>
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar"
+                        aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="offcanvas offcanvas-end"
+                        tabindex="-1"
+                        id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel"
+                    >
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                                Offcanvas
+                            </h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="offcanvas"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="#"
+                                        >Inicio</a
+                                    >
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Colegio
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/nosotros.html"
+                                                >Nosotros</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/historia.html"
+                                                >Historia</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/programas.html"
+                                                >Programas</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/reglas.html"
+                                                >Normativa Interna</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Publicaciones
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/noticias-1.html"
+                                                >Noticias</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/eventos-1.html"
+                                                >Eventos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/galeria.html"
+                                                >Galería</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/horarios.html"
+                                                >Horarios</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/utiles.html"
+                                                >Útiles</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Comunidad
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/egresados.html"
+                                                >Egresados</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/donar.html"
+                                                >Apóyanos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/eventos-2.html"
+                                                >Eventos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/noticias-2.html"
+                                                >Noticias</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="./src/pages/contacto.html"
+                                        >Contáctanos</a
+                                    >
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Intranet
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/sesiones-1.html"
+                                                >Institución</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/sesiones-1.html"
+                                                >Personal</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/sesiones-1.html"
+                                                >Representante</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/sesiones-1.html"
+                                                >Estudiante</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./src/pages/sesiones-2.html"
+                                                >Egresados</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </header>
 
         <!-- Hero Section con carrusel personalizable -->
-        <section class="hero" id="heroSection">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-titles-container">
-                        <h1 class="hero-title active">Formando líderes desde 1900</h1>
-                        <h1 class="hero-title">Educación con valores jesuitas</h1>
-                        <h1 class="hero-title">Formación técnica y humana</h1>
-                        <h1 class="hero-title">Excelencia académica</h1>
-                    </div>
-                    <div class="hero-subtitles-container">
-                        <p class="hero-subtitle active">
-                            Educación jesuita de excelencia para un mundo en
-                            transformación. Formación técnica, humana y espiritual.
-                        </p>
-                        <p class="hero-subtitle">
-                            Comprometidos con la formación integral de nuestros
-                            estudiantes.
-                        </p>
-                        <p class="hero-subtitle">
-                            Preparando a los líderes del mañana con herramientas para el
-                            éxito.
-                        </p>
-                        <p class="hero-subtitle">
-                            Más de un siglo de tradición educativa en Venezuela.
-                        </p>
-                    </div>
-                    <div class="hero-buttons">
-                        <a href="#cupo" class="btn btn-primary">Admisiones</a>
-                        <a href="#programas" class="btn btn-secondary"
-                            >Nuestros Programas</a
+        <section class="carousel">
+            <div class="carousel__contenedor">
+                <div class="carousel__lista">
+                    <div class="carousel__elemento">
+                        <div
+                            class="bg-parallax"
+                            style="--bg-image: url('../images/imagen-1.png')"
                         >
+                            <div class="bg-dark bg-opacity-50 h-100">
+                                <div class="container py-8">
+                                    <h2 class="fw-bold display-6 text-primary">
+                                        Formando líderes desde 1900
+                                    </h2>
+                                    <p class="fw-semibold text-white fs-5">
+                                        Educación jesuita de excelencia para un mundo en
+                                        transformación. Formación técnica, humana y
+                                        espiritual.
+                                    </p>
+                                    <div class="d-flex gap-3">
+                                        <a href="#cupo" class="btn btn-primary btn-lg"
+                                            >Admisiones</a
+                                        >
+                                        <a
+                                            href="#programas"
+                                            class="btn btn-info btn-lg text-white"
+                                            >Nuestros Programas</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel__elemento">
+                        <div
+                            class="bg-parallax"
+                            style="--bg-image: url('../images/imagen-2.png')"
+                        >
+                            <div class="bg-dark bg-opacity-50 h-100">
+                                <div class="container py-8">
+                                    <h2 class="fw-bold display-6 text-primary">
+                                        Educación con valores jesuitas
+                                    </h2>
+                                    <p class="fw-semibold text-white fs-5">
+                                        Comprometidos con la formación integral de
+                                        nuestros estudiantes.
+                                    </p>
+                                    <div class="d-flex gap-3">
+                                        <a
+                                            href="#cupo"
+                                            class="btn btn-danger btn-lg text-white"
+                                            >Admisiones</a
+                                        >
+                                        <a
+                                            href="#programas"
+                                            class="btn btn-info btn-lg text-white"
+                                            >Nuestros Programas</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel__elemento">
+                        <div
+                            class="bg-parallax"
+                            style="--bg-image: url('../images/imagen-1.png')"
+                        >
+                            <div class="bg-dark bg-opacity-50 h-100">
+                                <div class="container py-8">
+                                    <h2 class="fw-bold display-6 text-primary">
+                                        Formación técnica y humana
+                                    </h2>
+                                    <p class="fw-semibold text-white fs-5">
+                                        Preparando a los líderes del mañana con
+                                        herramientas para el éxito.
+                                    </p>
+                                    <div class="d-flex gap-3">
+                                        <a
+                                            href="#cupo"
+                                            class="btn btn-danger btn-lg text-white"
+                                            >Admisiones</a
+                                        >
+                                        <a
+                                            href="#programas"
+                                            class="btn btn-info btn-lg text-white"
+                                            >Nuestros Programas</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel__elemento">
+                        <div
+                            class="bg-parallax"
+                            style="--bg-image: url('../images/imagen-2.png')"
+                        >
+                            <div class="bg-dark bg-opacity-50 h-100">
+                                <div class="container py-8">
+                                    <h2 class="fw-bold display-6 text-primary">
+                                        Excelencia académica
+                                    </h2>
+                                    <p class="fw-semibold text-white fs-5">
+                                        Más de un siglo de tradición educativa en
+                                        Venezuela.
+                                    </p>
+                                    <div class="d-flex gap-3">
+                                        <a
+                                            href="#cupo"
+                                            class="btn btn-danger btn-lg text-white"
+                                            >Admisiones</a
+                                        >
+                                        <a
+                                            href="#programas"
+                                            class="btn btn-info btn-lg text-white"
+                                            >Nuestros Programas</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Controles del carrusel -->
-            <div class="carousel-controls">
-                <div class="carousel-btn" id="prevBtn">
-                    <i class="fas fa-chevron-left"></i>
+                <div class="carousel__botones">
+                    <button aria-label="Anterior" class="carousel__anterior">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button aria-label="Siguiente" class="carousel__siguiente">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
-                <div class="carousel-btn" id="nextBtn">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
+                <div role="tablist" class="carousel__indicadores"></div>
             </div>
-
-            <!-- Selector de imágenes -->
-            <div class="image-selector" id="imageSelector"></div>
         </section>
 
         <!-- Nosotros -->
-        <section class="section">
+        <section class="py-5" id="nosotros">
             <div class="container">
-                <div class="about-container" id="nosotros">
-                    <div class="about-image">
+                <div class="row row-cols-1 row-cols-lg-2">
+                    <div class="col">
                         <img
-                            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            class="img-thumbnail"
+                            src="./src/images/imagen-1.png"
                             alt="Colegio La Ninfa"
                         />
                     </div>
-                    <div class="about-content">
-                        <h2 class="about-title">
+                    <div class="col">
+                        <h2 class="display-6 fw-semibold text-primary">
                             Más de un siglo de excelencia educativa
                         </h2>
-                        <p class="about-text">
+                        <p>
                             Fundado en 1900, el Colegio La Ninfa ha sido un pilar en la
                             educación venezolana, formando generaciones de profesionales y
                             ciudadanos comprometidos con los valores jesuitas de justicia,
                             servicio y excelencia académica.
                         </p>
-                        <p class="about-text">
+                        <p>
                             Nuestro enfoque educativo combina la formación técnica de
                             vanguardia con el desarrollo humano integral, preparando a
                             nuestros estudiantes para los desafíos del siglo XXI.
@@ -1547,7 +674,9 @@
                         <a href="./src/pages/nosotros.html" class="btn btn-primary"
                             >Leer más</a
                         >
-                        <a href="./src/pages/historia.html" class="btn btn-secondary"
+                        <a
+                            href="./src/pages/historia.html"
+                            class="btn btn-info text-white"
                             >Nuestra historia</a
                         >
                     </div>
@@ -1556,58 +685,68 @@
         </section>
 
         <!-- Programas -->
-        <section class="section programs">
+        <section class="py-5">
             <div class="container" id="programas">
-                <h2 class="section-title"><u>Nuestros Programas Académicos</u></h2>
-                <div class="programs-grid">
-                    <div class="program-card">
-                        <div
-                            class="program-image"
-                            style="
-                                background: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-                            "
-                        ></div>
-                        <div class="program-content">
-                            <h3 class="program-title">Tecnología e Informática</h3>
-                            <p>
-                                Programa de vanguardia en desarrollo de software, redes y
-                                sistemas computacionales.
-                            </p>
-                            <a href="#" class="btn btn-primary">Más información</a>
+                <h2 class="display-6 fw-semibold text-center text-primary mb-4">
+                    Nuestros Programas Académicos
+                </h2>
+                <div class="row row-cols-1 row-cols-lg-3">
+                    <div class="col">
+                        <div class="card">
+                            <img
+                                src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                class="card-img-top"
+                                alt="Tecnología e Informática"
+                            />
+
+                            <div class="card-body">
+                                <h3 class="card-title text-primary">
+                                    Tecnología e Informática
+                                </h3>
+                                <p class="card-text">
+                                    Programa de vanguardia en desarrollo de software,
+                                    redes y sistemas computacionales.
+                                </p>
+                                <a href="#" class="btn btn-primary">Más información</a>
+                            </div>
                         </div>
                     </div>
+                    <div class="col">
+                        <div class="card">
+                            <img
+                                src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
+                                class="card-img-top"
+                                alt="Tecnología e Informática"
+                            />
 
-                    <div class="program-card">
-                        <div
-                            class="program-image"
-                            style="
-                                background: url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');
-                            "
-                        ></div>
-                        <div class="program-content">
-                            <h3 class="program-title">Ingeniería Industrial</h3>
-                            <p>
-                                Formación en procesos de producción, gestión de calidad y
-                                optimización industrial.
-                            </p>
-                            <a href="#" class="btn btn-primary">Más información</a>
+                            <div class="card-body">
+                                <h3 class="card-title text-primary">
+                                    Ingeniería Industrial
+                                </h3>
+                                <p class="card-text">
+                                    Formación en procesos de producción, gestión de
+                                    calidad y optimización industrial.
+                                </p>
+                                <a href="#" class="btn btn-primary">Más información</a>
+                            </div>
                         </div>
                     </div>
+                    <div class="col">
+                        <div class="card">
+                            <img
+                                src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                class="card-img-top"
+                                alt="Tecnología e Informática"
+                            />
 
-                    <div class="program-card">
-                        <div
-                            class="program-image"
-                            style="
-                                background: url('https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-                            "
-                        ></div>
-                        <div class="program-content">
-                            <h3 class="program-title">Ciencias Básicas</h3>
-                            <p>
-                                Programa integral en matemáticas, física y química con
-                                aplicaciones tecnológicas.
-                            </p>
-                            <a href="#" class="btn btn-primary">Más información</a>
+                            <div class="card-body">
+                                <h3 class="card-title text-primary">Ciencias Básicas</h3>
+                                <p class="card-text">
+                                    Programa integral en matemáticas, física y química con
+                                    aplicaciones tecnológicas.
+                                </p>
+                                <a href="#" class="btn btn-primary">Más información</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1616,56 +755,81 @@
 
         <!-- Equipo Directivo -->
         <section
-            class="section team-section"
+            class="bg-parallax"
             style="
-                background-image: url('https://placehold.co/1920x1080/003366/FFFFFF?text=Personal+del+Colegio');
+                --bg-image: url('https://placehold.co/1920x1080/003366/FFFFFF?text=Personal+del+Colegio');
             "
         >
-            <div class="container">
-                <h2 class="section-title"><u>Nuestro Equipo Directivo</u></h2>
-                <div class="team-grid">
-                    <div class="team-member">
-                        <div
-                            class="team-photo"
-                            style="
-                                background: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
-                            "
-                        ></div>
-                        <div class="team-info">
-                            <h3 class="team-name">Padre Carlos Mendoza, S.J.</h3>
-                            <p class="team-position">Rector</p>
-                            <p>Doctor en Educación, Universidad de Deusto</p>
-                            <a href="#" class="btn btn-primary">Conoceme</a>
-                        </div>
-                    </div>
+            <div class="bg-dark bg-opacity-75 py-5">
+                <div class="container">
+                    <h2 class="display-6 mb-4 text-center text-white fw-semibold">
+                        Nuestro Equipo Directivo
+                    </h2>
+                    <div class="row row-cols-1 row-cols-lg-3">
+                        <div class="col">
+                            <div class="card">
+                                <img
+                                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                                    class="card-img-top"
+                                    alt="Tecnología e Informática"
+                                />
 
-                    <div class="team-member">
-                        <div
-                            class="team-photo"
-                            style="
-                                background: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1376&q=80');
-                            "
-                        ></div>
-                        <div class="team-info">
-                            <h3 class="team-name">Dra. María Fernanda Rojas</h3>
-                            <p class="team-position">Directora Académica</p>
-                            <p>Máster en Pedagogía, UCAB</p>
-                            <a href="#" class="btn btn-primary">Conoceme</a>
-                        </div>
-                    </div>
+                                <div class="card-body">
+                                    <h3 class="card-title text-primary">
+                                        Padre Carlos Mendoza, S.J.
+                                    </h3>
+                                    <h4 class="card-subtitle mb-2 text-secondary">
+                                        Rector
+                                    </h4>
 
-                    <div class="team-member">
-                        <div
-                            class="team-photo"
-                            style="
-                                background: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
-                            "
-                        ></div>
-                        <div class="team-info">
-                            <h3 class="team-name">Ing. Luis Alberto Pérez</h3>
-                            <p class="team-position">Director Técnico</p>
-                            <p>Ingeniero Industrial, USB</p>
-                            <a href="#" class="btn btn-primary">Conoceme</a>
+                                    <p class="card-text">
+                                        Doctor en Educación, Universidad de Deusto
+                                    </p>
+                                    <a href="#" class="btn btn-primary">Conoceme</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img
+                                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1376&q=80"
+                                    class="card-img-top"
+                                    alt="Tecnología e Informática"
+                                />
+
+                                <div class="card-body">
+                                    <h3 class="card-title text-primary">
+                                        Dra. María Fernanda Rojas
+                                    </h3>
+                                    <h4 class="card-subtitle mb-2 text-secondary">
+                                        Directora Académica
+                                    </h4>
+
+                                    <p class="card-text">Máster en Pedagogía, UCAB</p>
+                                    <a href="#" class="btn btn-primary">Conoceme</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img
+                                    src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                                    class="card-img-top"
+                                    alt="Tecnología e Informática"
+                                />
+
+                                <div class="card-body">
+                                    <h3 class="card-title text-primary">
+                                        Ing. Luis Alberto Pérez
+                                    </h3>
+                                    <h4 class="card-subtitle text-secondary">
+                                        Director Técnico
+                                    </h4>
+
+                                    <p class="card-text">Ingeniero Industrial, USB</p>
+                                    <a href="#" class="btn btn-primary">Conoceme</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1673,276 +837,447 @@
         </section>
 
         <!-- Noticias, Eventos y Calendario -->
-        <section class="section">
+        <section class="py-5">
             <div class="container">
-                <div class="news-events-calendar-grid">
-                    <div class="news-events-column">
+                <div class="row">
+                    <div class="col-12 col-lg-8">
                         <!-- Noticias -->
-                        <h2 class="section-title"><u>Últimas Noticias</u></h2>
-                        <div class="news-grid">
-                            <div class="news-card">
-                                <div class="news-content">
-                                    <div class="news-date">15 Julio, 2025</div>
-                                    <h3 class="news-title">
-                                        Estudiantes ganan olimpiadas nacionales de
-                                        robótica
-                                    </h3>
-                                    <p class="news-excerpt">
-                                        Nuestro equipo de robótica obtuvo el primer lugar
-                                        en la competencia nacional realizada en Caracas...
-                                    </p>
-                                    <a href="#" class="btn btn-secondary">Leer más</a>
+                        <h2 class="h3 mb-4 text-center text-primary fw-semibold">
+                            Últimas Noticias
+                        </h2>
+                        <div class="row row-cols-1 g-3">
+                            <div class="col">
+                                <div class="card overflow-hidden">
+                                    <div class="row g-0">
+                                        <div class="col col-lg-4">
+                                            <div
+                                                class="bg-secondary h-100 d-flex align-items-center"
+                                            >
+                                                <img
+                                                    src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                                    alt="..."
+                                                    class="img-fluid d-inline-block"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="col col-lg-8">
+                                            <div class="card-body">
+                                                <p class="card-subtitle text-info">
+                                                    15 Julio, 2025
+                                                </p>
+                                                <h3 class="card-title h5 text-primary">
+                                                    Estudiantes ganan olimpiadas
+                                                    nacionales de robótica
+                                                </h3>
+                                                <p class="card-text">
+                                                    Nuestro equipo de robótica obtuvo el
+                                                    primer lugar en la competencia
+                                                    nacional realizada en Caracas...
+                                                </p>
+                                                <a href="#" class="btn btn-primary"
+                                                    >Leer mas</a
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div
-                                    class="news-image"
-                                    style="
-                                        background: url('https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-                                    "
-                                ></div>
                             </div>
-
-                            <div class="news-card">
-                                <div class="news-content">
-                                    <div class="news-date">10 Julio, 2025</div>
-                                    <h3 class="news-title">
-                                        Inauguración del nuevo laboratorio de ciencias
-                                    </h3>
-                                    <p class="news-excerpt">
-                                        Con tecnología de punta, el nuevo espacio
-                                        fortalecerá la investigación estudiantil en áreas
-                                        científicas...
-                                    </p>
-                                    <a href="#" class="btn btn-secondary">Leer más</a>
+                            <div class="col">
+                                <div class="card overflow-hidden">
+                                    <div class="row g-0">
+                                        <div class="col col-lg-4">
+                                            <div
+                                                class="bg-secondary h-100 d-flex align-items-center"
+                                            >
+                                                <img
+                                                    src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                                    alt="..."
+                                                    class="img-fluid d-inline-block"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="col col-lg-8">
+                                            <div class="card-body">
+                                                <p class="card-subtitle text-info">
+                                                    10 Julio, 2025
+                                                </p>
+                                                <h3 class="card-title h5 text-primary">
+                                                    Inauguración del nuevo laboratorio de
+                                                    ciencias
+                                                </h3>
+                                                <p class="card-text">
+                                                    Con tecnología de punta, el nuevo
+                                                    espacio fortalecerá la investigación
+                                                    estudiantil en áreas científicas...
+                                                </p>
+                                                <a href="#" class="btn btn-primary"
+                                                    >Leer mas</a
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div
-                                    class="news-image"
-                                    style="
-                                        background: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-                                    "
-                                ></div>
                             </div>
                         </div>
 
                         <!-- Eventos -->
-                        <h2 class="section-title" style="margin-top: 60px">
-                            <u>Próximos Eventos</u>
+                        <h2 class="h3 my-4 text-center text-primary fw-semibold">
+                            Próximos Eventos
                         </h2>
-                        <div class="events-grid">
-                            <div class="event-card">
-                                <div
-                                    class="event-image"
-                                    style="
-                                        background: url('https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-                                    "
-                                ></div>
-                                <div class="event-content">
-                                    <div class="event-date">20 Agosto, 2025</div>
-                                    <h3 class="event-title">
-                                        Feria de Ciencias y Tecnología
-                                    </h3>
-                                    <p class="event-excerpt">
-                                        Explora los proyectos innovadores de nuestros
-                                        estudiantes en ciencia, robótica y programación.
-                                    </p>
-                                    <a href="#" class="btn btn-primary">Ver Detalles</a>
+                        <div class="row row-cols-1 g-3">
+                            <div class="col">
+                                <div class="card overflow-hidden">
+                                    <div class="row g-0">
+                                        <div class="col col-lg-4">
+                                            <div
+                                                class="bg-secondary h-100 d-flex align-items-center"
+                                            >
+                                                <img
+                                                    src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                                    alt="..."
+                                                    class="img-fluid d-inline-block"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="col col-lg-8">
+                                            <div class="card-body">
+                                                <p class="card-subtitle text-info">
+                                                    20 Agosto, 2025
+                                                </p>
+                                                <h3 class="card-title h5 text-primary">
+                                                    Feria de Ciencias y Tecnología
+                                                </h3>
+                                                <p class="card-text">
+                                                    Explora los proyectos innovadores de
+                                                    nuestros estudiantes en ciencia,
+                                                    robótica y programación.
+                                                </p>
+                                                <a href="#" class="btn btn-primary"
+                                                    >Ver Detalles</a
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="event-card">
-                                <div
-                                    class="event-image"
-                                    style="
-                                        background: url('https://images.unsplash.com/photo-1533109721029-b47c7c34d47c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-                                    "
-                                ></div>
-                                <div class="event-content">
-                                    <div class="event-date">5 Septiembre, 2025</div>
-                                    <h3 class="event-title">
-                                        Concierto Anual de la Orquesta Juvenil
-                                    </h3>
-                                    <p class="event-excerpt">
-                                        Disfruta de una noche de música clásica y
-                                        contemporánea interpretada por nuestros talentosos
-                                        alumnos.
-                                    </p>
-                                    <a href="#" class="btn btn-primary"
-                                        >Comprar Entradas</a
-                                    >
+                            <div class="col">
+                                <div class="card overflow-hidden">
+                                    <div class="row g-0">
+                                        <div class="col col-lg-4">
+                                            <div
+                                                class="bg-secondary h-100 d-flex align-items-center"
+                                            >
+                                                <img
+                                                    src="https://images.unsplash.com/photo-1533109721029-b47c7c34d47c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                                    alt="..."
+                                                    class="img-fluid d-inline-block"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="col col-lg-8">
+                                            <div class="card-body">
+                                                <p class="card-subtitle text-info">
+                                                    5 Septiembre, 2025
+                                                </p>
+                                                <h3 class="card-title h5 text-primary">
+                                                    Concierto Anual de la Orquesta Juvenil
+                                                </h3>
+                                                <p class="card-text">
+                                                    Disfruta de una noche de música
+                                                    clásica y contemporánea interpretada
+                                                    por nuestros talentosos alumnos.
+                                                </p>
+                                                <a href="#" class="btn btn-primary"
+                                                    >Comprar entradas</a
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Calendario -->
-                    <div class="calendar-column" id="calendario">
-                        <h3><u>Próximos Acontecimientos Importantes</u></h3>
-                        <ul>
-                            <li><strong>1 Sept:</strong> Inicio de Clases</li>
-                            <li>
-                                <strong>12 Oct:</strong> Día de la Resistencia Indígena
+                    <div class="col-12 col-lg-4" id="calendario">
+                        <h3 class="h3 text-center text-primary fw-semibold">
+                            Próximos Acontecimientos Importantes
+                        </h3>
+                        <ul class="list-group mb-3">
+                            <li class="list-group-item">
+                                <span class="fw-bold">1 Sept:</span> Inicio de Clases
                             </li>
-                            <li><strong>1 Nov:</strong> Día de Todos los Santos</li>
-                            <li><strong>15 Dic:</strong> Vacaciones de Navidad</li>
-                            <li><strong>7 Ene:</strong> Regreso a Clases</li>
-                            <li><strong>24 Feb:</strong> Carnaval</li>
-                            <li><strong>20 Mar:</strong> Semana Santa</li>
-                            <li><strong>1 May:</strong> Día del Trabajador</li>
-                            <li><strong>30 Jun:</strong> Fin de Año Escolar</li>
+                            <li class="list-group-item">
+                                <span class="fw-bold">12 Oct:</span> Día de la Resistencia
+                                Indígena
+                            </li>
+                            <li class="list-group-item">
+                                <span class="fw-bold">1 Nov:</span> Día de Todos los
+                                Santos
+                            </li>
+                            <li class="list-group-item">
+                                <span class="fw-bold">15 Dic:</span> Vacaciones de Navidad
+                            </li>
+                            <li class="list-group-item">
+                                <span class="fw-bold">7 Ene:</span> Regreso a Clases
+                            </li>
+                            <li class="list-group-item">
+                                <span class="fw-bold">24 Feb:</span> Carnaval
+                            </li>
+                            <li class="list-group-item">
+                                <span class="fw-bold">20 Mar:</span> Semana Santa
+                            </li>
+                            <li class="list-group-item">
+                                <span class="fw-bold">1 May:</span> Día del Trabajador
+                            </li>
+                            <li class="list-group-item">
+                                <span class="fw-bold">30 Jun:</span> Fin de Año Escolar
+                            </li>
                         </ul>
-                        <a
-                            href="#"
-                            class="btn btn-secondary"
-                            style="width: 100%; text-align: center; margin-top: 20px"
+                        <a href="#" class="btn btn-info text-white w-100 mb-3"
                             >Descargar Calendario</a
                         >
 
-                        <h3 style="margin-top: 40px"><u>Calendario Escolar</u></h3>
-                        <div class="full-calendar-container">
-                            <div id="calendar"></div>
+                        <h3 class="h3 text-center text-primary fw-semibold">
+                            Calendario Escolar
+                        </h3>
+                        <div class="calendar">
+                            <div class="calendar__nav">
+                                <button id="prevBtn">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+                                <div class="calendar__titulo" id="monthYear"></div>
+                                <button id="nextBtn">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="calendar__days">
+                                <div class="calendar__day">Dom</div>
+                                <div class="calendar__day">Lun</div>
+                                <div class="calendar__day">Mar</div>
+                                <div class="calendar__day">Mie</div>
+                                <div class="calendar__day">Jue</div>
+                                <div class="calendar__day">Vie</div>
+                                <div class="calendar__day">Sab</div>
+                            </div>
+                            <div class="calendar__dates" id="dates"></div>
                         </div>
+                        <hr class="calendar__separator" />
+                        <div class="calendar__events" id="eventsContainer"></div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Galería -->
-        <section class="section gallery">
+        <section class="bg-primary py-5">
             <div class="container">
-                <h2 class="section-title"><u>Galería</u></h2>
-                <div class="gallery-grid">
+                <h2 class="display-6 mb-4 text-center text-white fw-semibold">Galería</h2>
+                <div class="row row-cols-1 row-cols-lg-3">
                     <!-- Álbum 1 -->
-                    <div class="gallery-album-card">
-                        <img
-                            src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            alt="Vida Estudiantil"
-                        />
-                        <h3>Vida Estudiantil</h3>
-                        <a href="#" class="btn btn-primary">Ver todas las fotos</a>
+                    <div class="col">
+                        <div class="card">
+                            <img
+                                src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Vida Estudiantil"
+                                class="card-img-top"
+                            />
+                            <div class="card-body">
+                                <h3 class="card-title">Vida Estudiantil</h3>
+                                <a href="#" class="btn btn-primary"
+                                    >Ver todas las fotos</a
+                                >
+                            </div>
+                        </div>
                     </div>
                     <!-- Álbum 2 -->
-                    <div class="gallery-album-card">
-                        <img
-                            src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            alt="Eventos Deportivos"
-                        />
-                        <h3>Eventos Deportivos</h3>
-                        <a href="#" class="btn btn-primary">Ver todas las fotos</a>
+                    <div class="col">
+                        <div class="card">
+                            <img
+                                src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Eventos Deportivos"
+                                class="card-img-top"
+                            />
+                            <div class="card-body">
+                                <h3 class="card-title">Eventos Deportivos</h3>
+                                <a href="#" class="btn btn-primary"
+                                    >Ver todas las fotos</a
+                                >
+                            </div>
+                        </div>
                     </div>
                     <!-- Álbum 3 -->
-                    <div class="gallery-album-card">
-                        <img
-                            src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            alt="Actos Académicos"
-                        />
-                        <h3>Actos Académicos</h3>
-                        <a href="#" class="btn btn-primary">Ver todas las fotos</a>
+                    <div class="col">
+                        <div class="card">
+                            <img
+                                src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Actos Académicos"
+                                class="card-img-top"
+                            />
+                            <div class="card-body">
+                                <h3 class="card-title">Actos Académicos</h3>
+                                <a href="#" class="btn btn-primary"
+                                    >Ver todas las fotos</a
+                                >
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Información de Interés -->
-        <section
-            class="section info-section"
-            style="
-                background-image: url('https://placehold.co/1920x1080/003366/FFFFFF?text=Personal+del+Colegio');
-            "
-        >
+        <section class="py-5">
             <div class="container">
-                <h2 class="section-title"><u>Información de Interés</u></h2>
-                <div class="info-cards">
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i class="far fa-pencil"></i>
+                <h2 class="display-6 mb-4 text-center text-primary fw-semibold">
+                    Información de Interés
+                </h2>
+                <div class="row row-cols-1 row-cols-lg-3">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <div
+                                    class="d-flex justify-content-center align-items-center mb-3"
+                                >
+                                    <div class="card-icon">
+                                        <i class="fas fa-pencil"></i>
+                                    </div>
+                                </div>
+
+                                <h3 class="card-title text-center" id="cupo">
+                                    Pedir cupo
+                                </h3>
+                                <a href="#" class="btn btn-info text-white"
+                                    >Inscriba a su hijo(a) aqui</a
+                                >
+                            </div>
                         </div>
-                        <h3 class="info-title" id="cupo">Pedir cupo</h3>
-                        <a href="#" class="btn btn-secondary"
-                            >Inscriba a su hijo(a) aqui.</a
-                        >
                     </div>
 
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-book"></i>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <div
+                                    class="d-flex justify-content-center align-items-center mb-3"
+                                >
+                                    <div class="card-icon">
+                                        <i class="fas fa-book"></i>
+                                    </div>
+                                </div>
+                                <h3 class="card-title text-center" id="cupo">
+                                    Listas de Útiles
+                                </h3>
+                                <p class="card-text">
+                                    Encuentra aquí la lista de materiales requeridos para
+                                    el próximo año escolar por grado y año.
+                                </p>
+                                <a href="#" class="btn btn-info text-white"
+                                    >Ver listas de útiles</a
+                                >
+                            </div>
                         </div>
-                        <h3 class="info-title">Listas de Útiles</h3>
-                        <p>
-                            Encuentra aquí la lista de materiales requeridos para el
-                            próximo año escolar por grado y año.
-                        </p>
-                        <a href="#" class="btn btn-secondary">Ver listas de útiles</a>
                     </div>
 
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-bus"></i>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <div
+                                    class="d-flex justify-content-center align-items-center mb-3"
+                                >
+                                    <div class="card-icon">
+                                        <i class="fas fa-bus"></i>
+                                    </div>
+                                </div>
+
+                                <h3 class="card-title text-center" id="cupo">Horarios</h3>
+                                <p class="card-text">
+                                    Encuentra aquí los horarios correspondientes para el
+                                    próximo año escolar por grado y año.
+                                </p>
+                                <a href="#" class="btn btn-info text-white"
+                                    >Ver horarios</a
+                                >
+                            </div>
                         </div>
-                        <h3 class="info-title">Horarios</h3>
-                        <p>
-                            Encuentra aquí los horarios correspondientes para el próximo
-                            año escolar por grado y año.
-                        </p>
-                        <a href="#" class="btn btn-secondary">Ver horarios</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Egresados Destacados -->
-        <section class="section">
+        <section class="py-5 bg-primary">
             <div class="container">
-                <h2 class="section-title"><u>Egresados Destacados</u></h2>
-                <div class="alumni-grid">
-                    <div class="alumni-card">
-                        <div
-                            class="alumni-photo"
-                            style="
-                                background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
-                            "
-                        ></div>
-                        <div class="alumni-info">
-                            <h3 class="alumni-name">Dr. Rafael Suárez</h3>
-                            <p class="alumni-career">Promoción 2005</p>
-                            <p class="alumni-achievement">
-                                Director de Innovación en empresa tecnológica
-                                internacional
-                            </p>
-                            <a href="#" class="btn btn-primary">Conoceme más</a>
+                <h2 class="display-6 mb-4 text-center text-white fw-semibold">
+                    Egresados Destacados
+                </h2>
+                <div class="row row-cols-1 row-cols-lg-3">
+                    <div class="col">
+                        <div class="card">
+                            <img
+                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                                class="card-img-top"
+                                alt="Tecnología e Informática"
+                            />
+
+                            <div class="card-body">
+                                <h3 class="card-title text-primary">Dr. Rafael Suárez</h3>
+                                <h4 class="card-subtitle mb-2 text-secondary">
+                                    Promoción 2005
+                                </h4>
+
+                                <p class="card-text">
+                                    Director de Innovación en empresa tecnológica
+                                    internacional
+                                </p>
+                                <a href="#" class="btn btn-primary">Conoceme</a>
+                            </div>
                         </div>
                     </div>
+                    <div class="col">
+                        <div class="card">
+                            <img
+                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                                class="card-img-top"
+                                alt="Tecnología e Informática"
+                            />
 
-                    <div class="alumni-card">
-                        <div
-                            class="alumni-photo"
-                            style="
-                                background: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
-                            "
-                        ></div>
-                        <div class="alumni-info">
-                            <h3 class="alumni-name">Dra. Carolina Mendoza</h3>
-                            <p class="alumni-career">Promoción 2010</p>
-                            <p class="alumni-achievement">
-                                Investigadora líder en energías renovables
-                            </p>
-                            <a href="#" class="btn btn-primary">Conoceme más</a>
+                            <div class="card-body">
+                                <h3 class="card-title text-primary">
+                                    Dra. Carolina Mendoza
+                                </h3>
+                                <h4 class="card-subtitle mb-2 text-secondary">
+                                    Promoción 2010
+                                </h4>
+
+                                <p class="card-text">
+                                    Investigadora líder en energías renovables
+                                </p>
+                                <a href="#" class="btn btn-primary">Conoceme</a>
+                            </div>
                         </div>
                     </div>
+                    <div class="col">
+                        <div class="card">
+                            <img
+                                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                                class="card-img-top"
+                                alt="Tecnología e Informática"
+                            />
 
-                    <div class="alumni-card">
-                        <div
-                            class="alumni-photo"
-                            style="
-                                background: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
-                            "
-                        ></div>
-                        <div class="alumni-info">
-                            <h3 class="alumni-name">Ing. Luis Martínez</h3>
-                            <p class="alumni-career">Promoción 1998</p>
-                            <p class="alumni-achievement">
-                                Fundador de empresa de ingeniería con presencia en 5
-                                países
-                            </p>
-                            <a href="#" class="btn btn-primary">Conoceme más</a>
+                            <div class="card-body">
+                                <h3 class="card-title text-primary">
+                                    Ing. Luis Martínez
+                                </h3>
+                                <h4 class="card-subtitle text-secondary">
+                                    Promoción 1998
+                                </h4>
+
+                                <p class="card-text">
+                                    Fundador de empresa de ingeniería con presencia en 5
+                                    países
+                                </p>
+                                <a href="#" class="btn btn-primary">Conoceme</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1950,116 +1285,101 @@
         </section>
 
         <!-- Contacto -->
-        <section class="section">
+        <section class="py-5">
             <div class="container">
-                <h2 class="section-title"><u>Contáctanos</u></h2>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Nombre completo</label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    class="form-control"
-                                    placeholder="Ingresa tu nombre"
-                                />
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Correo electrónico</label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    class="form-control"
-                                    placeholder="Ingresa tu correo"
-                                />
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone">Teléfono</label>
-                                <input
-                                    type="tel"
-                                    id="phone"
-                                    class="form-control"
-                                    placeholder="Ingresa tu teléfono"
-                                />
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Asunto</label>
-                                <input
-                                    type="text"
-                                    id="subject"
-                                    class="form-control"
-                                    placeholder="Motivo de tu consulta"
-                                />
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Mensaje</label>
-                            <textarea
-                                id="message"
+                <h2 class="display-6 mb-4 text-center text-primary fw-semibold">
+                    Contáctanos
+                </h2>
+                <form action="" method="post">
+                    <div class="row row-cols-2 g-3">
+                        <div class="col">
+                            <label class="form-label" for="name">Nombre completo</label>
+                            <input
+                                type="text"
+                                id="name"
                                 class="form-control"
-                                placeholder="Escribe tu mensaje aquí"
-                            ></textarea>
+                                placeholder="Ingresa tu nombre"
+                            />
+                        </div>
+                        <div class="col">
+                            <label class="form-label" for="email"
+                                >Correo electrónico</label
+                            >
+                            <input
+                                type="email"
+                                id="email"
+                                class="form-control"
+                                placeholder="Ingresa tu correo"
+                            />
                         </div>
 
-                        <button type="submit" class="submit-btn">Enviar Mensaje</button>
-                    </form>
-                </div>
+                        <div class="col">
+                            <label class="form-label" for="phone">Teléfono</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                class="form-control"
+                                placeholder="Ingresa tu teléfono"
+                            />
+                        </div>
+                        <div class="col">
+                            <label class="form-label" for="subject">Asunto</label>
+                            <input
+                                type="text"
+                                id="subject"
+                                class="form-control"
+                                placeholder="Motivo de tu consulta"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="my-3">
+                        <label class="form-label" for="message">Mensaje</label>
+                        <textarea
+                            id="message"
+                            class="form-control"
+                            rows="3"
+                            placeholder="Escribe tu mensaje aquí"
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                </form>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer>
+        <footer class="bg-primary text-white">
             <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-col">
+                <div class="row row-cols-1 row-cols-lg-4 py-5">
+                    <div class="col">
                         <h3>Colegio La Ninfa</h3>
-                        <p style="margin-bottom: 20px; opacity: 0.8">
+                        <p>
                             Educación jesuita de excelencia desde 1900. Formando líderes
                             con valores para un mundo mejor.
                         </p>
-                        <div class="iso-element">
-                            <div class="iso-building">
-                                <div class="iso-window"></div>
-                                <div class="iso-window"></div>
-                                <div class="iso-window"></div>
-                                <div class="iso-window"></div>
-                                <div class="iso-window"></div>
-                                <div class="iso-window"></div>
-                            </div>
-                        </div>
                     </div>
 
-                    <div class="footer-col">
+                    <div class="col">
                         <h3>Enlaces Rápidos</h3>
-                        <ul class="footer-links">
+                        <ul>
                             <li>
-                                <a href="#cupo"
-                                    ><i class="fas fa-chevron-right"></i> Admisiones</a
+                                <a href="#cupo" class="link-light"> Admisiones</a>
+                            </li>
+                            <li>
+                                <a href="#calendario" class="link-light">
+                                    Calendario Escolar</a
                                 >
                             </li>
                             <li>
-                                <a href="#calendario"
-                                    ><i class="fas fa-chevron-right"></i> Calendario
-                                    Escolar</a
-                                >
-                            </li>
-                            <li>
-                                <a href="#"
-                                    ><i class="fas fa-chevron-right"></i> Trabaja con
-                                    Nosotros</a
-                                >
+                                <a href="#" class="link-light"> Trabaja con Nosotros</a>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="footer-col">
+                    <div class="col">
                         <h3>Contáctanos</h3>
-                        <ul class="contact-info">
+                        <ul class="list-unstyled">
                             <li>
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span
@@ -2069,11 +1389,19 @@
                             </li>
                             <li>
                                 <i class="fas fa-phone"></i>
-                                <span>+58 212 555 1234</span>
+                                <a
+                                    href="tel:+582125551234"
+                                    class="link-light text-decoration-none"
+                                    >+58 212 555 1234</a
+                                >
                             </li>
                             <li>
                                 <i class="fas fa-envelope"></i>
-                                <span>info@colegiolaninfa.edu.ve</span>
+                                <a
+                                    href="mailto:info@colegiolaninfa.edu.ve"
+                                    class="link-light text-decoration-none"
+                                    >info@colegiolaninfa.edu.ve</a
+                                >
                             </li>
                             <li>
                                 <i class="fas fa-clock"></i>
@@ -2082,254 +1410,43 @@
                         </ul>
                     </div>
 
-                    <div class="footer-col">
+                    <div class="col">
                         <h3>Síguenos</h3>
-                        <p style="margin-bottom: 20px; opacity: 0.8">
+                        <p>
                             Mantente conectado con nuestra comunidad a través de las redes
                             sociales.
                         </p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        <div class="social">
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-facebook-f"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-twitter"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-instagram"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-linkedin-in"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-youtube"></i
+                            ></a>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="copyright">
-                <div class="container">
+            <div class="py-3 border-top border-white">
+                <p class="text-white text-center m-0">
                     &copy; 2025 Unidad Educativa Colegio La Ninfa. Todos los derechos
                     reservados.
-                </div>
+                </p>
             </div>
         </footer>
 
-        <!-- FullCalendar JS -->
-        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
-        <script>
-            // alert('¡Bienvenido a U.E.C. La Ninfa!');
-            // Menú móvil
-            const mobileToggle = document.getElementById('mobileToggle');
-            const navMenu = document.querySelector('.nav-menu');
-
-            mobileToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                mobileToggle.querySelector('i').classList.toggle('fa-bars');
-                mobileToggle.querySelector('i').classList.toggle('fa-times');
-            });
-
-            // Carrusel personalizable
-            const hero = document.getElementById('heroSection');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const imageSelector = document.getElementById('imageSelector');
-
-            // Array de imágenes para el carrusel
-            const carouselImages = [
-                'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80',
-                'https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-                'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-                'https://images.unsplash.com/photo-1511632765486-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-            ];
-
-            let currentSlide = 0;
-
-            // Crear indicadores de imágenes
-            carouselImages.forEach((img, index) => {
-                const dot = document.createElement('div');
-                dot.classList.add('selector-dot');
-                if (index === 0) dot.classList.add('active');
-                dot.addEventListener('click', () => {
-                    currentSlide = index;
-                    updateCarousel();
-                });
-                imageSelector.appendChild(dot);
-            });
-
-            // Función para actualizar el carrusel
-            function updateCarousel() {
-                hero.style.backgroundImage = `url(${carouselImages[currentSlide]})`;
-
-                // Actualizar indicadores activos
-                document.querySelectorAll('.selector-dot').forEach((dot, index) => {
-                    if (index === currentSlide) {
-                        dot.classList.add('active');
-                    } else {
-                        dot.classList.remove('active');
-                    }
-                });
-            }
-
-            // Navegación del carrusel
-            prevBtn.addEventListener('click', () => {
-                currentSlide =
-                    (currentSlide - 1 + carouselImages.length) % carouselImages.length;
-                updateCarousel();
-            });
-
-            nextBtn.addEventListener('click', () => {
-                currentSlide = (currentSlide + 1) % carouselImages.length;
-                updateCarousel();
-            });
-
-            // Iniciar carrusel automático
-            let carouselInterval = setInterval(() => {
-                currentSlide = (currentSlide + 1) % carouselImages.length;
-                updateCarousel();
-            }, 5000);
-
-            // Pausar carrusel al pasar el ratón
-            hero.addEventListener('mouseenter', () => {
-                clearInterval(carouselInterval);
-            });
-
-            hero.addEventListener('mouseleave', () => {
-                carouselInterval = setInterval(() => {
-                    currentSlide = (currentSlide + 1) % carouselImages.length;
-                    updateCarousel();
-                }, 5000);
-            });
-
-            // Inicializar el carrusel
-            updateCarousel();
-
-            // Carrusel de texto
-            const titles = document.querySelectorAll('.hero-title');
-            const subtitles = document.querySelectorAll('.hero-subtitle');
-            let textIndex = 0;
-
-            function updateTextCarousel() {
-                // Quitar clases activas
-                titles.forEach((title) => {
-                    title.classList.remove('active');
-                    title.classList.remove('exit');
-                });
-
-                subtitles.forEach((subtitle) => {
-                    subtitle.classList.remove('active');
-                    subtitle.classList.remove('exit');
-                });
-
-                // Marcar elemento actual para salida
-                titles[textIndex].classList.add('exit');
-                subtitles[textIndex].classList.add('exit');
-
-                // Calcular el siguiente índice
-                textIndex = (textIndex + 1) % titles.length;
-
-                // Agregar clase active al nuevo elemento después de un breve retraso
-                setTimeout(() => {
-                    titles[textIndex].classList.add('active');
-                    subtitles[textIndex].classList.add('active');
-                }, 500);
-            }
-
-            // Iniciar carrusel de texto
-            setInterval(updateTextCarousel, 5000);
-
-            // Iniciar con el primer elemento activo
-            titles[0].classList.add('active');
-            subtitles[0].classList.add('active');
-
-            // FullCalendar Initialization
-            document.addEventListener('DOMContentLoaded', function () {
-                const calendarEl = document.getElementById('calendar');
-                const calendar = new FullCalendar.Calendar(calendarEl, {
-                    initialView: 'dayGridMonth',
-                    locale: 'es',
-                    headerToolbar: {
-                        left: 'prev',
-                        center: 'title',
-                        right: 'next',
-                    },
-                    events: [
-                        // Noticias
-                        {
-                            title: 'Estudiantes ganan olimpiadas de robótica',
-                            start: '2025-07-15',
-                            className: 'fc-event-noticia',
-                            url: '#',
-                        },
-                        {
-                            title: 'Inauguración nuevo laboratorio de ciencias',
-                            start: '2025-07-10',
-                            className: 'fc-event-noticia',
-                            url: '#',
-                        },
-                        // Eventos
-                        {
-                            title: 'Feria de Ciencias y Tecnología',
-                            start: '2025-08-20',
-                            className: 'fc-event-importante',
-                            url: '#',
-                        },
-                        {
-                            title: 'Concierto Orquesta Juvenil',
-                            start: '2025-09-05',
-                            className: 'fc-event-importante',
-                            url: '#',
-                        },
-                        // Calendario Escolar
-                        {
-                            title: 'Inicio de Clases',
-                            start: '2025-09-01',
-                            className: 'fc-event-escolar',
-                        },
-                        {
-                            title: 'Día de la Resistencia Indígena',
-                            start: '2025-10-12',
-                            className: 'fc-event-escolar',
-                        },
-                        {
-                            title: 'Día de Todos los Santos',
-                            start: '2025-11-01',
-                            className: 'fc-event-escolar',
-                        },
-                        {
-                            title: 'Vacaciones de Navidad',
-                            start: '2025-12-15',
-                            end: '2026-01-07',
-                            className: 'fc-event-escolar',
-                            display: 'background',
-                        },
-                        {
-                            title: 'Regreso a Clases',
-                            start: '2026-01-07',
-                            className: 'fc-event-escolar',
-                        },
-                        {
-                            title: 'Carnaval',
-                            start: '2026-02-24',
-                            className: 'fc-event-escolar',
-                        },
-                        {
-                            title: 'Semana Santa',
-                            start: '2026-03-20',
-                            className: 'fc-event-escolar',
-                        },
-                        {
-                            title: 'Día del Trabajador',
-                            start: '2026-05-01',
-                            className: 'fc-event-escolar',
-                        },
-                        {
-                            title: 'Fin de Año Escolar',
-                            start: '2026-06-30',
-                            className: 'fc-event-escolar',
-                        },
-                    ],
-                    eventClick: function (info) {
-                        if (info.event.url) {
-                            window.open(info.event.url);
-                            info.jsEvent.preventDefault();
-                        }
-                    },
-                });
-                calendar.render();
-            });
-        </script>
+        <script src="./src/js/app.js"></script>
+        <script src="./src/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/js/all.min.js"></script>
     </body>
 </html>

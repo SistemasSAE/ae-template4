@@ -175,6 +175,56 @@
         }
     };
 
+    const LineaTiempo = () => {
+        const checkLineaTiempo = document.querySelector('.timeline');
+        if (document.body.contains(checkLineaTiempo)) {
+            // Animación para la línea de tiempo
+            document.addEventListener('DOMContentLoaded', function () {
+                const timelineItems = document.querySelectorAll('.timeline__item');
+
+                // Configuración del Intersection Observer
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.2,
+                };
+
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in-view');
+                            observer.unobserve(entry.target); // Deja de observar después de activarse
+                        }
+                    });
+                }, observerOptions);
+
+                // Observar cada elemento de la línea de tiempo
+                timelineItems.forEach((item) => {
+                    observer.observe(item);
+                });
+
+                // Opcional: Reanimar elementos al hacer scroll hacia arriba
+                let lastScrollY = window.scrollY;
+                window.addEventListener('scroll', () => {
+                    const currentScrollY = window.scrollY;
+
+                    // Si el usuario hace scroll hacia arriba
+                    if (currentScrollY < lastScrollY) {
+                        timelineItems.forEach((item) => {
+                            const rect = item.getBoundingClientRect();
+                            // Si el elemento está en el viewport
+                            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                                item.classList.add('in-view');
+                            }
+                        });
+                    }
+
+                    lastScrollY = currentScrollY;
+                });
+            });
+        }
+    };
+
     /*----- ----- ----- ----- -----
 	# Declaraciones
 	----- ----- ----- ----- -----*/
@@ -184,4 +234,5 @@
         MenuEstatico();
         Calendario();
     });
+    LineaTiempo();
 })();
