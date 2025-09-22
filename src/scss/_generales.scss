@@ -21,6 +21,15 @@
         align-items: center;
         background-color: $primary;
     }
+    &-avatar {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50rem;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .carousel {
