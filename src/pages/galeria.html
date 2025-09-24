@@ -3,1120 +3,817 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="shortcut icon"
+            href="../images/logo.png"
+            type="image/x-icon"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/sweetalert2@11.23.0/dist/sweetalert2.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/css/fontawesome.min.css"
+        />
+        <link rel="stylesheet" href="../css/estilos.min.css" />
         <title>Galería - Unidad Educativa Colegio La Ninfa</title>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
-            rel="stylesheet"
-        />
-        <style>
-            :root {
-                /* Paleta de colores */
-                --primary-dark: #003366;
-                --primary-accent: #d4af37;
-                --background-light: #f8f9fa;
-                --tech-accent: #20b2aa;
-                --text-gray: #5a6d7b;
-                --dynamic-coral: #ff6b6b;
-                --dark-section: #1e3d59;
-
-                /* Sombras */
-                --shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-                --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.2);
-
-                /* Transiciones */
-                --transition: all 0.4s ease;
-
-                /* Bordes redondeados */
-                --border-radius-lg: 30px;
-                --border-radius-xl: 50px;
-            }
-
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-
-            body {
-                font-family: 'Open Sans', sans-serif;
-                color: var(--text-gray);
-                background-color: var(--background-light);
-                line-height: 1.6;
-            }
-
-            h1,
-            h2,
-            h3,
-            h4,
-            h5 {
-                font-family: 'Montserrat', sans-serif;
-                color: var(--primary-dark);
-                font-weight: 700;
-            }
-
-            .container {
-                width: 100%;
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 20px;
-            }
-
-            .btn {
-                display: inline-block;
-                padding: 14px 32px;
-                border-radius: var(--border-radius-xl);
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 16px;
-                transition: var(--transition);
-                cursor: pointer;
-                border: none;
-                font-family: 'Montserrat', sans-serif;
-                box-shadow: var(--shadow);
-            }
-
-            .btn-primary {
-                background: var(--dynamic-coral);
-                color: white;
-            }
-
-            .btn-primary:hover {
-                background: var(--tech-accent);
-                transform: translateY(-5px);
-                box-shadow: var(--shadow-hover);
-            }
-
-            .btn-secondary {
-                background: var(--tech-accent);
-                color: white;
-            }
-
-            .btn-secondary:hover {
-                background: var(--dynamic-coral);
-                transform: translateY(-5px);
-                box-shadow: var(--shadow-hover);
-            }
-
-            .section {
-                padding: 80px 0;
-                position: relative;
-            }
-
-            .section-title {
-                text-align: center;
-                margin-bottom: 50px;
-                position: relative;
-            }
-
-            /* Header */
-            header {
-                background: linear-gradient(
-                    135deg,
-                    var(--primary-dark) 0%,
-                    var(--dark-section) 100%
-                );
-                padding: 15px 0;
-                position: fixed;
-                width: 100%;
-                top: 0;
-                z-index: 1000;
-                box-shadow: var(--shadow);
-            }
-
-            .header-container {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            .logo {
-                display: flex;
-                align-items: center;
-            }
-
-            .logo-img {
-                height: 60px;
-                width: auto;
-                margin-right: 15px;
-                border-radius: 10px;
-            }
-
-            .logo-text {
-                color: white;
-                font-family: 'Montserrat', sans-serif;
-                font-size: 24px;
-                font-weight: 700;
-            }
-
-            .logo-text span {
-                color: var(--primary-accent);
-                font-weight: 600;
-            }
-
-            /* Navegación */
-            .nav-menu {
-                display: flex;
-                list-style: none;
-            }
-
-            .nav-item {
-                position: relative;
-                margin: 0 10px;
-            }
-
-            .nav-link {
-                color: white;
-                text-decoration: none;
-                padding: 10px 15px;
-                border-radius: var(--border-radius-lg);
-                font-weight: 500;
-                transition: var(--transition);
-                display: flex;
-                align-items: center;
-            }
-
-            .nav-link.active {
-                background: rgba(255, 255, 255, 0.2);
-                color: var(--primary-accent);
-            }
-
-            .nav-link i {
-                margin-left: 5px;
-                font-size: 14px;
-            }
-
-            .nav-link:hover {
-                background: rgba(255, 255, 255, 0.15);
-            }
-
-            .submenu {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                background: white;
-                min-width: 200px;
-                border-radius: var(--border-radius-lg);
-                box-shadow: var(--shadow);
-                list-style: none;
-                padding: 10px 0;
-                opacity: 0;
-                visibility: hidden;
-                transform: translateY(15px);
-                transition: var(--transition);
-                z-index: 100;
-            }
-
-            .submenu-item {
-                padding: 8px 25px;
-            }
-
-            .submenu-link {
-                color: var(--text-gray);
-                text-decoration: none;
-                transition: var(--transition);
-                display: block;
-                font-size: 15px;
-                padding: 5px 0;
-            }
-
-            .submenu-link:hover {
-                color: var(--primary-dark);
-                transform: translateX(8px);
-            }
-
-            .nav-item:hover .submenu {
-                opacity: 1;
-                visibility: visible;
-                transform: translateY(0);
-            }
-
-            .mobile-toggle {
-                display: none;
-                font-size: 28px;
-                color: white;
-                cursor: pointer;
-            }
-
-            /* Hero para galería */
-            .gallery-hero {
-                background: url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-                background-size: cover;
-                background-position: center;
-                min-height: 400px;
-                display: flex;
-                align-items: center;
-                color: white;
-                padding-top: 100px;
-                margin-bottom: 50px;
-                text-align: center;
-            }
-
-            .gallery-hero-content {
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 30px;
-            }
-
-            .gallery-hero h1 {
-                font-size: 48px;
-                color: white;
-                margin-bottom: 20px;
-                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            }
-
-            .gallery-hero p {
-                font-size: 20px;
-                margin-bottom: 30px;
-                color: rgba(255, 255, 255, 0.9);
-            }
-
-            /* Filtros de galería */
-            .gallery-filters {
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 15px;
-                margin-bottom: 40px;
-            }
-
-            .filter-btn {
-                padding: 12px 25px;
-                background: white;
-                border: 2px solid var(--primary-accent);
-                border-radius: var(--border-radius-xl);
-                font-weight: 600;
-                cursor: pointer;
-                transition: var(--transition);
-                font-family: 'Montserrat', sans-serif;
-            }
-
-            .filter-btn.active,
-            .filter-btn:hover {
-                background: var(--primary-accent);
-                color: white;
-            }
-
-            /* Álbumes */
-            .albums-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                gap: 40px;
-                margin-bottom: 60px;
-            }
-
-            .album-card {
-                background: white;
-                border-radius: var(--border-radius-lg);
-                overflow: hidden;
-                box-shadow: var(--shadow);
-                transition: var(--transition);
-                position: relative;
-            }
-
-            .album-card:hover {
-                transform: translateY(-10px);
-                box-shadow: var(--shadow-hover);
-            }
-
-            .album-image {
-                height: 250px;
-                width: 100%;
-                object-fit: cover;
-                border-top-left-radius: var(--border-radius-lg);
-                border-top-right-radius: var(--border-radius-lg);
-                transition: transform 0.5s ease;
-            }
-
-            .album-card:hover .album-image {
-                transform: scale(1.05);
-            }
-
-            .album-info {
-                padding: 25px;
-                position: relative;
-            }
-
-            .album-title {
-                font-size: 22px;
-                margin-bottom: 10px;
-                color: var(--primary-dark);
-            }
-
-            .album-count {
-                color: var(--tech-accent);
-                font-weight: 600;
-                margin-bottom: 15px;
-                display: block;
-            }
-
-            .album-date {
-                color: var(--text-gray);
-                font-size: 14px;
-                position: absolute;
-                top: 25px;
-                right: 25px;
-                background: rgba(212, 175, 55, 0.1);
-                padding: 5px 12px;
-                border-radius: 20px;
-            }
-
-            /* Galería de fotos */
-            .photos-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-                gap: 25px;
-                margin-bottom: 50px;
-            }
-
-            .photo-item {
-                border-radius: var(--border-radius-lg);
-                overflow: hidden;
-                position: relative;
-                height: 280px;
-                cursor: pointer;
-                box-shadow: var(--shadow);
-                transition: var(--transition);
-            }
-
-            .photo-item:hover {
-                transform: translateY(-5px);
-                box-shadow: var(--shadow-hover);
-            }
-
-            .photo-item img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: transform 0.5s ease;
-            }
-
-            .photo-item:hover img {
-                transform: scale(1.1);
-            }
-
-            .photo-overlay {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-                padding: 20px;
-                color: white;
-                opacity: 0;
-                transition: var(--transition);
-            }
-
-            .photo-item:hover .photo-overlay {
-                opacity: 1;
-            }
-
-            /* Modal de fotos */
-            .photo-modal {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.9);
-                z-index: 2000;
-                overflow: auto;
-            }
-
-            .modal-content {
-                position: relative;
-                margin: 80px auto;
-                width: 90%;
-                max-width: 1200px;
-            }
-
-            .modal-photo {
-                width: 100%;
-                max-height: 80vh;
-                object-fit: contain;
-                display: block;
-                margin: 0 auto;
-            }
-
-            .modal-info {
-                color: white;
-                text-align: center;
-                padding: 20px;
-                max-width: 800px;
-                margin: 0 auto;
-            }
-
-            .modal-title {
-                font-size: 28px;
-                margin-bottom: 10px;
-            }
-
-            .modal-date {
-                color: var(--primary-accent);
-                margin-bottom: 20px;
-            }
-
-            .close-modal {
-                position: absolute;
-                top: 20px;
-                right: 30px;
-                color: white;
-                font-size: 40px;
-                cursor: pointer;
-                transition: var(--transition);
-            }
-
-            .close-modal:hover {
-                color: var(--primary-accent);
-                transform: rotate(90deg);
-            }
-
-            .nav-modal {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                background: rgba(255, 255, 255, 0.2);
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                font-size: 30px;
-                cursor: pointer;
-                transition: var(--transition);
-            }
-
-            .nav-modal:hover {
-                background: var(--primary-accent);
-                transform: translateY(-50%) scale(1.1);
-            }
-
-            .prev-modal {
-                left: 30px;
-            }
-
-            .next-modal {
-                right: 30px;
-            }
-
-            /* Footer */
-            footer {
-                padding: 70px 0 0;
-                background-image: url('https://placehold.co/1920x1080/003366/FFFFFF?text=Personal+del+Colegio');
-                background-size: cover;
-                background-position: center;
-                background-attachment: fixed;
-                position: relative;
-                color: white;
-            }
-
-            footer::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.6);
-                z-index: 1;
-            }
-
-            .footer-grid {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-around;
-                gap: 40px;
-                margin-bottom: 50px;
-            }
-
-            .footer-col {
-                flex: 1;
-                min-width: 250px;
-                position: relative;
-                z-index: 2;
-            }
-
-            .footer-col h3 {
-                color: white;
-                margin-bottom: 25px;
-                font-size: 22px;
-                position: relative;
-                padding-bottom: 10px;
-            }
-
-            .footer-col h3::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 60px;
-                height: 3px;
-                background: var(--primary-accent);
-            }
-
-            .footer-links {
-                list-style: none;
-            }
-
-            .footer-links li {
-                margin-bottom: 14px;
-            }
-
-            .footer-links a {
-                color: rgba(255, 255, 255, 0.8);
-                text-decoration: none;
-                transition: var(--transition);
-                display: flex;
-                align-items: center;
-                font-size: 16px;
-            }
-
-            .footer-links a i {
-                margin-right: 12px;
-                font-size: 15px;
-            }
-
-            .footer-links a:hover {
-                color: white;
-                transform: translateX(8px);
-            }
-
-            .social-links {
-                display: flex;
-                gap: 18px;
-                margin-top: 25px;
-            }
-
-            .social-links a {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 45px;
-                height: 45px;
-                background: rgba(255, 255, 255, 0.15);
-                border-radius: 50%;
-                color: white;
-                transition: var(--transition);
-                box-shadow: var(--shadow);
-            }
-
-            .social-links a:hover {
-                background: var(--primary-accent);
-                transform: translateY(-8px);
-            }
-
-            .contact-info {
-                list-style: none;
-            }
-
-            .contact-info li {
-                display: flex;
-                margin-bottom: 18px;
-                align-items: flex-start;
-                font-size: 16px;
-            }
-
-            .contact-info i {
-                margin-right: 18px;
-                color: var(--primary-accent);
-                font-size: 22px;
-                min-width: 22px;
-            }
-
-            .copyright {
-                text-align: center;
-                padding: 30px 0;
-                border-top: 1px solid rgba(255, 255, 255, 0.15);
-                color: rgba(255, 255, 255, 0.7);
-                font-size: 15px;
-                position: relative;
-                z-index: 2;
-            }
-
-            /* Responsive */
-            @media (max-width: 992px) {
-                .gallery-hero h1 {
-                    font-size: 38px;
-                }
-
-                .photos-grid {
-                    grid-template-columns: repeat(
-                        auto-fill,
-                        minmax(250px, 1fr)
-                    );
-                }
-            }
-
-            @media (max-width: 768px) {
-                .nav-menu {
-                    position: fixed;
-                    top: 90px;
-                    right: -100%;
-                    flex-direction: column;
-                    background: var(--primary-dark);
-                    width: 300px;
-                    height: calc(100vh - 90px);
-                    padding: 20px;
-                    transition: var(--transition);
-                    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-                }
-
-                .nav-menu.active {
-                    right: 0;
-                }
-
-                .nav-item {
-                    margin: 10px 0;
-                }
-
-                .submenu {
-                    position: static;
-                    opacity: 1;
-                    visibility: visible;
-                    transform: translateY(0);
-                    box-shadow: none;
-                    background: rgba(255, 255, 255, 0.05);
-                    margin-top: 5px;
-                    display: none;
-                }
-
-                .nav-item:hover .submenu {
-                    display: block;
-                }
-
-                .mobile-toggle {
-                    display: block;
-                }
-
-                .gallery-hero {
-                    min-height: 350px;
-                }
-
-                .gallery-hero h1 {
-                    font-size: 32px;
-                }
-
-                .gallery-hero p {
-                    font-size: 18px;
-                }
-
-                .filter-btn {
-                    padding: 10px 20px;
-                    font-size: 14px;
-                }
-
-                .footer-grid {
-                    flex-direction: column;
-                    align-items: center;
-                    text-align: center;
-                }
-
-                .footer-col h3::after {
-                    left: 50%;
-                    transform: translateX(-50%);
-                }
-            }
-
-            @media (max-width: 576px) {
-                .section {
-                    padding: 60px 0;
-                }
-
-                .gallery-hero {
-                    padding-top: 80px;
-                    min-height: 300px;
-                }
-
-                .photos-grid {
-                    grid-template-columns: 1fr;
-                }
-            }
-        </style>
     </head>
     <body>
         <!-- Header -->
-        <header>
-            <div class="container header-container">
-                <div class="logo">
-                    <img
-                        src="../images/logo.png"
-                        alt="Logo Colegio La Ninfa"
-                        class="logo-img"
-                    />
-                    <div class="logo-text">Colegio <span>La Ninfa</span></div>
-                </div>
-
-                <nav>
-                    <ul class="nav-menu">
-                        <li class="nav-item">
-                            <a href="../../index.html" class="nav-link"
-                                >Inicio</a
+        <header class="bg-primary d-none fixed-top" id="mainNavbar">
+            <nav class="navbar navbar-dark navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="../../index.html">
+                        <img
+                            src="../images/logo.png"
+                            alt="Logo Colegio La Ninfa"
+                            class="logo-img"
+                            width="50"
+                            height="50"
+                        />
+                        Colegio <span class="text-warning">La Ninfa</span>
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar"
+                        aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="offcanvas offcanvas-end"
+                        tabindex="-1"
+                        id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel"
+                    >
+                        <div class="offcanvas-header">
+                            <h5
+                                class="offcanvas-title"
+                                id="offcanvasNavbarLabel"
                             >
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link"
-                                >Colegio <i class="fas fa-chevron-down"></i
-                            ></a>
-                            <ul class="submenu">
-                                <li class="submenu-item">
-                                    <a
-                                        href="./nosotros.html"
-                                        class="submenu-link"
-                                        >Nosotros</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./historia.html"
-                                        class="submenu-link"
-                                        >Historia</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./programas.html"
-                                        class="submenu-link"
-                                        >Programas</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a href="./reglas.html" class="submenu-link"
-                                        >Normativa Interna</a
-                                    >
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link"
-                                >Publicaciones
-                                <i class="fas fa-chevron-down"></i
-                            ></a>
-                            <ul class="submenu">
-                                <li class="submenu-item">
-                                    <a
-                                        href="./noticias.html"
-                                        class="submenu-link"
-                                        >Noticias</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./eventos.html"
-                                        class="submenu-link"
-                                        >Eventos</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./galeria.html"
-                                        class="submenu-link"
-                                        >Galería</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./horarios.html"
-                                        class="submenu-link"
-                                        >Horarios</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a href="./utiles.html" class="submenu-link"
-                                        >Útiles</a
-                                    >
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link"
-                                >Comunidad <i class="fas fa-chevron-down"></i
-                            ></a>
-                            <ul class="submenu">
-                                <li class="submenu-item">
-                                    <a
-                                        href="./egresados.html"
-                                        class="submenu-link"
-                                        >Egresados</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a href="./donar.html" class="submenu-link"
-                                        >Apóyanos</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./eventos.html"
-                                        class="submenu-link"
-                                        >Eventos</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./noticias.html"
-                                        class="submenu-link"
-                                        >Noticias</a
-                                    >
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="./contacto.html" class="nav-link active"
-                                >Contáctanos</a
+                                Offcanvas
+                            </h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="offcanvas"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul
+                                class="navbar-nav justify-content-end flex-grow-1 pe-3"
                             >
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link"
-                                >Intranet <i class="fas fa-chevron-down"></i
-                            ></a>
-                            <ul class="submenu">
-                                <li class="submenu-item">
+                                <li class="nav-item">
                                     <a
-                                        href="./sesiones-1.html"
-                                        class="submenu-link"
-                                        >Institución</a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="../../index.html"
+                                        >Inicio</a
                                     >
                                 </li>
-                                <li class="submenu-item">
+                                <li class="nav-item dropdown">
                                     <a
-                                        href="./sesiones-1.html"
-                                        class="submenu-link"
-                                        >Personal</a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Colegio
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./nosotros.html"
+                                                >Nosotros</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./historia.html"
+                                                >Historia</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./programas.html"
+                                                >Programas</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./reglas.html"
+                                                >Normativa Interna</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Publicaciones
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./noticias.html"
+                                                >Noticias</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./eventos.html"
+                                                >Eventos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./galeria.html"
+                                                >Galería</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./horarios.html"
+                                                >Horarios</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./utiles.html"
+                                                >Útiles</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Comunidad
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./egresados.html"
+                                                >Egresados</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./donar.html"
+                                                >Apóyanos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./eventos.html"
+                                                >Eventos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./noticias.html"
+                                                >Noticias</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="./contacto.html"
+                                        >Contáctanos</a
                                     >
                                 </li>
-                                <li class="submenu-item">
+                                <li class="nav-item dropdown">
                                     <a
-                                        href="./sesiones-1.html"
-                                        class="submenu-link"
-                                        >Representante</a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
                                     >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./sesiones-1.html"
-                                        class="submenu-link"
-                                        >Estudiante</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./sesiones-2.html"
-                                        class="submenu-link"
-                                        >Egresados</a
-                                    >
+                                        Intranet
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Institución</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Personal</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Representante</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Estudiante</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-2.html"
+                                                >Egresados</a
+                                            >
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
-                        </li>
-                    </ul>
-
-                    <div class="mobile-toggle" id="mobileToggle">
-                        <i class="fas fa-bars"></i>
+                        </div>
                     </div>
-                </nav>
-            </div>
+                </div>
+            </nav>
+        </header>
+
+        <header class="bg-primary">
+            <nav class="navbar navbar-dark navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="../../index.html">
+                        <img
+                            src="../images/logo.png"
+                            alt="Logo Colegio La Ninfa"
+                            class="logo-img"
+                            width="50"
+                            height="50"
+                        />
+                        Colegio <span class="text-warning">La Ninfa</span>
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar"
+                        aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="offcanvas offcanvas-end"
+                        tabindex="-1"
+                        id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel"
+                    >
+                        <div class="offcanvas-header">
+                            <h5
+                                class="offcanvas-title"
+                                id="offcanvasNavbarLabel"
+                            >
+                                Offcanvas
+                            </h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="offcanvas"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul
+                                class="navbar-nav justify-content-end flex-grow-1 pe-3"
+                            >
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="../../index.html"
+                                        >Inicio</a
+                                    >
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Colegio
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./nosotros.html"
+                                                >Nosotros</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./historia.html"
+                                                >Historia</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./programas.html"
+                                                >Programas</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./reglas.html"
+                                                >Normativa Interna</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Publicaciones
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./noticias.html"
+                                                >Noticias</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./eventos.html"
+                                                >Eventos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./galeria.html"
+                                                >Galería</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./horarios.html"
+                                                >Horarios</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./utiles.html"
+                                                >Útiles</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Comunidad
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./egresados.html"
+                                                >Egresados</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./donar.html"
+                                                >Apóyanos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./eventos.html"
+                                                >Eventos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./noticias.html"
+                                                >Noticias</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="./contacto.html"
+                                        >Contáctanos</a
+                                    >
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Intranet
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Institución</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Personal</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Representante</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Estudiante</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-2.html"
+                                                >Egresados</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </header>
 
         <!-- Hero para Galería -->
-        <section class="gallery-hero">
-            <div class="container">
-                <div class="gallery-hero-content">
-                    <h1>Galería de Imágenes</h1>
-                    <p>
+        <section
+            class="bg-parallax"
+            style="
+                --bg-image: url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            "
+        >
+            <div class="bg-dark bg-opacity-50 h-100 py-7">
+                <div class="container">
+                    <h1 class="display-6 text-center text-white fw-semibold">
+                        Galería de Imágenes
+                    </h1>
+                    <p class="fs-5 text-center text-white mx-lg-8">
                         Revive los momentos más memorables de nuestra comunidad
                         educativa a través de nuestra colección de fotografías
                     </p>
-                    <a href="#albumes" class="btn btn-primary"
-                        >Explorar Álbumes</a
+                    <div
+                        class="d-flex justify-content-center alingn-items-center gap-3 mt-4"
                     >
-                    <a href="#fotos" class="btn btn-secondary"
-                        >Ver Todas las Fotos</a
-                    >
+                        <a href="#albumes" class="btn btn-primary"
+                            >Explorar Álbumes</a
+                        >
+                        <a href="#fotos" class="btn btn-secondary"
+                            >Ver Todas las Fotos</a
+                        >
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Álbumes de fotos -->
-        <section class="section" id="albumes">
+        <section class="py-5" id="albumes">
             <div class="container">
-                <h2 class="section-title">Nuestros Álbumes</h2>
+                <h2 class="display-6 text-center text-primary fw-semibold">
+                    Nuestros Álbumes
+                </h2>
 
-                <div class="gallery-filters">
-                    <button class="filter-btn active" data-filter="all">
+                <div class="d-flex justify-content-center gap-3 mb-3">
+                    <button
+                        class="btn btn-outline-primary active btn-filter"
+                        data-filter="all"
+                    >
                         Todos
                     </button>
-                    <button class="filter-btn" data-filter="eventos">
+                    <button
+                        class="btn btn-outline-primary btn-filter"
+                        data-filter="eventos"
+                    >
                         Eventos
                     </button>
-                    <button class="filter-btn" data-filter="deportes">
+                    <button
+                        class="btn btn-outline-primary btn-filter"
+                        data-filter="deportes"
+                    >
                         Deportes
                     </button>
-                    <button class="filter-btn" data-filter="academico">
+                    <button
+                        class="btn btn-outline-primary btn-filter"
+                        data-filter="academico"
+                    >
                         Académico
                     </button>
-                    <button class="filter-btn" data-filter="cultural">
+                    <button
+                        class="btn btn-outline-primary btn-filter"
+                        data-filter="cultural"
+                    >
                         Cultural
                     </button>
                 </div>
 
-                <div class="albums-grid">
+                <div class="row row-cols-1 row-cols-lg-3 g-3">
                     <!-- Álbum 1 -->
-                    <div class="album-card" data-category="eventos">
-                        <img
-                            src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            alt="Vida Estudiantil"
-                            class="album-image"
-                        />
-                        <div class="album-info">
-                            <span class="album-date">15 Jun, 2025</span>
-                            <h3 class="album-title">Vida Estudiantil</h3>
-                            <span class="album-count">48 fotos</span>
-                            <p>
-                                Momentos cotidianos de nuestros estudiantes en
-                                clases, recreos y actividades diarias
-                            </p>
-                            <a
-                                href="#"
-                                class="btn btn-primary"
-                                style="margin-top: 15px"
-                                data-album-id="1"
-                                >Ver Álbum</a
-                            >
+                    <div class="col album-card" data-category="eventos">
+                        <div class="card">
+                            <img
+                                src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Vida Estudiantil"
+                                class="card-img-top"
+                            />
+                            <div class="card-body">
+                                <h3 class="card-text">Vida Estudiantil</h3>
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <span class="text-info fw-bold"
+                                            >48 fotos</span
+                                        >
+                                    </div>
+                                    <div>
+                                        <span class="badge text-bg-primary"
+                                            >15 Jun, 2025</span
+                                        >
+                                    </div>
+                                </div>
+
+                                <p class="card-text">
+                                    Momentos cotidianos de nuestros estudiantes
+                                    en clases, recreos y actividades diarias
+                                </p>
+                                <a
+                                    href="#"
+                                    class="btn btn-primary"
+                                    data-album-id="1"
+                                    >Ver Álbum</a
+                                >
+                            </div>
                         </div>
                     </div>
 
                     <!-- Álbum 2 -->
-                    <div class="album-card" data-category="deportes">
-                        <img
-                            src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            alt="Eventos Deportivos"
-                            class="album-image"
-                        />
-                        <div class="album-info">
-                            <span class="album-date">20 May, 2025</span>
-                            <h3 class="album-title">Eventos Deportivos</h3>
-                            <span class="album-count">36 fotos</span>
-                            <p>
-                                Competencias, torneos y actividades deportivas
-                                donde nuestros alumnos demuestran su talento
-                            </p>
-                            <a
-                                href="#"
-                                class="btn btn-primary"
-                                style="margin-top: 15px"
-                                data-album-id="2"
-                                >Ver Álbum</a
-                            >
+                    <div class="col album-card" data-category="deportes">
+                        <div class="card">
+                            <img
+                                src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Eventos Deportivos"
+                                class="card-img-top"
+                            />
+                            <div class="card-body">
+                                <h3 class="card-text">Eventos Deportivos</h3>
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <span class="text-info fw-bold"
+                                            >36 fotos</span
+                                        >
+                                    </div>
+                                    <div>
+                                        <span class="badge text-bg-primary">
+                                            20 May, 2025</span
+                                        >
+                                    </div>
+                                </div>
+
+                                <p class="card-text">
+                                    Competencias, torneos y actividades
+                                    deportivas donde nuestros alumnos demuestran
+                                    su talento
+                                </p>
+                                <a
+                                    href="#"
+                                    class="btn btn-primary"
+                                    data-album-id="2"
+                                    >Ver Álbum</a
+                                >
+                            </div>
                         </div>
                     </div>
 
                     <!-- Álbum 3 -->
-                    <div class="album-card" data-category="academico">
-                        <img
-                            src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            alt="Actos Académicos"
-                            class="album-image"
-                        />
-                        <div class="album-info">
-                            <span class="album-date">12 Abr, 2025</span>
-                            <h3 class="album-title">Actos Académicos</h3>
-                            <span class="album-count">42 fotos</span>
-                            <p>
-                                Ceremonias de premiación, graduaciones y
-                                reconocimientos al mérito estudiantil
-                            </p>
-                            <a
-                                href="#"
-                                class="btn btn-primary"
-                                style="margin-top: 15px"
-                                data-album-id="3"
-                                >Ver Álbum</a
-                            >
+                    <div class="col album-card" data-category="academico">
+                        <div class="card">
+                            <img
+                                src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Actos Académicos"
+                                class="card-img-top"
+                            />
+                            <div class="card-body">
+                                <h3 class="card-text">Actos Académicos</h3>
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <span class="text-info fw-bold"
+                                            >42 fotos</span
+                                        >
+                                    </div>
+                                    <div>
+                                        <span class="badge text-bg-primary">
+                                            12 Abr, 2025
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <p class="card-text">
+                                    Ceremonias de premiación, graduaciones y
+                                    reconocimientos al mérito estudiantil
+                                </p>
+                                <a
+                                    href="#"
+                                    class="btn btn-primary"
+                                    data-album-id="3"
+                                    >Ver Álbum</a
+                                >
+                            </div>
                         </div>
                     </div>
 
                     <!-- Álbum 4 -->
-                    <div class="album-card" data-category="cultural">
-                        <img
-                            src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            alt="Festival Cultural"
-                            class="album-image"
-                        />
-                        <div class="album-info">
-                            <span class="album-date">8 Mar, 2025</span>
-                            <h3 class="album-title">Festival Cultural</h3>
-                            <span class="album-count">56 fotos</span>
-                            <p>
-                                Presentaciones artísticas, musicales y teatrales
-                                de nuestros talentosos estudiantes
-                            </p>
-                            <a
-                                href="#"
-                                class="btn btn-primary"
-                                style="margin-top: 15px"
-                                data-album-id="4"
-                                >Ver Álbum</a
-                            >
+                    <div class="col album-card" data-category="cultural">
+                        <div class="card">
+                            <img
+                                src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Festival Cultural"
+                                class="card-img-top"
+                            />
+                            <div class="card-body">
+                                <h3 class="card-text">Festival Cultural</h3>
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <span class="text-info fw-bold"
+                                            >56 fotos</span
+                                        >
+                                    </div>
+                                    <div>
+                                        <span class="badge text-bg-primary">
+                                            8 Mar, 2025
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <p class="card-text">
+                                    Presentaciones artísticas, musicales y
+                                    teatrales de nuestros talentosos estudiantes
+                                </p>
+                                <a
+                                    href="#"
+                                    class="btn btn-primary"
+                                    data-album-id="4"
+                                    >Ver Álbum</a
+                                >
+                            </div>
                         </div>
                     </div>
 
                     <!-- Álbum 5 -->
-                    <div class="album-card" data-category="eventos">
-                        <img
-                            src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            alt="Feria de Ciencias"
-                            class="album-image"
-                        />
-                        <div class="album-info">
-                            <span class="album-date">25 Feb, 2025</span>
-                            <h3 class="album-title">Feria de Ciencias</h3>
-                            <span class="album-count">38 fotos</span>
-                            <p>
-                                Proyectos científicos innovadores desarrollados
-                                por nuestros estudiantes
-                            </p>
-                            <a
-                                href="#"
-                                class="btn btn-primary"
-                                style="margin-top: 15px"
-                                data-album-id="5"
-                                >Ver Álbum</a
-                            >
+                    <div class="col album-card" data-category="eventos">
+                        <div class="card">
+                            <img
+                                src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Feria de Ciencias"
+                                class="card-img-top"
+                            />
+                            <div class="card-body">
+                                <h3 class="card-text">Feria de Ciencias</h3>
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <span class="text-info fw-bold">
+                                            38 fotos</span
+                                        >
+                                    </div>
+                                    <div>
+                                        <span class="badge text-bg-primary">
+                                            25 Feb, 2025
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <p class="card-text">
+                                    Proyectos científicos innovadores
+                                    desarrollados por nuestros estudiantes
+                                </p>
+                                <a
+                                    href="#"
+                                    class="btn btn-primary"
+                                    data-album-id="5"
+                                    >Ver Álbum</a
+                                >
+                            </div>
                         </div>
                     </div>
 
                     <!-- Álbum 6 -->
-                    <div class="album-card" data-category="deportes">
-                        <img
-                            src="https://images.unsplash.com/photo-1533109721029-b47c7c34d47c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            alt="Torneo Intercolegial"
-                            class="album-image"
-                        />
-                        <div class="album-info">
-                            <span class="album-date">15 Ene, 2025</span>
-                            <h3 class="album-title">Torneo Intercolegial</h3>
-                            <span class="album-count">45 fotos</span>
-                            <p>
-                                Competencias deportivas entre colegios de la
-                                región con destacada participación
-                            </p>
-                            <a
-                                href="#"
-                                class="btn btn-primary"
-                                style="margin-top: 15px"
-                                data-album-id="6"
-                                >Ver Álbum</a
-                            >
+                    <div class="col album-card" data-category="deportes">
+                        <div class="card">
+                            <img
+                                src="https://images.unsplash.com/photo-1533109721029-b47c7c34d47c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Torneo Intercolegial"
+                                class="card-img-top"
+                            />
+                            <div class="card-body">
+                                <h3 class="card-text">Torneo Intercolegial</h3>
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <span class="text-info fw-bold">
+                                            45 fotos
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span class="badge text-bg-primary">
+                                            15 Ene, 2025</span
+                                        >
+                                    </div>
+                                </div>
+
+                                <p class="card-text">
+                                    Competencias deportivas entre colegios de la
+                                    región con destacada participación
+                                </p>
+                                <a
+                                    href="#"
+                                    class="btn btn-primary"
+                                    data-album-id="6"
+                                    >Ver Álbum</a
+                                >
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1124,196 +821,217 @@
         </section>
 
         <!-- Todas las fotos -->
-        <section
-            class="section"
-            id="fotos"
-            style="background: var(--background-light)"
-        >
+        <section class="py-5" id="fotos">
             <div class="container">
-                <h2 class="section-title">Todas las Fotos</h2>
+                <h2 class="display-6 text-center text-primary fw-semibold">
+                    Todas las Fotos
+                </h2>
 
-                <div class="photos-grid">
+                <div class="row row-cols-1 row-cols-lg-3 g-3">
                     <!-- Foto 1 -->
-                    <div class="photo-item" data-album-id="1">
-                        <img
-                            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            alt="Estudiantes en laboratorio"
-                        />
-                        <div class="photo-overlay">
-                            <h4>Estudiantes en laboratorio</h4>
-                            <p>Álbum: Vida Estudiantil</p>
+                    <div class="col">
+                        <div
+                            class="photo__overlay"
+                            style="
+                                --bg-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+                            "
+                        >
+                            <div class="photo__body">
+                                <h4 class="photo__title">
+                                    Estudiantes en laboratorio
+                                </h4>
+                                <p class="photo__text">
+                                    Álbum: Vida Estudiantil
+                                </p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Foto 2 -->
-                    <div class="photo-item" data-album-id="2">
-                        <img
-                            src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            alt="Partido de fútbol"
-                        />
-                        <div class="photo-overlay">
-                            <h4>Partido de fútbol</h4>
-                            <p>Álbum: Eventos Deportivos</p>
+                    <div class="col">
+                        <div
+                            class="photo__overlay"
+                            style="
+                                --bg-image: url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+                            "
+                        >
+                            <div class="photo__body">
+                                <h4 class="photo__title">Partido de fútbol</h4>
+                                <p class="photo__text">
+                                    Álbum: Eventos Deportivos
+                                </p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Foto 3 -->
-                    <div class="photo-item" data-album-id="3">
-                        <img
-                            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            alt="Ceremonia de graduación"
-                        />
-                        <div class="photo-overlay">
-                            <h4>Ceremonia de graduación</h4>
-                            <p>Álbum: Actos Académicos</p>
+                    <div class="col">
+                        <div
+                            class="photo__overlay"
+                            style="
+                                --bg-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+                            "
+                        >
+                            <div class="photo__body">
+                                <h4 class="photo__title">
+                                    Ceremonia de graduación
+                                </h4>
+                                <p class="photo__text">
+                                    Álbum: Actos Académicos
+                                </p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Foto 4 -->
-                    <div class="photo-item" data-album-id="4">
-                        <img
-                            src="https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            alt="Presentación teatral"
-                        />
-                        <div class="photo-overlay">
-                            <h4>Presentación teatral</h4>
-                            <p>Álbum: Festival Cultural</p>
+                    <div class="col">
+                        <div
+                            class="photo__overlay"
+                            style="
+                                --bg-image: url('https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+                            "
+                        >
+                            <div class="photo__body">
+                                <h4 class="photo__title">
+                                    Presentación teatral
+                                </h4>
+                                <p class="photo__text">
+                                    Álbum: Festival Cultural
+                                </p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Foto 5 -->
-                    <div class="photo-item" data-album-id="5">
-                        <img
-                            src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            alt="Robótica educativa"
-                        />
-                        <div class="photo-overlay">
-                            <h4>Robótica educativa</h4>
-                            <p>Álbum: Feria de Ciencias</p>
+                    <div class="col">
+                        <div
+                            class="photo__overlay"
+                            style="
+                                --bg-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+                            "
+                        >
+                            <div class="photo__body">
+                                <h4 class="photo__title">Robótica educativa</h4>
+                                <p class="photo__text">
+                                    Álbum: Feria de Ciencias
+                                </p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Foto 6 -->
-                    <div class="photo-item" data-album-id="6">
-                        <img
-                            src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            alt="Baloncesto escolar"
-                        />
-                        <div class="photo-overlay">
-                            <h4>Baloncesto escolar</h4>
-                            <p>Álbum: Torneo Intercolegial</p>
+                    <div class="col">
+                        <div
+                            class="photo__overlay"
+                            style="
+                                --bg-image: url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+                            "
+                        >
+                            <div class="photo__body">
+                                <h4 class="photo__title">Baloncesto escolar</h4>
+                                <p class="photo__text">
+                                    Álbum: Torneo Intercolegial
+                                </p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Foto 7 -->
-                    <div class="photo-item" data-album-id="1">
-                        <img
-                            src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            alt="Estudiante en clase"
-                        />
-                        <div class="photo-overlay">
-                            <h4>Estudiante en clase</h4>
-                            <p>Álbum: Vida Estudiantil</p>
+                    <div class="col">
+                        <div
+                            class="photo__overlay"
+                            style="
+                                --bg-image: url('https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+                            "
+                        >
+                            <div class="photo__body">
+                                <h4 class="photo__title">
+                                    Estudiante en clase
+                                </h4>
+                                <p class="photo__text">
+                                    Álbum: Vida Estudiantil
+                                </p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Foto 8 -->
-                    <div class="photo-item" data-album-id="3">
-                        <img
-                            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80"
-                            alt="Premiación académica"
-                        />
-                        <div class="photo-overlay">
-                            <h4>Premiación académica</h4>
-                            <p>Álbum: Actos Académicos</p>
+                    <div class="col">
+                        <div
+                            class="photo__overlay"
+                            style="
+                                --bg-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');
+                            "
+                        >
+                            <div class="photo__body">
+                                <h4 class="photo__title">
+                                    Premiación académica
+                                </h4>
+                                <p class="photo__text">
+                                    Álbum: Actos Académicos
+                                </p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Foto 9 -->
-                    <div class="photo-item" data-album-id="4">
-                        <img
-                            src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
-                            alt="Orquesta estudiantil"
-                        />
-                        <div class="photo-overlay">
-                            <h4>Orquesta estudiantil</h4>
-                            <p>Álbum: Festival Cultural</p>
+                    <div class="col">
+                        <div
+                            class="photo__overlay"
+                            style="
+                                --bg-image: url('https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');
+                            "
+                        >
+                            <div class="photo__body">
+                                <h4 class="photo__title">
+                                    Orquesta estudiantil
+                                </h4>
+                                <p class="photo__text">
+                                    Álbum: Festival Cultural
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Modal para fotos -->
-        <div id="photoModal" class="photo-modal">
-            <span class="close-modal">&times;</span>
-            <div class="nav-modal prev-modal">
-                <i class="fas fa-chevron-left"></i>
-            </div>
-            <div class="modal-content">
-                <img src="" alt="" class="modal-photo" id="modalPhoto" />
-                <div class="modal-info">
-                    <h3 class="modal-title" id="modalTitle">
-                        Título de la foto
-                    </h3>
-                    <p class="modal-date" id="modalDate">15 Junio, 2025</p>
-                    <p id="modalDescription">Descripción de la foto</p>
-                </div>
-            </div>
-            <div class="nav-modal next-modal">
-                <i class="fas fa-chevron-right"></i>
-            </div>
-        </div>
-
         <!-- Footer -->
-        <footer>
+        <footer class="bg-primary text-white">
             <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-col">
+                <div class="row row-cols-1 row-cols-lg-4 py-5">
+                    <div class="col">
                         <h3>Colegio La Ninfa</h3>
-                        <p style="margin-bottom: 20px; opacity: 0.8">
+                        <p>
                             Educación jesuita de excelencia desde 1900. Formando
                             líderes con valores para un mundo mejor.
                         </p>
-                        <div class="iso-element">
-                            <div class="iso-building">
-                                <div class="iso-window"></div>
-                                <div class="iso-window"></div>
-                                <div class="iso-window"></div>
-                                <div class="iso-window"></div>
-                                <div class="iso-window"></div>
-                                <div class="iso-window"></div>
-                            </div>
-                        </div>
                     </div>
 
-                    <div class="footer-col">
+                    <div class="col">
                         <h3>Enlaces Rápidos</h3>
-                        <ul class="footer-links">
+                        <ul>
                             <li>
-                                <a href="index.html#cupo"
-                                    ><i class="fas fa-chevron-right"></i>
+                                <a href="#cupo" class="link-light">
                                     Admisiones</a
                                 >
                             </li>
                             <li>
-                                <a href="index.html#calendario"
-                                    ><i class="fas fa-chevron-right"></i>
+                                <a href="#calendario" class="link-light">
                                     Calendario Escolar</a
                                 >
                             </li>
                             <li>
-                                <a href="#"
-                                    ><i class="fas fa-chevron-right"></i>
+                                <a href="#" class="link-light">
                                     Trabaja con Nosotros</a
                                 >
                             </li>
                         </ul>
                     </div>
 
-                    <div class="footer-col">
+                    <div class="col">
                         <h3>Contáctanos</h3>
-                        <ul class="contact-info">
+                        <ul class="list-unstyled">
                             <li>
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span
@@ -1323,11 +1041,19 @@
                             </li>
                             <li>
                                 <i class="fas fa-phone"></i>
-                                <span>+58 212 555 1234</span>
+                                <a
+                                    href="tel:+582125551234"
+                                    class="link-light text-decoration-none"
+                                    >+58 212 555 1234</a
+                                >
                             </li>
                             <li>
                                 <i class="fas fa-envelope"></i>
-                                <span>info@colegiolaninfa.edu.ve</span>
+                                <a
+                                    href="mailto:info@colegiolaninfa.edu.ve"
+                                    class="link-light text-decoration-none"
+                                    >info@colegiolaninfa.edu.ve</a
+                                >
                             </li>
                             <li>
                                 <i class="fas fa-clock"></i>
@@ -1336,265 +1062,43 @@
                         </ul>
                     </div>
 
-                    <div class="footer-col">
+                    <div class="col">
                         <h3>Síguenos</h3>
-                        <p style="margin-bottom: 20px; opacity: 0.8">
+                        <p>
                             Mantente conectado con nuestra comunidad a través de
                             las redes sociales.
                         </p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        <div class="social">
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-facebook-f"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-twitter"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-instagram"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-linkedin-in"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-youtube"></i
+                            ></a>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="copyright">
-                <div class="container">
+            <div class="py-3 border-top border-white">
+                <p class="text-white text-center m-0">
                     &copy; 2025 Unidad Educativa Colegio La Ninfa. Todos los
                     derechos reservados.
-                </div>
+                </p>
             </div>
         </footer>
 
-        <script>
-            // Menú móvil
-            const mobileToggle = document.getElementById('mobileToggle');
-            const navMenu = document.querySelector('.nav-menu');
-
-            mobileToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                mobileToggle.querySelector('i').classList.toggle('fa-bars');
-                mobileToggle.querySelector('i').classList.toggle('fa-times');
-            });
-
-            // Filtros de galería
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const albumCards = document.querySelectorAll('.album-card');
-
-            filterButtons.forEach((button) => {
-                button.addEventListener('click', () => {
-                    // Quitar clase activa de todos los botones
-                    filterButtons.forEach((btn) =>
-                        btn.classList.remove('active'),
-                    );
-
-                    // Añadir clase activa al botón clicado
-                    button.classList.add('active');
-
-                    const filter = button.getAttribute('data-filter');
-
-                    // Filtrar álbumes
-                    albumCards.forEach((card) => {
-                        if (
-                            filter === 'all' ||
-                            card.getAttribute('data-category') === filter
-                        ) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
-
-            // Modal para fotos
-            const photoModal = document.getElementById('photoModal');
-            const modalPhoto = document.getElementById('modalPhoto');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalDate = document.getElementById('modalDate');
-            const modalDescription =
-                document.getElementById('modalDescription');
-            const closeModal = document.querySelector('.close-modal');
-            const prevModal = document.querySelector('.prev-modal');
-            const nextModal = document.querySelector('.next-modal');
-
-            // Datos de las fotos
-            const photos = [
-                {
-                    id: 1,
-                    url: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-                    title: 'Estudiantes en laboratorio',
-                    date: '15 Junio, 2025',
-                    description:
-                        'Alumnos de secundaria realizando experimentos en nuestro moderno laboratorio de ciencias.',
-                    album: 'Vida Estudiantil',
-                },
-                {
-                    id: 2,
-                    url: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-                    title: 'Partido de fútbol',
-                    date: '20 Mayo, 2025',
-                    description:
-                        'Equipo de fútbol del colegio durante el torneo intercolegial regional.',
-                    album: 'Eventos Deportivos',
-                },
-                {
-                    id: 3,
-                    url: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-                    title: 'Ceremonia de graduación',
-                    date: '12 Abril, 2025',
-                    description:
-                        'Promoción 2025 durante la ceremonia de graduación en el auditorio principal.',
-                    album: 'Actos Académicos',
-                },
-                {
-                    id: 4,
-                    url: 'https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-                    title: 'Presentación teatral',
-                    date: '8 Marzo, 2025',
-                    description:
-                        "Obra teatral 'El Quijote' interpretada por el grupo de teatro estudiantil.",
-                    album: 'Festival Cultural',
-                },
-                {
-                    id: 5,
-                    url: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-                    title: 'Robótica educativa',
-                    date: '25 Febrero, 2025',
-                    description:
-                        'Equipo de robótica presentando su proyecto en la Feria de Ciencias anual.',
-                    album: 'Feria de Ciencias',
-                },
-                {
-                    id: 6,
-                    url: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-                    title: 'Baloncesto escolar',
-                    date: '15 Enero, 2025',
-                    description:
-                        'Partido de baloncesto durante el torneo intercolegial regional.',
-                    album: 'Torneo Intercolegial',
-                },
-                {
-                    id: 7,
-                    url: 'https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-                    title: 'Estudiante en clase',
-                    date: '10 Junio, 2025',
-                    description:
-                        'Estudiante resolviendo problemas matemáticos en el aula de clases.',
-                    album: 'Vida Estudiantil',
-                },
-                {
-                    id: 8,
-                    url: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80',
-                    title: 'Premiación académica',
-                    date: '5 Abril, 2025',
-                    description:
-                        'Entrega de reconocimientos a los estudiantes con mejor desempeño académico.',
-                    album: 'Actos Académicos',
-                },
-                {
-                    id: 9,
-                    url: 'https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80',
-                    title: 'Orquesta estudiantil',
-                    date: '3 Marzo, 2025',
-                    description:
-                        'Concierto de la orquesta juvenil durante el Festival Cultural anual.',
-                    album: 'Festival Cultural',
-                },
-            ];
-
-            let currentPhotoIndex = 0;
-
-            // Abrir modal con la foto seleccionada
-            document
-                .querySelectorAll('.photo-item, .album-card a')
-                .forEach((element) => {
-                    element.addEventListener('click', function (e) {
-                        e.preventDefault();
-
-                        // Obtener el ID del álbum
-                        const albumId = this.getAttribute('data-album-id');
-
-                        // Si se hizo clic en un álbum, mostrar la primera foto de ese álbum
-                        if (albumId) {
-                            const albumPhotos = photos.filter(
-                                (photo) =>
-                                    photo.album ===
-                                    this.parentElement.querySelector(
-                                        '.album-title',
-                                    ).textContent,
-                            );
-                            if (albumPhotos.length > 0) {
-                                currentPhotoIndex = photos.findIndex(
-                                    (p) => p.id === albumPhotos[0].id,
-                                );
-                                showPhoto(currentPhotoIndex);
-                            }
-                        }
-                        // Si se hizo clic en una foto
-                        else {
-                            const photoId = parseInt(
-                                this.getAttribute('data-album-id'),
-                            );
-                            currentPhotoIndex = photos.findIndex(
-                                (p) => p.id === photoId,
-                            );
-                            showPhoto(currentPhotoIndex);
-                        }
-
-                        photoModal.style.display = 'block';
-                        document.body.style.overflow = 'hidden'; // Deshabilitar scroll
-                    });
-                });
-
-            // Mostrar foto en el modal
-            function showPhoto(index) {
-                const photo = photos[index];
-                modalPhoto.src = photo.url;
-                modalTitle.textContent = photo.title;
-                modalDate.textContent = photo.date;
-                modalDescription.textContent = photo.description;
-            }
-
-            // Cerrar modal
-            closeModal.addEventListener('click', () => {
-                photoModal.style.display = 'none';
-                document.body.style.overflow = 'auto'; // Habilitar scroll
-            });
-
-            // Cerrar al hacer clic fuera del modal
-            window.addEventListener('click', (e) => {
-                if (e.target === photoModal) {
-                    photoModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-
-            // Navegación entre fotos
-            prevModal.addEventListener('click', () => {
-                currentPhotoIndex =
-                    (currentPhotoIndex - 1 + photos.length) % photos.length;
-                showPhoto(currentPhotoIndex);
-            });
-
-            nextModal.addEventListener('click', () => {
-                currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
-                showPhoto(currentPhotoIndex);
-            });
-
-            // Navegación con teclado
-            document.addEventListener('keydown', (e) => {
-                if (photoModal.style.display === 'block') {
-                    if (e.key === 'ArrowLeft') {
-                        currentPhotoIndex =
-                            (currentPhotoIndex - 1 + photos.length) %
-                            photos.length;
-                        showPhoto(currentPhotoIndex);
-                    } else if (e.key === 'ArrowRight') {
-                        currentPhotoIndex =
-                            (currentPhotoIndex + 1) % photos.length;
-                        showPhoto(currentPhotoIndex);
-                    } else if (e.key === 'Escape') {
-                        photoModal.style.display = 'none';
-                        document.body.style.overflow = 'auto';
-                    }
-                }
-            });
-        </script>
+        <script src="../js/app.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.23.0/dist/sweetalert2.all.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/js/all.min.js"></script>
     </body>
 </html>
