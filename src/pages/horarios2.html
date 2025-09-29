@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/css/fontawesome.min.css"
+        />
+        <link rel="stylesheet" href="../css/estilos.min.css" />
+        <title>Horarios Escolares - Colegio La Ninfa</title>
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="bg-primary d-none fixed-top" id="mainNavbar">
+            <nav class="navbar navbar-dark navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="../../index.html">
+                        <img
+                            src="../images/logo.png"
+                            alt="Logo Colegio La Ninfa"
+                            class="logo-img"
+                            width="50"
+                            height="50"
+                        />
+                        Colegio <span class="text-warning">La Ninfa</span>
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar"
+                        aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="offcanvas offcanvas-end"
+                        tabindex="-1"
+                        id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel"
+                    >
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                                Offcanvas
+                            </h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="offcanvas"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="../../index.html"
+                                        >Inicio</a
+                                    >
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Colegio
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./nosotros.html"
+                                                >Nosotros</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./historia.html"
+                                                >Historia</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./programas.html"
+                                                >Programas</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./reglas.html"
+                                                >Normativa Interna</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Publicaciones
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./noticias.html"
+                                                >Noticias</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./eventos.html"
+                                                >Eventos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./galeria.html"
+                                                >Galería</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./horarios.html"
+                                                >Horarios</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./utiles.html"
+                                                >Útiles</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Comunidad
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./egresados.html"
+                                                >Egresados</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./donar.html"
+                                                >Apóyanos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./eventos.html"
+                                                >Eventos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./noticias.html"
+                                                >Noticias</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="./contacto.html"
+                                        >Contáctanos</a
+                                    >
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Intranet
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Institución</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Personal</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Representante</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Estudiante</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-2.html"
+                                                >Egresados</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <header class="bg-primary">
+            <nav class="navbar navbar-dark navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="../../index.html">
+                        <img
+                            src="../images/logo.png"
+                            alt="Logo Colegio La Ninfa"
+                            class="logo-img"
+                            width="50"
+                            height="50"
+                        />
+                        Colegio <span class="text-warning">La Ninfa</span>
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar"
+                        aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="offcanvas offcanvas-end"
+                        tabindex="-1"
+                        id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel"
+                    >
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                                Offcanvas
+                            </h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="offcanvas"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="../../index.html"
+                                        >Inicio</a
+                                    >
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Colegio
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./nosotros.html"
+                                                >Nosotros</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./historia.html"
+                                                >Historia</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./programas.html"
+                                                >Programas</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./reglas.html"
+                                                >Normativa Interna</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Publicaciones
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./noticias.html"
+                                                >Noticias</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./eventos.html"
+                                                >Eventos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./galeria.html"
+                                                >Galería</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./horarios.html"
+                                                >Horarios</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./utiles.html"
+                                                >Útiles</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Comunidad
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./egresados.html"
+                                                >Egresados</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./donar.html"
+                                                >Apóyanos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./eventos.html"
+                                                >Eventos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./noticias.html"
+                                                >Noticias</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="./contacto.html"
+                                        >Contáctanos</a
+                                    >
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Intranet
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Institución</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Personal</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Representante</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Estudiante</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-2.html"
+                                                >Egresados</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <section class="py-7 bg-primary-subtle">
+            <div class="container">
+                <h1 class="display-6 text-center text-primary fw-semibold">
+                    Horarios Escolares
+                </h1>
+                <p class="fs-5 text-center mx-lg-8">
+                    Descarga los horarios por grado para el año escolar 2025-2026.
+                    Selecciona el grado de tu interés para obtener el horario completo en
+                    formato PDF.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contenido Principal - Horarios -->
+        <section class="py-5">
+            <div class="container">
+                <!-- Sección Primaria -->
+                <div class="grades-section">
+                    <div
+                        class="d-flex gap-3 align-items-center border-bottom border-3 border-primary-subtle py-3 mb-4"
+                    >
+                        <div class="card-icon">
+                            <i class="fas fa-pencil-alt"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-primary fw-semibold h4">
+                                Educación Primaria
+                            </h3>
+                            <p class="m-0">
+                                Horarios para los grados de 1ro a 6to de primaria
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="shadow-lg p-5 rounded-4">
+                        <div class="row row-cols-2 row-cols-lg-3 g-4">
+                            <!-- Grado 1ro -->
+                            <div class="col">
+                                <div class="bg-info-subtle p-4 rounded-4 text-center">
+                                    <div class="fs-1 mb-3 text-primary">
+                                        <i class="fas fa-child"></i>
+                                    </div>
+                                    <h4 class="text-primary fw-semibold">1er Grado</h4>
+                                    <p class="grade-info">
+                                        Horario completo de clases y actividades
+                                    </p>
+                                    <a href="#" class="btn btn-primary">
+                                        <i class="fas fa-download"></i> Descargar PDF
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Grado 2do -->
+                            <div class="col">
+                                <div class="bg-info-subtle p-4 rounded-4 text-center">
+                                    <div class="fs-1 mb-3 text-primary">
+                                        <i class="fas fa-book-reader"></i>
+                                    </div>
+                                    <h4 class="text-primary fw-semibold">2do Grado</h4>
+                                    <p class="grade-info">
+                                        Horario completo de clases y actividades
+                                    </p>
+                                    <a href="#" class="btn btn-primary">
+                                        <i class="fas fa-download"></i> Descargar PDF
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Grado 3ro -->
+                            <div class="col">
+                                <div class="bg-info-subtle p-4 rounded-4 text-center">
+                                    <div class="fs-1 mb-3 text-primary">
+                                        <i class="fas fa-calculator"></i>
+                                    </div>
+                                    <h4 class="text-primary fw-semibold">3er Grado</h4>
+                                    <p class="grade-info">
+                                        Horario completo de clases y actividades
+                                    </p>
+                                    <a href="#" class="btn btn-primary">
+                                        <i class="fas fa-download"></i> Descargar PDF
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Grado 4to -->
+                            <div class="col">
+                                <div class="bg-info-subtle p-4 rounded-4 text-center">
+                                    <div class="fs-1 mb-3 text-primary">
+                                        <i class="fas fa-globe-americas"></i>
+                                    </div>
+                                    <h4 class="text-primary fw-semibold">4to Grado</h4>
+                                    <p class="grade-info">
+                                        Horario completo de clases y actividades
+                                    </p>
+                                    <a href="#" class="btn btn-primary">
+                                        <i class="fas fa-download"></i> Descargar PDF
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Grado 5to -->
+                            <div class="col">
+                                <div class="bg-info-subtle p-4 rounded-4 text-center">
+                                    <div class="fs-1 mb-3 text-primary">
+                                        <i class="fas fa-flask"></i>
+                                    </div>
+                                    <h4 class="text-primary fw-semibold">5to Grado</h4>
+                                    <p class="grade-info">
+                                        Horario completo de clases y actividades
+                                    </p>
+                                    <a href="#" class="btn btn-primary">
+                                        <i class="fas fa-download"></i> Descargar PDF
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Grado 6to -->
+                            <div class="col">
+                                <div class="bg-info-subtle p-4 rounded-4 text-center">
+                                    <div class="fs-1 mb-3 text-primary">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <h4 class="text-primary fw-semibold">6to Grado</h4>
+                                    <p class="grade-info">
+                                        Horario completo de clases y actividades
+                                    </p>
+                                    <a href="#" class="btn btn-primary">
+                                        <i class="fas fa-download"></i> Descargar PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección Educación Media (Secundaria + Bachillerato Unificados) -->
+                <div class="grades-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div>
+                            <h3>Educación Media</h3>
+                            <p>
+                                Horarios para Secundaria (1ro a 3ro) y Bachillerato (4to a
+                                6to)
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="section-content">
+                        <h4 class="sub-section-title">Secundaria</h4>
+                        <div class="media-grid">
+                            <!-- Año 1ro -->
+                            <div class="grade-card">
+                                <div class="grade-icon">
+                                    <i class="fas fa-atom"></i>
+                                </div>
+                                <h4 class="grade-title">1er Año</h4>
+                                <p class="grade-info">
+                                    Horario completo de clases y actividades
+                                </p>
+                                <a href="#" class="grade-download">
+                                    <i class="fas fa-download"></i> Descargar PDF
+                                </a>
+                            </div>
+
+                            <!-- Año 2do -->
+                            <div class="grade-card">
+                                <div class="grade-icon">
+                                    <i class="fas fa-dna"></i>
+                                </div>
+                                <h4 class="grade-title">2do Año</h4>
+                                <p class="grade-info">
+                                    Horario completo de clases y actividades
+                                </p>
+                                <a href="#" class="grade-download">
+                                    <i class="fas fa-download"></i> Descargar PDF
+                                </a>
+                            </div>
+
+                            <!-- Año 3ro -->
+                            <div class="grade-card">
+                                <div class="grade-icon">
+                                    <i class="fas fa-microscope"></i>
+                                </div>
+                                <h4 class="grade-title">3er Año</h4>
+                                <p class="grade-info">
+                                    Horario completo de clases y actividades
+                                </p>
+                                <a href="#" class="grade-download">
+                                    <i class="fas fa-download"></i> Descargar PDF
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="media-divider">
+                            <div class="media-divider-text">Bachillerato</div>
+                        </div>
+
+                        <div class="media-grid">
+                            <!-- Bachillerato 1ro -->
+                            <div class="grade-card">
+                                <div class="grade-icon">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <h4 class="grade-title">4to Año</h4>
+                                <p class="grade-info">
+                                    Horario completo de clases y actividades
+                                </p>
+                                <a href="#" class="grade-download">
+                                    <i class="fas fa-download"></i> Descargar PDF
+                                </a>
+                            </div>
+
+                            <!-- Bachillerato 2do -->
+                            <div class="grade-card">
+                                <div class="grade-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <h4 class="grade-title">5to Año</h4>
+                                <p class="grade-info">
+                                    Horario completo de clases y actividades
+                                </p>
+                                <a href="#" class="grade-download">
+                                    <i class="fas fa-download"></i> Descargar PDF
+                                </a>
+                            </div>
+
+                            <!-- Bachillerato 3ro -->
+                            <div class="grade-card">
+                                <div class="grade-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <h4 class="grade-title">6to Año</h4>
+                                <p class="grade-info">
+                                    Horario completo de clases y actividades
+                                </p>
+                                <a href="#" class="grade-download">
+                                    <i class="fas fa-download"></i> Descargar PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección Talleres -->
+                <div class="extracurricular-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div>
+                            <h3>Talleres Extracurriculares</h3>
+                            <p>Descarga los horarios de nuestros talleres especiales</p>
+                        </div>
+                    </div>
+
+                    <div class="extracurricular-grid">
+                        <div class="extracurricular-card">
+                            <h3 class="extracurricular-title">Talleres Culturales</h3>
+                            <p class="extracurricular-desc">
+                                Horarios para teatro, música, danza y artes plásticas
+                            </p>
+                            <a href="#" class="grade-download">
+                                <i class="fas fa-download"></i> Descargar Horarios
+                            </a>
+                        </div>
+
+                        <div class="extracurricular-card">
+                            <h3 class="extracurricular-title">Talleres Tecnológicos</h3>
+                            <p class="extracurricular-desc">
+                                Horarios para robótica, programación y diseño digital
+                            </p>
+                            <a href="#" class="grade-download">
+                                <i class="fas fa-download"></i> Descargar Horarios
+                            </a>
+                        </div>
+
+                        <div class="extracurricular-card">
+                            <h3 class="extracurricular-title">Talleres Académicos</h3>
+                            <p class="extracurricular-desc">
+                                Horarios para clubes de ciencias, matemáticas y literatura
+                            </p>
+                            <a href="#" class="grade-download">
+                                <i class="fas fa-download"></i> Descargar Horarios
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección Deportes -->
+                <div class="extracurricular-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-futbol"></i>
+                        </div>
+                        <div>
+                            <h3>Programa Deportivo</h3>
+                            <p>
+                                Descarga los horarios de entrenamientos y actividades
+                                deportivas
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="extracurricular-grid">
+                        <div class="extracurricular-card">
+                            <h3 class="extracurricular-title">Deportes de Conjunto</h3>
+                            <p class="extracurricular-desc">
+                                Horarios para fútbol, baloncesto, voleibol y béisbol
+                            </p>
+                            <a href="#" class="grade-download">
+                                <i class="fas fa-download"></i> Descargar Horarios
+                            </a>
+                        </div>
+
+                        <div class="extracurricular-card">
+                            <h3 class="extracurricular-title">Deportes Individuales</h3>
+                            <p class="extracurricular-desc">
+                                Horarios para atletismo, natación, tenis y artes marciales
+                            </p>
+                            <a href="#" class="grade-download">
+                                <i class="fas fa-download"></i> Descargar Horarios
+                            </a>
+                        </div>
+
+                        <div class="extracurricular-card">
+                            <h3 class="extracurricular-title">Competencias</h3>
+                            <p class="extracurricular-desc">
+                                Calendario de competencias intercolegiales y torneos
+                            </p>
+                            <a href="#" class="grade-download">
+                                <i class="fas fa-download"></i> Descargar Calendario
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección de Descargas Completas -->
+                <div class="download-section">
+                    <h3 class="download-title">Descarga todos los horarios</h3>
+                    <p class="download-subtitle">
+                        Disponibles en formato PDF para imprimir o guardar en tu
+                        dispositivo. Incluye todos los grados, talleres y actividades
+                        deportivas.
+                    </p>
+
+                    <div class="download-buttons">
+                        <a href="#" class="download-btn">
+                            <i class="fas fa-file-pdf"></i> Descargar Primaria Completa
+                        </a>
+                        <a href="#" class="download-btn">
+                            <i class="fas fa-file-pdf"></i> Descargar Media Completa
+                        </a>
+                        <a href="#" class="download-btn">
+                            <i class="fas fa-file-pdf"></i> Descargar Todo en Uno
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-primary text-white">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-lg-4 py-5">
+                    <div class="col">
+                        <h3>Colegio La Ninfa</h3>
+                        <p>
+                            Educación jesuita de excelencia desde 1900. Formando líderes
+                            con valores para un mundo mejor.
+                        </p>
+                    </div>
+
+                    <div class="col">
+                        <h3>Enlaces Rápidos</h3>
+                        <ul>
+                            <li>
+                                <a href="#cupo" class="link-light"> Admisiones</a>
+                            </li>
+                            <li>
+                                <a href="#calendario" class="link-light">
+                                    Calendario Escolar</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" class="link-light"> Trabaja con Nosotros</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col">
+                        <h3>Contáctanos</h3>
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span
+                                    >Av. Principal, Sector La Ninfa, Caracas,
+                                    Venezuela</span
+                                >
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <a
+                                    href="tel:+582125551234"
+                                    class="link-light text-decoration-none"
+                                    >+58 212 555 1234</a
+                                >
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <a
+                                    href="mailto:info@colegiolaninfa.edu.ve"
+                                    class="link-light text-decoration-none"
+                                    >info@colegiolaninfa.edu.ve</a
+                                >
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Lunes a Viernes: 7:00 AM - 4:00 PM</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col">
+                        <h3>Síguenos</h3>
+                        <p>
+                            Mantente conectado con nuestra comunidad a través de las redes
+                            sociales.
+                        </p>
+                        <div class="social">
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-facebook-f"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-twitter"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-instagram"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-linkedin-in"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-youtube"></i
+                            ></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="py-3 border-top border-white">
+                <p class="text-white text-center m-0">
+                    &copy; 2025 Unidad Educativa Colegio La Ninfa. Todos los derechos
+                    reservados.
+                </p>
+            </div>
+        </footer>
+
+        <script src="../js/app.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/js/all.min.js"></script>
+    </body>
+</html>
