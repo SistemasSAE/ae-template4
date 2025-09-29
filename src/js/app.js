@@ -98,24 +98,16 @@
                 let datesHTML = '';
 
                 for (let i = firstDayIndex; i > 0; i--) {
-                    const prevDate = new Date(
-                        currentYear,
-                        currentMonth,
-                        -i + 1,
-                    );
+                    const prevDate = new Date(currentYear, currentMonth, -i + 1);
                     datesHTML += `<div class="calendar__date inactive">${prevDate.getDate()}</div>`;
                 }
 
                 for (let i = 1; i <= totalDays; i++) {
                     const date = new Date(currentYear, currentMonth, i);
                     const formattedDate = date.toISOString().split('T')[0];
-                    const hasEvent = events.some(
-                        (event) => event.date === formattedDate,
-                    );
+                    const hasEvent = events.some((event) => event.date === formattedDate);
                     const activeClass =
-                        date.toDateString() === new Date().toDateString()
-                            ? 'active'
-                            : '';
+                        date.toDateString() === new Date().toDateString() ? 'active' : '';
                     const eventClass = hasEvent ? 'event' : '';
                     datesHTML += `<div class="calendar__date ${activeClass} ${eventClass}" data-date="${formattedDate}">${i}</div>`;
                 }
@@ -131,12 +123,10 @@
             };
 
             const attachDateClickListeners = () => {
-                const dateElements =
-                    document.querySelectorAll('.calendar__date');
+                const dateElements = document.querySelectorAll('.calendar__date');
                 dateElements.forEach((dateElement) => {
                     dateElement.addEventListener('click', () => {
-                        const selectedDate =
-                            dateElement.getAttribute('data-date');
+                        const selectedDate = dateElement.getAttribute('data-date');
                         showEvents(selectedDate);
                     });
                 });
@@ -151,9 +141,7 @@
             };
 
             const showEvents = (date) => {
-                const filteredEvents = events.filter(
-                    (event) => event.date === date,
-                );
+                const filteredEvents = events.filter((event) => event.date === date);
                 eventsContainer.innerHTML = '';
 
                 if (filteredEvents.length === 0) {
@@ -163,9 +151,7 @@
                     filteredEvents.forEach((event) => {
                         eventsContainer.innerHTML += `
                         <div class="calendar__event">
-                            <p class="calendar__event-date">${formatDate(
-                                event.date,
-                            )}</p>
+                            <p class="calendar__event-date">${formatDate(event.date)}</p>
                             <p class="calendar__event-title">${event.title}</p>
                             <p class="calendar__event-description">${
                                 event.description
@@ -194,8 +180,7 @@
         if (document.body.contains(checkLineaTiempo)) {
             // Animación para la línea de tiempo
             document.addEventListener('DOMContentLoaded', function () {
-                const timelineItems =
-                    document.querySelectorAll('.timeline__item');
+                const timelineItems = document.querySelectorAll('.timeline__item');
 
                 // Configuración del Intersection Observer
                 const observerOptions = {
@@ -204,17 +189,14 @@
                     threshold: 0.2,
                 };
 
-                const observer = new IntersectionObserver(
-                    (entries, observer) => {
-                        entries.forEach((entry) => {
-                            if (entry.isIntersecting) {
-                                entry.target.classList.add('in-view');
-                                observer.unobserve(entry.target); // Deja de observar después de activarse
-                            }
-                        });
-                    },
-                    observerOptions,
-                );
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in-view');
+                            observer.unobserve(entry.target); // Deja de observar después de activarse
+                        }
+                    });
+                }, observerOptions);
 
                 // Observar cada elemento de la línea de tiempo
                 timelineItems.forEach((item) => {
@@ -231,10 +213,7 @@
                         timelineItems.forEach((item) => {
                             const rect = item.getBoundingClientRect();
                             // Si el elemento está en el viewport
-                            if (
-                                rect.top < window.innerHeight &&
-                                rect.bottom > 0
-                            ) {
+                            if (rect.top < window.innerHeight && rect.bottom > 0) {
                                 item.classList.add('in-view');
                             }
                         });
@@ -256,9 +235,7 @@
             filterButtons.forEach((button) => {
                 button.addEventListener('click', () => {
                     // Quitar clase activa de todos los botones
-                    filterButtons.forEach((btn) =>
-                        btn.classList.remove('active'),
-                    );
+                    filterButtons.forEach((btn) => btn.classList.remove('active'));
 
                     // Añadir clase activa al botón clicado
                     button.classList.add('active');
@@ -373,9 +350,7 @@
                     html: `
                         <div class='swal-gallery-container'>
                             <div class='swal-gallery-header'>
-                                <h4 class='swal-gallery-title'>${
-                                    photo.title
-                                }</h4>
+                                <h4 class='swal-gallery-title'>${photo.title}</h4>
                                 <p class='swal-gallery-subtitle'>
                                     ${photo.date} - ${photo.album}
                                 </p>
@@ -429,10 +404,8 @@
                     },
                     didOpen: () => {
                         // Event listeners para los botones personalizados
-                        const prevButton =
-                            document.querySelector('.swal-prev-button');
-                        const nextButton =
-                            document.querySelector('.swal-next-button');
+                        const prevButton = document.querySelector('.swal-prev-button');
+                        const nextButton = document.querySelector('.swal-next-button');
 
                         if (prevButton && !isFirst) {
                             prevButton.addEventListener('click', () => {
@@ -449,16 +422,10 @@
                         }
 
                         // Navegación con teclado
-                        document.addEventListener(
-                            'keydown',
-                            handleKeyNavigation,
-                        );
+                        document.addEventListener('keydown', handleKeyNavigation);
                     },
                     willClose: () => {
-                        document.removeEventListener(
-                            'keydown',
-                            handleKeyNavigation,
-                        );
+                        document.removeEventListener('keydown', handleKeyNavigation);
                     },
                 });
 
@@ -476,34 +443,32 @@
             };
 
             // 🔥 CORRECCIÓN: Selectores correctos para los botones "Ver Álbum"
-            document
-                .querySelectorAll('.album-card .btn-primary')
-                .forEach((button) => {
-                    button.addEventListener('click', function (e) {
-                        e.preventDefault();
+            document.querySelectorAll('.album-card .btn-primary').forEach((button) => {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
 
-                        const albumId = this.getAttribute('data-album-id');
-                        let currentPhotoIndex = 0;
+                    const albumId = this.getAttribute('data-album-id');
+                    let currentPhotoIndex = 0;
 
-                        // Encontrar la primera foto del álbum seleccionado
-                        if (albumId) {
-                            const albumTitle =
-                                this.closest('.card-body').querySelector(
-                                    '.card-text',
-                                ).textContent;
-                            const albumPhotos = photos.filter(
-                                (photo) => photo.album === albumTitle,
+                    // Encontrar la primera foto del álbum seleccionado
+                    if (albumId) {
+                        const albumTitle =
+                            this.closest('.card-body').querySelector(
+                                '.card-text',
+                            ).textContent;
+                        const albumPhotos = photos.filter(
+                            (photo) => photo.album === albumTitle,
+                        );
+                        if (albumPhotos.length > 0) {
+                            currentPhotoIndex = photos.findIndex(
+                                (p) => p.id === albumPhotos[0].id,
                             );
-                            if (albumPhotos.length > 0) {
-                                currentPhotoIndex = photos.findIndex(
-                                    (p) => p.id === albumPhotos[0].id,
-                                );
-                            }
                         }
+                    }
 
-                        showPhotoWithSwal(currentPhotoIndex);
-                    });
+                    showPhotoWithSwal(currentPhotoIndex);
                 });
+            });
 
             // 🔥 CORRECCIÓN: Selector para las fotos individuales en "Todas las Fotos"
             document
@@ -514,9 +479,7 @@
 
                         // Obtener el título de la foto para encontrar su índice en el array
                         const photoTitle =
-                            this.querySelector(
-                                '.photo__title',
-                            ).textContent.trim();
+                            this.querySelector('.photo__title').textContent.trim();
                         const currentPhotoIndex = photos.findIndex(
                             (p) => p.title === photoTitle,
                         );
@@ -532,6 +495,47 @@
         }
     };
 
+    const FuncionesFormulario = () => {
+        const checkForm = document.querySelector('#loginForm');
+        if (document.body.contains(checkForm)) {
+            const passwordToggle = document.getElementById('passwordToggle');
+            const passwordInput = document.getElementById('password');
+
+            passwordToggle.addEventListener('click', () => {
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    passwordToggle.innerHTML = '<i class="far fa-eye-slash"></i>';
+                } else {
+                    passwordInput.type = 'password';
+                    passwordToggle.innerHTML = '<i class="far fa-eye"></i>';
+                }
+            });
+
+            // Generador de CAPTCHA
+            function generateCaptcha() {
+                const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+                let captcha = '';
+                for (let i = 0; i < 5; i++) {
+                    captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                return captcha;
+            }
+
+            // Actualizar CAPTCHA
+            function updateCaptcha() {
+                const captchaText = document.getElementById('captchaText');
+                captchaText.textContent = generateCaptcha();
+            }
+
+            // Botón para actualizar CAPTCHA
+            const refreshCaptcha = document.getElementById('refreshCaptcha');
+            refreshCaptcha.addEventListener('click', updateCaptcha);
+
+            // Inicializar CAPTCHA
+            updateCaptcha();
+        }
+    };
+
     /*----- ----- ----- ----- -----
 	# Declaraciones
 	----- ----- ----- ----- -----*/
@@ -541,6 +545,7 @@
         MenuEstatico();
         Calendario();
         GaleriaFotos();
+        FuncionesFormulario();
     });
     LineaTiempo();
 })();
