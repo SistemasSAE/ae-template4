@@ -3,932 +3,497 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/css/fontawesome.min.css"
+        />
+        <link rel="stylesheet" href="../css/estilos.min.css" />
         <title>Egresados Destacados - Colegio La Ninfa</title>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
-            rel="stylesheet"
-        />
-        <style>
-            /* Variables y estilos base de la página principal */
-            :root {
-                --primary-dark: #003366;
-                --primary-accent: #d4af37;
-                --background-light: #f8f9fa;
-                --tech-accent: #20b2aa;
-                --text-gray: #5a6d7b;
-                --dynamic-coral: #ff6b6b;
-                --dark-section: #1e3d59;
-                --shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-                --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.2);
-                --transition: all 0.4s ease;
-                --border-radius-lg: 30px;
-                --border-radius-xl: 50px;
-            }
-
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-
-            body {
-                font-family: 'Open Sans', sans-serif;
-                color: var(--text-gray);
-                background-color: var(--background-light);
-                line-height: 1.6;
-            }
-
-            h1,
-            h2,
-            h3,
-            h4,
-            h5 {
-                font-family: 'Montserrat', sans-serif;
-                color: var(--primary-dark);
-                font-weight: 700;
-            }
-
-            .container {
-                width: 100%;
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 20px;
-            }
-
-            .btn {
-                display: inline-block;
-                padding: 14px 32px;
-                border-radius: var(--border-radius-xl);
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 16px;
-                transition: var(--transition);
-                cursor: pointer;
-                border: none;
-                font-family: 'Montserrat', sans-serif;
-                box-shadow: var(--shadow);
-            }
-
-            .btn-primary {
-                background: var(--dynamic-coral);
-                color: white;
-            }
-
-            .btn-primary:hover {
-                background: var(--tech-accent);
-                transform: translateY(-5px);
-                box-shadow: var(--shadow-hover);
-            }
-
-            .btn-secondary {
-                background: var(--tech-accent);
-                color: white;
-            }
-
-            .btn-secondary:hover {
-                background: var(--dynamic-coral);
-                transform: translateY(-5px);
-                box-shadow: var(--shadow-hover);
-            }
-
-            .section {
-                padding: 80px 0;
-                position: relative;
-            }
-
-            .section-title {
-                text-align: center;
-                margin-bottom: 50px;
-                position: relative;
-            }
-
-            /* Header */
-            header {
-                background: linear-gradient(
-                    135deg,
-                    var(--primary-dark) 0%,
-                    var(--dark-section) 100%
-                );
-                padding: 15px 0;
-                position: fixed;
-                width: 100%;
-                top: 0;
-                z-index: 1000;
-                box-shadow: var(--shadow);
-            }
-
-            .header-container {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            .logo {
-                display: flex;
-                align-items: center;
-            }
-
-            .logo-img {
-                height: 60px;
-                width: auto;
-                margin-right: 15px;
-                border-radius: 10px;
-            }
-
-            .logo-text {
-                color: white;
-                font-family: 'Montserrat', sans-serif;
-                font-size: 24px;
-                font-weight: 700;
-            }
-
-            .logo-text span {
-                color: var(--primary-accent);
-                font-weight: 600;
-            }
-
-            /* Navegación */
-            .nav-menu {
-                display: flex;
-                list-style: none;
-            }
-
-            .nav-item {
-                position: relative;
-                margin: 0 10px;
-            }
-
-            .nav-link {
-                color: white;
-                text-decoration: none;
-                padding: 10px 15px;
-                border-radius: var(--border-radius-lg);
-                font-weight: 500;
-                transition: var(--transition);
-                display: flex;
-                align-items: center;
-            }
-
-            .nav-link i {
-                margin-left: 5px;
-                font-size: 14px;
-            }
-
-            .nav-link:hover {
-                background: rgba(255, 255, 255, 0.15);
-            }
-
-            .submenu {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                background: white;
-                min-width: 200px;
-                border-radius: var(--border-radius-lg);
-                box-shadow: var(--shadow);
-                list-style: none;
-                padding: 10px 0;
-                opacity: 0;
-                visibility: hidden;
-                transform: translateY(15px);
-                transition: var(--transition);
-                z-index: 100;
-            }
-
-            .submenu-item {
-                padding: 8px 25px;
-            }
-
-            .submenu-link {
-                color: var(--text-gray);
-                text-decoration: none;
-                transition: var(--transition);
-                display: block;
-                font-size: 15px;
-                padding: 5px 0;
-            }
-
-            .submenu-link:hover {
-                color: var(--primary-dark);
-                transform: translateX(8px);
-            }
-
-            .nav-item:hover .submenu {
-                opacity: 1;
-                visibility: visible;
-                transform: translateY(0);
-            }
-
-            .mobile-toggle {
-                display: none;
-                font-size: 28px;
-                color: white;
-                cursor: pointer;
-            }
-
-            /* Hero Section para Egresados */
-            .hero-egresados {
-                padding-top: 120px;
-                background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');
-                background-size: cover;
-                background-position: center;
-                min-height: 500px;
-                display: flex;
-                align-items: center;
-                color: white;
-                position: relative;
-                overflow: hidden;
-            }
-
-            .hero-egresados::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 51, 102, 0.8);
-                z-index: 1;
-            }
-
-            .hero-egresados-content {
-                max-width: 800px;
-                position: relative;
-                z-index: 2;
-                padding: 30px;
-                text-align: center;
-                margin: 0 auto;
-            }
-
-            .hero-egresados h1 {
-                font-size: 52px;
-                margin-bottom: 20px;
-                color: white;
-                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            }
-
-            .hero-egresados p {
-                font-size: 22px;
-                margin-bottom: 35px;
-                max-width: 700px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            /* Sección de Bienvenida */
-            .welcome-section {
-                background-color: white;
-                padding: 80px 0;
-            }
-
-            .welcome-container {
-                max-width: 900px;
-                margin: 0 auto;
-                text-align: center;
-            }
-
-            .welcome-container h2 {
-                font-size: 40px;
-                margin-bottom: 30px;
-                color: var(--primary-dark);
-            }
-
-            .welcome-container p {
-                font-size: 18px;
-                margin-bottom: 25px;
-                line-height: 1.8;
-            }
-
-            .welcome-features {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 30px;
-                margin-top: 50px;
-            }
-
-            .feature-card {
-                background: var(--background-light);
-                border-radius: var(--border-radius-lg);
-                padding: 30px;
-                width: 250px;
-                box-shadow: var(--shadow);
-                transition: var(--transition);
-            }
-
-            .feature-card:hover {
-                transform: translateY(-10px);
-                box-shadow: var(--shadow-hover);
-            }
-
-            .feature-icon {
-                width: 70px;
-                height: 70px;
-                background: var(--primary-accent);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin: 0 auto 20px;
-                font-size: 28px;
-                color: var(--primary-dark);
-            }
-
-            .feature-card h3 {
-                font-size: 20px;
-                margin-bottom: 15px;
-            }
-
-            /* Egresados Destacados */
-            .alumni-section {
-                background-color: var(--background-light);
-            }
-
-            .alumni-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 40px;
-            }
-
-            .alumni-card {
-                background: white;
-                border-radius: var(--border-radius-lg);
-                overflow: hidden;
-                box-shadow: var(--shadow);
-                transition: var(--transition);
-                position: relative;
-            }
-
-            .alumni-card:hover {
-                transform: translateY(-15px);
-                box-shadow: var(--shadow-hover);
-            }
-
-            .alumni-photo {
-                height: 300px;
-                background-color: var(--primary-dark);
-                background-size: cover;
-                background-position: center;
-            }
-
-            .alumni-info {
-                padding: 25px;
-                text-align: center;
-            }
-
-            .alumni-name {
-                font-size: 22px;
-                margin-bottom: 8px;
-                color: var(--primary-dark);
-            }
-
-            .alumni-promo {
-                color: var(--tech-accent);
-                font-size: 16px;
-                margin-bottom: 12px;
-                font-weight: 600;
-            }
-
-            .alumni-career {
-                font-size: 16px;
-                margin-bottom: 15px;
-                color: var(--text-gray);
-            }
-
-            .alumni-achievement {
-                font-size: 15px;
-                font-style: italic;
-                margin-bottom: 20px;
-            }
-
-            .alumni-badge {
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                background: var(--primary-accent);
-                color: var(--primary-dark);
-                padding: 8px 15px;
-                border-radius: 30px;
-                font-weight: 700;
-                font-size: 14px;
-                box-shadow: var(--shadow);
-            }
-
-            /* Sección de Donaciones */
-            .donation-section {
-                background: linear-gradient(
-                    135deg,
-                    var(--primary-dark) 0%,
-                    var(--dark-section) 100%
-                );
-                color: rgb(255, 255, 255);
-                text-align: center;
-                padding: 100px 0;
-                position: relative;
-                overflow: hidden;
-            }
-
-            .donation-section::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')
-                    no-repeat center center/cover;
-                opacity: 0.2;
-                z-index: 1;
-            }
-
-            .donation-content {
-                position: relative;
-                z-index: 2;
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 0 20px;
-            }
-
-            .donation-content h2 {
-                font-size: 42px;
-                margin-bottom: 25px;
-                color: white;
-            }
-
-            .donation-content p {
-                font-size: 18px;
-                margin-bottom: 35px;
-                line-height: 1.8;
-            }
-
-            .impact-stats {
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 40px;
-                margin: 50px 0;
-            }
-
-            .stat-item {
-                background: rgba(255, 255, 255, 0.1);
-                border-radius: var(--border-radius-lg);
-                padding: 25px;
-                min-width: 180px;
-                backdrop-filter: blur(5px);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-            }
-
-            .stat-number {
-                font-size: 42px;
-                font-weight: 700;
-                color: var(--primary-accent);
-                margin-bottom: 10px;
-            }
-
-            .stat-label {
-                font-size: 18px;
-            }
-
-            /* Footer */
-            footer {
-                padding: 70px 0 0;
-                background-image: url('https://placehold.co/1920x1080/003366/FFFFFF?text=Personal+del+Colegio');
-                background-size: cover;
-                background-position: center;
-                background-attachment: fixed;
-                position: relative;
-                color: white;
-            }
-
-            footer::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.6);
-                z-index: 1;
-            }
-
-            .footer-grid {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-around;
-                gap: 40px;
-                margin-bottom: 50px;
-            }
-
-            .footer-col {
-                flex: 1;
-                min-width: 250px;
-                position: relative;
-                z-index: 2;
-            }
-
-            .footer-col h3 {
-                color: white;
-                margin-bottom: 25px;
-                font-size: 22px;
-                position: relative;
-                padding-bottom: 10px;
-            }
-
-            .footer-col h3::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 60px;
-                height: 3px;
-                background: var(--primary-accent);
-            }
-
-            .footer-links {
-                list-style: none;
-            }
-
-            .footer-links li {
-                margin-bottom: 14px;
-            }
-
-            .footer-links a {
-                color: rgba(255, 255, 255, 0.8);
-                text-decoration: none;
-                transition: var(--transition);
-                display: flex;
-                align-items: center;
-                font-size: 16px;
-            }
-
-            .footer-links a i {
-                margin-right: 12px;
-                font-size: 15px;
-            }
-
-            .footer-links a:hover {
-                color: white;
-                transform: translateX(8px);
-            }
-
-            .social-links {
-                display: flex;
-                gap: 18px;
-                margin-top: 25px;
-            }
-
-            .social-links a {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 45px;
-                height: 45px;
-                background: rgba(255, 255, 255, 0.15);
-                border-radius: 50%;
-                color: white;
-                transition: var(--transition);
-                box-shadow: var(--shadow);
-            }
-
-            .social-links a:hover {
-                background: var(--primary-accent);
-                transform: translateY(-8px);
-            }
-
-            .contact-info {
-                list-style: none;
-            }
-
-            .contact-info li {
-                display: flex;
-                margin-bottom: 18px;
-                align-items: flex-start;
-                font-size: 16px;
-            }
-
-            .contact-info i {
-                margin-right: 18px;
-                color: var(--primary-accent);
-                font-size: 22px;
-                min-width: 22px;
-            }
-
-            .copyright {
-                text-align: center;
-                padding: 30px 0;
-                border-top: 1px solid rgba(255, 255, 255, 0.15);
-                color: rgba(255, 255, 255, 0.7);
-                font-size: 15px;
-                position: relative;
-                z-index: 2;
-            }
-
-            /* Responsive */
-            @media (max-width: 992px) {
-                .hero-egresados h1 {
-                    font-size: 42px;
-                }
-
-                .hero-egresados p {
-                    font-size: 20px;
-                }
-            }
-
-            @media (max-width: 768px) {
-                .nav-menu {
-                    position: fixed;
-                    top: 90px;
-                    right: -100%;
-                    flex-direction: column;
-                    background: var(--primary-dark);
-                    width: 300px;
-                    height: calc(100vh - 90px);
-                    padding: 20px;
-                    transition: var(--transition);
-                    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-                }
-
-                .nav-menu.active {
-                    right: 0;
-                }
-
-                .nav-item {
-                    margin: 10px 0;
-                }
-
-                .submenu {
-                    position: static;
-                    opacity: 1;
-                    visibility: visible;
-                    transform: translateY(0);
-                    box-shadow: none;
-                    background: rgba(255, 255, 255, 0.05);
-                    margin-top: 5px;
-                    display: none;
-                }
-
-                .nav-item:hover .submenu {
-                    display: block;
-                }
-
-                .mobile-toggle {
-                    display: block;
-                }
-
-                .hero-egresados h1 {
-                    font-size: 36px;
-                }
-
-                .hero-egresados p {
-                    font-size: 18px;
-                }
-
-                .feature-card {
-                    width: 100%;
-                    max-width: 350px;
-                }
-
-                .footer-grid {
-                    flex-direction: column;
-                    align-items: center;
-                    text-align: center;
-                }
-
-                .footer-col h3::after {
-                    left: 50%;
-                    transform: translateX(-50%);
-                }
-            }
-
-            @media (max-width: 576px) {
-                .section {
-                    padding: 60px 0;
-                }
-
-                .hero-egresados {
-                    min-height: 450px;
-                    padding-top: 100px;
-                }
-
-                .hero-egresados h1 {
-                    font-size: 32px;
-                }
-
-                .hero-egresados p {
-                    font-size: 16px;
-                }
-
-                .stat-item {
-                    width: 100%;
-                    max-width: 250px;
-                }
-            }
-        </style>
     </head>
     <body>
         <!-- Header -->
-        <header>
-            <div class="container header-container">
-                <div class="logo">
-                    <img
-                        src="../images/logo.png"
-                        alt="Logo Colegio La Ninfa"
-                        class="logo-img"
-                    />
-                    <div class="logo-text">Colegio <span>La Ninfa</span></div>
-                </div>
-
-                <nav>
-                    <ul class="nav-menu">
-                        <li class="nav-item">
-                            <a href="../../index.html" class="nav-link"
-                                >Inicio</a
-                            >
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link"
-                                >Colegio <i class="fas fa-chevron-down"></i
-                            ></a>
-                            <ul class="submenu">
-                                <li class="submenu-item">
+        <header class="bg-primary d-none fixed-top" id="mainNavbar">
+            <nav class="navbar navbar-dark navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="../../index.html">
+                        <img
+                            src="../images/logo.png"
+                            alt="Logo Colegio La Ninfa"
+                            class="logo-img"
+                            width="50"
+                            height="50"
+                        />
+                        Colegio <span class="text-warning">La Ninfa</span>
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar"
+                        aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="offcanvas offcanvas-end"
+                        tabindex="-1"
+                        id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel"
+                    >
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                                Offcanvas
+                            </h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="offcanvas"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li class="nav-item">
                                     <a
-                                        href="./nosotros.html"
-                                        class="submenu-link"
-                                        >Nosotros</a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="../../index.html"
+                                        >Inicio</a
                                     >
                                 </li>
-                                <li class="submenu-item">
+                                <li class="nav-item dropdown">
                                     <a
-                                        href="./historia.html"
-                                        class="submenu-link"
-                                        >Historia</a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Colegio
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./nosotros.html"
+                                                >Nosotros</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./historia.html"
+                                                >Historia</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./programas.html"
+                                                >Programas</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./reglas.html"
+                                                >Normativa Interna</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Publicaciones
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./noticias.html"
+                                                >Noticias</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./eventos.html"
+                                                >Eventos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./galeria.html"
+                                                >Galería</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./horarios.html"
+                                                >Horarios</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./utiles.html"
+                                                >Útiles</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Comunidad
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./egresados.html"
+                                                >Egresados</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./donar.html"
+                                                >Apóyanos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./eventos.html"
+                                                >Eventos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./noticias.html"
+                                                >Noticias</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="./contacto.html"
+                                        >Contáctanos</a
                                     >
                                 </li>
-                                <li class="submenu-item">
+                                <li class="nav-item dropdown">
                                     <a
-                                        href="./programas.html"
-                                        class="submenu-link"
-                                        >Programas</a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
                                     >
-                                </li>
-                                <li class="submenu-item">
-                                    <a href="./reglas.html" class="submenu-link"
-                                        >Normativa Interna</a
-                                    >
+                                        Intranet
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Institución</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Personal</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Representante</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Estudiante</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-2.html"
+                                                >Egresados</a
+                                            >
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link"
-                                >Publicaciones
-                                <i class="fas fa-chevron-down"></i
-                            ></a>
-                            <ul class="submenu">
-                                <li class="submenu-item">
-                                    <a
-                                        href="./noticias.html"
-                                        class="submenu-link"
-                                        >Noticias</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./eventos.html"
-                                        class="submenu-link"
-                                        >Eventos</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./galeria.html"
-                                        class="submenu-link"
-                                        >Galería</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./horarios.html"
-                                        class="submenu-link"
-                                        >Horarios</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a href="./utiles.html" class="submenu-link"
-                                        >Útiles</a
-                                    >
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link"
-                                >Comunidad <i class="fas fa-chevron-down"></i
-                            ></a>
-                            <ul class="submenu">
-                                <li class="submenu-item">
-                                    <a
-                                        href="./egresados.html"
-                                        class="submenu-link"
-                                        >Egresados</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a href="./donar.html" class="submenu-link"
-                                        >Apóyanos</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./eventos.html"
-                                        class="submenu-link"
-                                        >Eventos</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./noticias.html"
-                                        class="submenu-link"
-                                        >Noticias</a
-                                    >
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="./contacto.html" class="nav-link active"
-                                >Contáctanos</a
-                            >
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link"
-                                >Intranet <i class="fas fa-chevron-down"></i
-                            ></a>
-                            <ul class="submenu">
-                                <li class="submenu-item">
-                                    <a
-                                        href="./sesiones-1.html"
-                                        class="submenu-link"
-                                        >Institución</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./sesiones-1.html"
-                                        class="submenu-link"
-                                        >Personal</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./sesiones-1.html"
-                                        class="submenu-link"
-                                        >Representante</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./sesiones-1.html"
-                                        class="submenu-link"
-                                        >Estudiante</a
-                                    >
-                                </li>
-                                <li class="submenu-item">
-                                    <a
-                                        href="./sesiones-2.html"
-                                        class="submenu-link"
-                                        >Egresados</a
-                                    >
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <div class="mobile-toggle" id="mobileToggle">
-                        <i class="fas fa-bars"></i>
+                        </div>
                     </div>
-                </nav>
-            </div>
+                </div>
+            </nav>
+        </header>
+
+        <header class="bg-primary">
+            <nav class="navbar navbar-dark navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="../../index.html">
+                        <img
+                            src="../images/logo.png"
+                            alt="Logo Colegio La Ninfa"
+                            class="logo-img"
+                            width="50"
+                            height="50"
+                        />
+                        Colegio <span class="text-warning">La Ninfa</span>
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar"
+                        aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="offcanvas offcanvas-end"
+                        tabindex="-1"
+                        id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel"
+                    >
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                                Offcanvas
+                            </h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="offcanvas"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="../../index.html"
+                                        >Inicio</a
+                                    >
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Colegio
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./nosotros.html"
+                                                >Nosotros</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./historia.html"
+                                                >Historia</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./programas.html"
+                                                >Programas</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./reglas.html"
+                                                >Normativa Interna</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Publicaciones
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./noticias.html"
+                                                >Noticias</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./eventos.html"
+                                                >Eventos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./galeria.html"
+                                                >Galería</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./horarios.html"
+                                                >Horarios</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./utiles.html"
+                                                >Útiles</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Comunidad
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./egresados.html"
+                                                >Egresados</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./donar.html"
+                                                >Apóyanos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./eventos.html"
+                                                >Eventos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./noticias.html"
+                                                >Noticias</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="./contacto.html"
+                                        >Contáctanos</a
+                                    >
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Intranet
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Institución</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Personal</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Representante</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Estudiante</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-2.html"
+                                                >Egresados</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </header>
 
         <!-- Hero Section para Egresados -->
-        <section class="hero-egresados">
+
+        <section class="py-7 bg-primary-subtle">
             <div class="container">
-                <div class="hero-egresados-content">
-                    <h1>Comunidad de Egresados</h1>
-                    <p>
-                        Manteniendo viva la tradición y los lazos de nuestra
-                        querida institución
-                    </p>
-                    <a href="#alumni" class="btn btn-primary"
-                        >Ver egresados destacados</a
-                    >
+                <h1 class="display-6 text-center text-primary fw-semibold">
+                    Comunidad de Egresados
+                </h1>
+                <p class="fs-5 text-center mx-lg-8">
+                    Manteniendo viva la tradición y los lazos de nuestra querida
+                    institución
+                </p>
+                <div class="d-flex justify-content-center align-items-center gap-3">
+                    <a href="#alumni" class="btn btn-primary">Ver egresados destacados</a>
                     <a href="#donate" class="btn btn-secondary"
                         >Apoya a las nuevas generaciones</a
                     >
@@ -937,74 +502,82 @@
         </section>
 
         <!-- Sección de Bienvenida -->
-        <section class="section welcome-section">
+        <section class="py-5">
             <div class="container">
-                <div class="welcome-container">
-                    <h2><u>¡Bienvenidos, Egresados!</u></h2>
-                    <p>
-                        En el Colegio La Ninfa, nuestra comunidad de egresados
-                        es parte fundamental de nuestra historia y tradición. A
-                        lo largo de más de un siglo, hemos formado generaciones
-                        de profesionales que hoy son líderes en sus campos,
-                        contribuyendo al desarrollo de Venezuela y el mundo.
-                    </p>
+                <h2 class="text-center text-primary fw-semibold">
+                    ¡Bienvenidos, Egresados!
+                </h2>
+                <p class="fs-5 text-center mx-lg-8">
+                    En el Colegio La Ninfa, nuestra comunidad de egresados es parte
+                    fundamental de nuestra historia y tradición. A lo largo de más de un
+                    siglo, hemos formado generaciones de profesionales que hoy son líderes
+                    en sus campos, contribuyendo al desarrollo de Venezuela y el mundo.
+                </p>
 
-                    <p>
-                        Esta sección está dedicada exclusivamente a ustedes,
-                        nuestros queridos exalumnos. Aquí encontrarán
-                        información sobre eventos, oportunidades para
-                        reconectarse con antiguos compañeros y formas de
-                        contribuir al futuro de nuestra institución.
-                    </p>
+                <p class="fs-5 text-center mx-lg-8">
+                    Esta sección está dedicada exclusivamente a ustedes, nuestros queridos
+                    exalumnos. Aquí encontrarán información sobre eventos, oportunidades
+                    para reconectarse con antiguos compañeros y formas de contribuir al
+                    futuro de nuestra institución.
+                </p>
 
-                    <p>
-                        Mantenernos unidos como comunidad fortalece nuestro
-                        legado y nos permite seguir ofreciendo una educación de
-                        excelencia a las nuevas generaciones.
-                    </p>
+                <p class="fs-5 text-center mx-lg-8 mb-4">
+                    Mantenernos unidos como comunidad fortalece nuestro legado y nos
+                    permite seguir ofreciendo una educación de excelencia a las nuevas
+                    generaciones.
+                </p>
 
-                    <div class="welcome-features">
-                        <div class="feature-card">
-                            <div class="feature-icon">
+                <div class="row row-cols-1 row-cols-lg-4 g-4">
+                    <div class="col">
+                        <div class="bg-white shadow-lg p-4 rounded-4 mb-4 text-center">
+                            <div class="card-icon mb-3 mx-auto">
                                 <i class="fas fa-calendar-alt"></i>
                             </div>
-                            <h3>Eventos Exclusivos</h3>
+                            <h3 class="h4 fw-semibold text-primary">
+                                Eventos Exclusivos
+                            </h3>
                             <p>
-                                Reencuentros, conferencias y actividades
-                                especiales para egresados
+                                Reencuentros, conferencias y actividades especiales para
+                                egresados
                             </p>
                         </div>
+                    </div>
 
-                        <div class="feature-card">
-                            <div class="feature-icon">
+                    <div class="col">
+                        <div class="bg-white shadow-lg p-4 rounded-4 mb-4 text-center">
+                            <div class="card-icon mb-3 mx-auto">
                                 <i class="fas fa-network-wired"></i>
                             </div>
-                            <h3>Red de Contactos</h3>
+                            <h3 class="h4 fw-semibold text-primary">Red de Contactos</h3>
                             <p>
                                 Conecta con antiguos compañeros y amplía tu red
                                 profesional
                             </p>
                         </div>
+                    </div>
 
-                        <div class="feature-card">
-                            <div class="feature-icon">
+                    <div class="col">
+                        <div class="bg-white shadow-lg p-4 rounded-4 mb-4 text-center">
+                            <div class="card-icon mb-3 mx-auto">
                                 <i class="fas fa-graduation-cap"></i>
                             </div>
-                            <h3>Mentorías</h3>
+                            <h3 class="h4 fw-semibold text-primary">Mentorías</h3>
                             <p>
-                                Comparte tu experiencia con las nuevas
-                                generaciones de estudiantes
+                                Comparte tu experiencia con las nuevas generaciones de
+                                estudiantes
                             </p>
                         </div>
+                    </div>
 
-                        <div class="feature-card">
-                            <div class="feature-icon">
+                    <div class="col">
+                        <div class="bg-white shadow-lg p-4 rounded-4 mb-4 text-center">
+                            <div class="card-icon mb-3 mx-auto">
                                 <i class="fas fa-hands-helping"></i>
                             </div>
-                            <h3>Oportunidades</h3>
+                            <h3 class="h4 fw-semibold text-primary">Oportunidades</h3>
                             <p>
-                                Beneficios y oportunidades exclusivas para
-                                nuestra comunidad
+                                Beneficios y oportunidades exclusivas para nuestra
+                                comunidad
                             </p>
                         </div>
                     </div>
@@ -1013,167 +586,185 @@
         </section>
 
         <!-- Egresados Destacados -->
-        <section class="section alumni-section" id="alumni">
+        <section class="py-5" id="alumni">
             <div class="container">
-                <h2 class="section-title"><u>Egresados Destacados</u></h2>
-                <p
-                    style="
-                        text-align: center;
-                        max-width: 800px;
-                        margin: 0 auto 50px;
-                        font-size: 18px;
-                    "
-                >
-                    Estos son algunos de nuestros egresados que han destacado en
-                    sus campos profesionales, llevando en alto el nombre de
-                    nuestro colegio y sirviendo de inspiración para las nuevas
-                    generaciones.
+                <h2 class="display-6 text-center text-primary fw-semibold">
+                    Egresados Destacados
+                </h2>
+
+                <p class="fs-5 text-center mx-lg-8">
+                    Estos son algunos de nuestros egresados que han destacado en sus
+                    campos profesionales, llevando en alto el nombre de nuestro colegio y
+                    sirviendo de inspiración para las nuevas generaciones.
                 </p>
 
-                <div class="alumni-grid">
-                    <div class="alumni-card">
-                        <div class="alumni-badge">Promoción 2005</div>
-                        <div
-                            class="alumni-photo"
-                            style="
-                                background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
-                            "
-                        ></div>
-                        <div class="alumni-info">
-                            <h3 class="alumni-name">Dr. Rafael Suárez</h3>
-                            <p class="alumni-promo">Promoción 2005</p>
-                            <p class="alumni-career">
-                                Ingeniería en Sistemas, Universidad Simón
-                                Bolívar
-                            </p>
-                            <p class="alumni-achievement">
-                                Director de Innovación en empresa tecnológica
-                                internacional con presencia en 12 países
-                            </p>
-                            <a href="#" class="btn btn-primary"
-                                >Conoce mi trayectoria</a
-                            >
+                <div class="row row-cols-1 row-cols-lg-3 g-4">
+                    <div class="col">
+                        <div class="card">
+                            <img
+                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                                alt=""
+                                class="card-img-top"
+                            />
+                            <div class="card-body text-center">
+                                <h3 class="card-title h4 text-primary fw-semibold">
+                                    Dr. Rafael Suárez
+                                </h3>
+                                <p class="card-subtitle text-info fw-semibold">
+                                    Promoción 2005
+                                </p>
+                                <p class="card-text">
+                                    Ingeniería en Sistemas, Universidad Simón Bolívar
+                                </p>
+                                <p class="card-text fst-italic">
+                                    Director de Innovación en empresa tecnológica
+                                    internacional con presencia en 12 países
+                                </p>
+                                <a href="#" class="btn btn-primary"
+                                    >Conoce mi trayectoria</a
+                                >
+                            </div>
                         </div>
                     </div>
 
-                    <div class="alumni-card">
-                        <div class="alumni-badge">Promoción 2010</div>
-                        <div
-                            class="alumni-photo"
-                            style="
-                                background: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
-                            "
-                        ></div>
-                        <div class="alumni-info">
-                            <h3 class="alumni-name">Dra. Carolina Mendoza</h3>
-                            <p class="alumni-promo">Promoción 2010</p>
-                            <p class="alumni-career">
-                                Doctorado en Energías Renovables, MIT
-                            </p>
-                            <p class="alumni-achievement">
-                                Investigadora líder en energías renovables,
-                                autora de 20 patentes internacionales
-                            </p>
-                            <a href="#" class="btn btn-primary"
-                                >Conoce mi trayectoria</a
-                            >
+                    <div class="col">
+                        <div class="card">
+                            <img
+                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                                alt=""
+                                class="card-img-top"
+                            />
+                            <div class="card-body text-center">
+                                <h3 class="card-title h4 text-primary fw-semibold">
+                                    Dra. Carolina Mendoza
+                                </h3>
+                                <p class="card-subtitle text-info fw-semibold">
+                                    Promoción 2010
+                                </p>
+                                <p class="card-text">
+                                    Doctorado en Energías Renovables, MIT
+                                </p>
+                                <p class="card-text fst-italic">
+                                    Investigadora líder en energías renovables, autora de
+                                    20 patentes internacionales
+                                </p>
+                                <a href="#" class="btn btn-primary"
+                                    >Conoce mi trayectoria</a
+                                >
+                            </div>
                         </div>
                     </div>
 
-                    <div class="alumni-card">
-                        <div class="alumni-badge">Promoción 1998</div>
-                        <div
-                            class="alumni-photo"
-                            style="
-                                background: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
-                            "
-                        ></div>
-                        <div class="alumni-info">
-                            <h3 class="alumni-name">Ing. Luis Martínez</h3>
-                            <p class="alumni-promo">Promoción 1998</p>
-                            <p class="alumni-career">
-                                Ingeniería Industrial, Universidad Central de
-                                Venezuela
-                            </p>
-                            <p class="alumni-achievement">
-                                Fundador de empresa de ingeniería con presencia
-                                en 5 países y más de 500 empleados
-                            </p>
-                            <a href="#" class="btn btn-primary"
-                                >Conoce mi trayectoria</a
-                            >
+                    <div class="col">
+                        <div class="card">
+                            <img
+                                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                                alt=""
+                                class="card-img-top"
+                            />
+                            <div class="card-body text-center">
+                                <h3 class="card-title h4 text-primary fw-semibold">
+                                    Ing. Luis Martínez
+                                </h3>
+                                <p class="card-subtitle text-info fw-semibold">
+                                    Promoción 1998
+                                </p>
+                                <p class="card-text">
+                                    Ingeniería Industrial, Universidad Central de
+                                    Venezuela
+                                </p>
+                                <p class="card-text fst-italic">
+                                    Fundador de empresa de ingeniería con presencia en 5
+                                    países y más de 500 empleados
+                                </p>
+                                <a href="#" class="btn btn-primary"
+                                    >Conoce mi trayectoria</a
+                                >
+                            </div>
                         </div>
                     </div>
 
-                    <div class="alumni-card">
-                        <div class="alumni-badge">Promoción 2015</div>
-                        <div
-                            class="alumni-photo"
-                            style="
-                                background: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1376&q=80');
-                            "
-                        ></div>
-                        <div class="alumni-info">
-                            <h3 class="alumni-name">Dra. Andrea Rojas</h3>
-                            <p class="alumni-promo">Promoción 2015</p>
-                            <p class="alumni-career">
-                                Medicina, Universidad de Los Andes
-                            </p>
-                            <p class="alumni-achievement">
-                                Directora del programa de salud pública que ha
-                                beneficiado a más de 50,000 personas
-                            </p>
-                            <a href="#" class="btn btn-primary"
-                                >Conoce mi trayectoria</a
-                            >
+                    <div class="col">
+                        <div class="card">
+                            <img
+                                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1376&q=80"
+                                alt=""
+                                class="card-img-top"
+                            />
+                            <div class="card-body text-center">
+                                <h3 class="card-title h4 text-primary fw-semibold">
+                                    Dra. Andrea Rojas
+                                </h3>
+                                <p class="card-subtitle text-info fw-semibold">
+                                    Promoción 2015
+                                </p>
+                                <p class="card-text">
+                                    Medicina, Universidad de Los Andes
+                                </p>
+                                <p class="card-text fst-italic">
+                                    Directora del programa de salud pública que ha
+                                    beneficiado a más de 50,000 personas
+                                </p>
+                                <a href="#" class="btn btn-primary"
+                                    >Conoce mi trayectoria</a
+                                >
+                            </div>
                         </div>
                     </div>
 
-                    <div class="alumni-card">
-                        <div class="alumni-badge">Promoción 2008</div>
-                        <div
-                            class="alumni-photo"
-                            style="
-                                background: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
-                            "
-                        ></div>
-                        <div class="alumni-info">
-                            <h3 class="alumni-name">Lic. Carlos Pérez</h3>
-                            <p class="alumni-promo">Promoción 2008</p>
-                            <p class="alumni-career">
-                                Derecho, Universidad Católica Andrés Bello
-                            </p>
-                            <p class="alumni-achievement">
-                                Premio Nacional de Derechos Humanos por su
-                                trabajo en comunidades vulnerables
-                            </p>
-                            <a href="#" class="btn btn-primary"
-                                >Conoce mi trayectoria</a
-                            >
+                    <div class="col">
+                        <div class="card">
+                            <img
+                                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                                alt=""
+                                class="card-img-top"
+                            />
+                            <div class="card-body text-center">
+                                <h3 class="card-title h4 text-primary fw-semibold">
+                                    Lic. Carlos Pérez
+                                </h3>
+                                <p class="card-subtitle text-info fw-semibold">
+                                    Promoción 2008
+                                </p>
+                                <p class="card-text">
+                                    Derecho, Universidad Católica Andrés Bello
+                                </p>
+                                <p class="card-text fst-italic">
+                                    Premio Nacional de Derechos Humanos por su trabajo en
+                                    comunidades vulnerables
+                                </p>
+                                <a href="#" class="btn btn-primary"
+                                    >Conoce mi trayectoria</a
+                                >
+                            </div>
                         </div>
                     </div>
 
-                    <div class="alumni-card">
-                        <div class="alumni-badge">Promoción 2018</div>
-                        <div
-                            class="alumni-photo"
-                            style="
-                                background: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
-                            "
-                        ></div>
-                        <div class="alumni-info">
-                            <h3 class="alumni-name">Ing. Sofía González</h3>
-                            <p class="alumni-promo">Promoción 2018</p>
-                            <p class="alumni-career">
-                                Ingeniería Química, Universidad Simón Bolívar
-                            </p>
-                            <p class="alumni-achievement">
-                                Desarrolló tecnología para purificación de agua
-                                que beneficia a comunidades rurales
-                            </p>
-                            <a href="#" class="btn btn-primary"
-                                >Conoce mi trayectoria</a
-                            >
+                    <div class="col">
+                        <div class="card">
+                            <img
+                                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                                alt=""
+                                class="card-img-top"
+                            />
+                            <div class="card-body text-center">
+                                <h3 class="card-title h4 text-primary fw-semibold">
+                                    Ing. Sofía González
+                                </h3>
+                                <p class="card-subtitle text-info fw-semibold">
+                                    Promoción 2018
+                                </p>
+                                <p class="card-text">
+                                    Ingeniería Química, Universidad Simón Bolívar
+                                </p>
+                                <p class="card-text fst-italic">
+                                    Desarrolló tecnología para purificación de agua que
+                                    beneficia a comunidades rurales
+                                </p>
+                                <a href="#" class="btn btn-primary"
+                                    >Conoce mi trayectoria</a
+                                >
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1181,97 +772,91 @@
         </section>
 
         <!-- Sección de Donaciones -->
-        <section class="donation-section" id="donate">
-            <div class="donation-content">
-                <h2>Apoya el Futuro del Colegio</h2>
-                <p>
-                    Tu contribución como egresado es fundamental para mantener
-                    la excelencia educativa que caracteriza al Colegio La Ninfa.
-                    Con tu apoyo, podemos seguir formando a las nuevas
-                    generaciones con los mismos valores y calidad que recibiste
-                    durante tu paso por nuestra institución.
-                </p>
-
-                <p>
-                    Las donaciones de nuestros exalumnos han permitido financiar
-                    becas para estudiantes talentosos, renovar nuestros
-                    laboratorios tecnológicos, mejorar nuestras instalaciones
-                    deportivas y desarrollar programas de innovación educativa.
-                </p>
-
-                <div class="impact-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">250+</div>
-                        <div class="stat-label">Becas otorgadas</div>
+        <section
+            class="bg-parallax"
+            style="
+                --bg-image: url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80);
+            "
+            id="donate"
+        >
+            <div class="bg-primary bg-opacity-50 py-5 text-white text-center">
+                <div class="container">
+                    <h2 class="fw-semibold">Apoya el Futuro del Colegio</h2>
+                    <p class="fs-5 mx-lg-6">
+                        Tu contribución como egresado es fundamental para mantener la
+                        excelencia educativa que caracteriza al Colegio La Ninfa. Con tu
+                        apoyo, podemos seguir formando a las nuevas generaciones con los
+                        mismos valores y calidad que recibiste durante tu paso por nuestra
+                        institución.
+                    </p>
+                    <p class="fs-5 mx-lg-6">
+                        Las donaciones de nuestros exalumnos han permitido financiar becas
+                        para estudiantes talentosos, renovar nuestros laboratorios
+                        tecnológicos, mejorar nuestras instalaciones deportivas y
+                        desarrollar programas de innovación educativa.
+                    </p>
+                    <div class="row row-cols-1 row-cols-lg-3 g-4 text-dark mb-4">
+                        <div class="col">
+                            <div class="bg-white rounded-4 p-3">
+                                <p class="text-primary fs-2 fw-semibold mb-0">250+</p>
+                                <p class="fs-5 mb-0">Becas otorgadas</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="bg-white rounded-4 p-3">
+                                <p class="text-primary fs-2 fw-semibold mb-0">12</p>
+                                <p class="fs-5 mb-0">Laboratorios renovados</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="bg-white rounded-4 p-3">
+                                <p class="text-primary fs-2 fw-semibold mb-0">1,200+</p>
+                                <p class="fs-5 mb-0">Estudiantes beneficiados</p>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="stat-item">
-                        <div class="stat-number">12</div>
-                        <div class="stat-label">Laboratorios renovados</div>
-                    </div>
-
-                    <div class="stat-item">
-                        <div class="stat-number">1,200+</div>
-                        <div class="stat-label">Estudiantes beneficiados</div>
+                    <div class="d-flex justify-content-center align-items-center gap-4">
+                        <a href="#" class="btn btn-primary">Hacer una donación</a>
+                        <a href="#" class="btn btn-secondary"
+                            >Conocer más sobre nuestro fondo de becas</a
+                        >
                     </div>
                 </div>
-
-                <a href="#" class="btn btn-primary">Hacer una donación</a>
-                <a href="#" class="btn btn-secondary"
-                    >Conocer más sobre nuestro fondo de becas</a
-                >
             </div>
         </section>
 
         <!-- Footer -->
-        <footer>
+        <footer class="bg-primary text-white">
             <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-col">
+                <div class="row row-cols-1 row-cols-lg-4 py-5">
+                    <div class="col">
                         <h3>Colegio La Ninfa</h3>
-                        <p style="margin-bottom: 20px; opacity: 0.8">
-                            Educación jesuita de excelencia desde 1900. Formando
-                            líderes con valores para un mundo mejor.
+                        <p>
+                            Educación jesuita de excelencia desde 1900. Formando líderes
+                            con valores para un mundo mejor.
                         </p>
-                        <div class="iso-element">
-                            <div class="iso-building">
-                                <div class="iso-window"></div>
-                                <div class="iso-window"></div>
-                                <div class="iso-window"></div>
-                                <div class="iso-window"></div>
-                                <div class="iso-window"></div>
-                                <div class="iso-window"></div>
-                            </div>
-                        </div>
                     </div>
 
-                    <div class="footer-col">
+                    <div class="col">
                         <h3>Enlaces Rápidos</h3>
-                        <ul class="footer-links">
+                        <ul>
                             <li>
-                                <a href="index.html#cupo"
-                                    ><i class="fas fa-chevron-right"></i>
-                                    Admisiones</a
-                                >
+                                <a href="#cupo" class="link-light"> Admisiones</a>
                             </li>
                             <li>
-                                <a href="index.html#calendario"
-                                    ><i class="fas fa-chevron-right"></i>
+                                <a href="#calendario" class="link-light">
                                     Calendario Escolar</a
                                 >
                             </li>
                             <li>
-                                <a href="#"
-                                    ><i class="fas fa-chevron-right"></i>
-                                    Trabaja con Nosotros</a
-                                >
+                                <a href="#" class="link-light"> Trabaja con Nosotros</a>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="footer-col">
+                    <div class="col">
                         <h3>Contáctanos</h3>
-                        <ul class="contact-info">
+                        <ul class="list-unstyled">
                             <li>
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span
@@ -1281,11 +866,19 @@
                             </li>
                             <li>
                                 <i class="fas fa-phone"></i>
-                                <span>+58 212 555 1234</span>
+                                <a
+                                    href="tel:+582125551234"
+                                    class="link-light text-decoration-none"
+                                    >+58 212 555 1234</a
+                                >
                             </li>
                             <li>
                                 <i class="fas fa-envelope"></i>
-                                <span>info@colegiolaninfa.edu.ve</span>
+                                <a
+                                    href="mailto:info@colegiolaninfa.edu.ve"
+                                    class="link-light text-decoration-none"
+                                    >info@colegiolaninfa.edu.ve</a
+                                >
                             </li>
                             <li>
                                 <i class="fas fa-clock"></i>
@@ -1294,59 +887,42 @@
                         </ul>
                     </div>
 
-                    <div class="footer-col">
+                    <div class="col">
                         <h3>Síguenos</h3>
-                        <p style="margin-bottom: 20px; opacity: 0.8">
-                            Mantente conectado con nuestra comunidad a través de
-                            las redes sociales.
+                        <p>
+                            Mantente conectado con nuestra comunidad a través de las redes
+                            sociales.
                         </p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        <div class="social">
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-facebook-f"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-twitter"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-instagram"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-linkedin-in"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-youtube"></i
+                            ></a>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="copyright">
-                <div class="container">
-                    &copy; 2025 Unidad Educativa Colegio La Ninfa. Todos los
-                    derechos reservados.
-                </div>
+            <div class="py-3 border-top border-white">
+                <p class="text-white text-center m-0">
+                    &copy; 2025 Unidad Educativa Colegio La Ninfa. Todos los derechos
+                    reservados.
+                </p>
             </div>
         </footer>
 
-        <script>
-            // Menú móvil
-            const mobileToggle = document.getElementById('mobileToggle');
-            const navMenu = document.querySelector('.nav-menu');
-
-            mobileToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                const icon = mobileToggle.querySelector('i');
-                if (icon.classList.contains('fa-bars')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
-
-            // Destacar enlace activo en el menú
-            const currentPage = window.location.pathname.split('/').pop();
-            const navLinks = document.querySelectorAll(
-                '.nav-link, .submenu-link',
-            );
-
-            navLinks.forEach((link) => {
-                if (link.getAttribute('href') === currentPage) {
-                    link.classList.add('active');
-                }
-            });
-        </script>
+        <script src="../js/app.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/js/all.min.js"></script>
     </body>
 </html>
