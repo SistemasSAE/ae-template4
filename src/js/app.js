@@ -8,6 +8,7 @@
             slidesToShow: 1,
             slidesToScroll: 1,
             scrollLock: true,
+            rewind: true,
 
             responsive: [
                 {
@@ -20,10 +21,11 @@
             ],
         };
 
-        const gliderConfig1SlidesBase = {
+        const gliderConfig1Slide = {
             slidesToShow: 1,
             slidesToScroll: 1,
             scrollLock: true,
+            rewind: true,
         };
 
         document.querySelectorAll('.carousel__lista').forEach((carousel) => {
@@ -33,7 +35,40 @@
             const dots = container.querySelector('.carousel__indicadores');
 
             const glider = new Glider(carousel, {
-                ...gliderConfig1SlidesBase,
+                ...gliderConfig1Slide,
+                arrows: {
+                    prev: prevButton,
+                    next: nextButton,
+                },
+                dots: dots,
+            });
+
+            // Auto-desplazamiento cada 5 segundos
+            let autoplay = setInterval(() => {
+                glider.scrollItem('next');
+            }, 4000);
+
+            // Pausar autoplay al interactuar
+            container.addEventListener('mouseenter', () => {
+                clearInterval(autoplay);
+            });
+
+            // Reanudar autoplay al dejar de interactuar
+            container.addEventListener('mouseleave', () => {
+                autoplay = setInterval(() => {
+                    glider.scrollItem('next');
+                }, 4000);
+            });
+        });
+
+        document.querySelectorAll('.carousel__lista_3').forEach((carousel) => {
+            const container = carousel.closest('.carousel');
+            const prevButton = container.querySelector('.carousel__anterior');
+            const nextButton = container.querySelector('.carousel__siguiente');
+            const dots = container.querySelector('.carousel__indicadores');
+
+            const glider = new Glider(carousel, {
+                ...gliderConfig3Slides,
                 arrows: {
                     prev: prevButton,
                     next: nextButton,
@@ -85,12 +120,12 @@
             let currentDate = new Date();
             const events = [
                 {
-                    date: '2025-04-25',
+                    date: '2025-11-04',
                     title: 'Navidad',
                     description: 'Celebración de la Navidad',
                 },
                 {
-                    date: '2025-04-30',
+                    date: '2025-11-05',
                     title: 'Fin de Año',
                     description: 'Cena de fin de año con familia',
                 },

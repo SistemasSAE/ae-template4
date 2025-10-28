@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link rel="shortcut icon" href="./src/images/logo.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="./src/images/favicon.png" type="image/x-icon" />
         <link
             href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
             rel="stylesheet"
@@ -23,261 +23,14 @@
     </head>
     <body>
         <!-- Header -->
-        <header class="bg-primary d-none fixed-top" id="mainNavbar">
+        <header class="bg-primary sticky-top">
             <nav class="navbar navbar-dark navbar-expand-lg">
                 <div class="container">
                     <a class="navbar-brand" href="#">
                         <img
-                            src="./src/images/logo.png"
+                            src="./src/images/logotipo.png"
                             alt="Logo Colegio La Ninfa"
-                            class="logo-img"
-                            width="50"
-                            height="50"
                         />
-                        Colegio <span class="text-warning">La Ninfa</span>
-                    </a>
-                    <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasNavbar"
-                        aria-controls="offcanvasNavbar"
-                        aria-label="Toggle navigation"
-                    >
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div
-                        class="offcanvas offcanvas-end"
-                        tabindex="-1"
-                        id="offcanvasNavbar"
-                        aria-labelledby="offcanvasNavbarLabel"
-                    >
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-                                Colegio <span class="text-warning">La Ninfa</span>
-                            </h5>
-                            <button
-                                type="button"
-                                class="btn-close"
-                                data-bs-dismiss="offcanvas"
-                                aria-label="Close"
-                            ></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                                <li class="nav-item">
-                                    <a
-                                        class="nav-link active"
-                                        aria-current="page"
-                                        href="#"
-                                        >Inicio</a
-                                    >
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a
-                                        class="nav-link dropdown-toggle"
-                                        href="#"
-                                        role="button"
-                                        data-bs-toggle="dropdown"
-                                        aria-expanded="false"
-                                    >
-                                        Colegio
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a
-                                                class="dropdown-item"
-                                                href="./src/pages/nosotros.html"
-                                                >Nosotros</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a
-                                                class="dropdown-item"
-                                                href="./src/pages/historia.html"
-                                                >Historia</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a
-                                                class="dropdown-item"
-                                                href="./src/pages/programas.html"
-                                                >Programas</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a
-                                                class="dropdown-item"
-                                                href="./src/pages/reglas.html"
-                                                >Normativa Interna</a
-                                            >
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a
-                                        class="nav-link dropdown-toggle"
-                                        href="#"
-                                        role="button"
-                                        data-bs-toggle="dropdown"
-                                        aria-expanded="false"
-                                    >
-                                        Publicaciones
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a
-                                                class="dropdown-item"
-                                                href="./src/pages/noticias.html"
-                                                >Noticias</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a
-                                                class="dropdown-item"
-                                                href="./src/pages/eventos.html"
-                                                >Eventos</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a
-                                                class="dropdown-item"
-                                                href="./src/pages/galeria.html"
-                                                >Galería</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a
-                                                class="dropdown-item"
-                                                href="./src/pages/horarios.html"
-                                                >Horarios</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a
-                                                class="dropdown-item"
-                                                href="./src/pages/utiles.html"
-                                                >Útiles</a
-                                            >
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a
-                                        class="nav-link dropdown-toggle"
-                                        href="#"
-                                        role="button"
-                                        data-bs-toggle="dropdown"
-                                        aria-expanded="false"
-                                    >
-                                        Comunidad
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a
-                                                class="dropdown-item"
-                                                href="./src/pages/egresados.html"
-                                                >Egresados</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a
-                                                class="dropdown-item"
-                                                href="./src/pages/donar.html"
-                                                >Apóyanos</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a
-                                                class="dropdown-item"
-                                                href="./src/pages/eventos.html"
-                                                >Eventos</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a
-                                                class="dropdown-item"
-                                                href="./src/pages/noticias.html"
-                                                >Noticias</a
-                                            >
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a
-                                        class="nav-link active"
-                                        aria-current="page"
-                                        href="./src/pages/contacto.html"
-                                        >Contáctanos</a
-                                    >
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a
-                                        class="nav-link dropdown-toggle"
-                                        href="#"
-                                        role="button"
-                                        data-bs-toggle="dropdown"
-                                        aria-expanded="false"
-                                    >
-                                        Intranet
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a
-                                                class="dropdown-item"
-                                                href="./src/pages/sesiones-1.html"
-                                                >Institución</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a
-                                                class="dropdown-item"
-                                                href="./src/pages/sesiones-1.html"
-                                                >Personal</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a
-                                                class="dropdown-item"
-                                                href="./src/pages/sesiones-1.html"
-                                                >Representante</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a
-                                                class="dropdown-item"
-                                                href="./src/pages/sesiones-1.html"
-                                                >Estudiante</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a
-                                                class="dropdown-item"
-                                                href="./src/pages/sesiones-2.html"
-                                                >Egresados</a
-                                            >
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
-        <header class="bg-primary">
-            <nav class="navbar navbar-dark navbar-expand-lg">
-                <div class="container">
-                    <a class="navbar-brand" href="#">
-                        <img
-                            src="./src/images/logo.png"
-                            alt="Logo Colegio La Ninfa"
-                            class="logo-img"
-                            width="50"
-                            height="50"
-                        />
-                        Colegio <span class="text-warning">La Ninfa</span>
                     </a>
                     <button
                         class="navbar-toggler"
@@ -515,119 +268,104 @@
                 <div class="carousel__lista">
                     <div class="carousel__elemento">
                         <div
-                            class="bg-parallax"
+                            class="bg-image bg-dark-image h-100"
                             style="--bg-image: url('../images/imagen-1.png')"
                         >
-                            <div class="bg-dark bg-opacity-50 h-100">
-                                <div class="container py-8">
-                                    <h2 class="fw-bold display-6 text-primary">
-                                        Formando líderes desde 1900
-                                    </h2>
-                                    <p class="fw-semibold text-white fs-5">
-                                        Educación jesuita de excelencia para un mundo en
-                                        transformación. Formación técnica, humana y
-                                        espiritual.
-                                    </p>
-                                    <div class="d-flex flex-column flex-lg-row gap-3">
-                                        <a href="#cupo" class="btn btn-primary btn-lg"
-                                            >Admisiones</a
-                                        >
-                                        <a
-                                            href="#programas"
-                                            class="btn btn-info btn-lg text-white"
-                                            >Nuestros Programas</a
-                                        >
-                                    </div>
+                            <div class="container py-6 py-lg-8">
+                                <h2 class="fw-bold h2 text-primary">
+                                    Formando líderes desde 1900
+                                </h2>
+                                <p class="fw-semibold text-white fs-5">
+                                    Educación jesuita de excelencia para un mundo en
+                                    transformación. Formación técnica, humana y
+                                    espiritual.
+                                </p>
+                                <div class="d-flex flex-column flex-lg-row gap-3">
+                                    <a href="#cupo" class="btn btn-primary btn-lg"
+                                        >Admisiones</a
+                                    >
+                                    <a
+                                        href="#programas"
+                                        class="btn btn-info btn-lg text-white"
+                                        >Nuestros Programas</a
+                                    >
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="carousel__elemento">
                         <div
-                            class="bg-parallax"
+                            class="bg-image bg-dark-image h-100"
                             style="--bg-image: url('../images/imagen-2.png')"
                         >
-                            <div class="bg-dark bg-opacity-50 h-100">
-                                <div class="container py-8">
-                                    <h2 class="fw-bold display-6 text-primary">
-                                        Educación con valores jesuitas
-                                    </h2>
-                                    <p class="fw-semibold text-white fs-5">
-                                        Comprometidos con la formación integral de
-                                        nuestros estudiantes.
-                                    </p>
-                                    <div class="d-flex gap-3">
-                                        <a
-                                            href="#cupo"
-                                            class="btn btn-danger btn-lg text-white"
-                                            >Admisiones</a
-                                        >
-                                        <a
-                                            href="#programas"
-                                            class="btn btn-info btn-lg text-white"
-                                            >Nuestros Programas</a
-                                        >
-                                    </div>
+                            <div class="container py-6 py-lg-8">
+                                <h2 class="fw-bold h2 text-primary">
+                                    Educación con valores jesuitas
+                                </h2>
+                                <p class="fw-semibold text-white fs-5">
+                                    Comprometidos con la formación integral de nuestros
+                                    estudiantes.
+                                </p>
+                                <div class="d-flex flex-column flex-lg-row gap-3">
+                                    <a href="#cupo" class="btn btn-primary btn-lg"
+                                        >Admisiones</a
+                                    >
+                                    <a
+                                        href="#programas"
+                                        class="btn btn-info btn-lg text-white"
+                                        >Nuestros Programas</a
+                                    >
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="carousel__elemento">
                         <div
-                            class="bg-parallax"
+                            class="bg-image bg-dark-image h-100"
                             style="--bg-image: url('../images/imagen-1.png')"
                         >
-                            <div class="bg-dark bg-opacity-50 h-100">
-                                <div class="container py-8">
-                                    <h2 class="fw-bold display-6 text-primary">
-                                        Formación técnica y humana
-                                    </h2>
-                                    <p class="fw-semibold text-white fs-5">
-                                        Preparando a los líderes del mañana con
-                                        herramientas para el éxito.
-                                    </p>
-                                    <div class="d-flex gap-3">
-                                        <a
-                                            href="#cupo"
-                                            class="btn btn-danger btn-lg text-white"
-                                            >Admisiones</a
-                                        >
-                                        <a
-                                            href="#programas"
-                                            class="btn btn-info btn-lg text-white"
-                                            >Nuestros Programas</a
-                                        >
-                                    </div>
+                            <div class="container py-6 py-lg-8">
+                                <h2 class="h2 fw-bold text-primary">
+                                    Formación técnica y humana
+                                </h2>
+                                <p class="fw-semibold text-white fs-5">
+                                    Preparando a los líderes del mañana con herramientas
+                                    para el éxito.
+                                </p>
+                                <div class="d-flex flex-column flex-lg-row gap-3">
+                                    <a href="#cupo" class="btn btn-primary btn-lg"
+                                        >Admisiones</a
+                                    >
+                                    <a
+                                        href="#programas"
+                                        class="btn btn-info btn-lg text-white"
+                                        >Nuestros Programas</a
+                                    >
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="carousel__elemento">
                         <div
-                            class="bg-parallax"
+                            class="bg-image bg-dark-image h-100"
                             style="--bg-image: url('../images/imagen-2.png')"
                         >
-                            <div class="bg-dark bg-opacity-50 h-100">
-                                <div class="container py-8">
-                                    <h2 class="fw-bold display-6 text-primary">
-                                        Excelencia académica
-                                    </h2>
-                                    <p class="fw-semibold text-white fs-5">
-                                        Más de un siglo de tradición educativa en
-                                        Venezuela.
-                                    </p>
-                                    <div class="d-flex gap-3">
-                                        <a
-                                            href="#cupo"
-                                            class="btn btn-danger btn-lg text-white"
-                                            >Admisiones</a
-                                        >
-                                        <a
-                                            href="#programas"
-                                            class="btn btn-info btn-lg text-white"
-                                            >Nuestros Programas</a
-                                        >
-                                    </div>
+                            <div class="container py-6 py-lg-8">
+                                <h2 class="h2 fw-bold text-primary">
+                                    Excelencia académica
+                                </h2>
+                                <p class="fw-semibold text-white fs-5">
+                                    Más de un siglo de tradición educativa en Venezuela.
+                                </p>
+                                <div class="d-flex flex-column flex-lg-row gap-3">
+                                    <a href="#cupo" class="btn btn-primary btn-lg"
+                                        >Admisiones</a
+                                    >
+                                    <a
+                                        href="#programas"
+                                        class="btn btn-info btn-lg text-white"
+                                        >Nuestros Programas</a
+                                    >
                                 </div>
                             </div>
                         </div>
@@ -646,18 +384,18 @@
         </section>
 
         <!-- Nosotros -->
-        <section class="py-5" id="nosotros">
+        <section class="py-3 py-lg-5" id="nosotros">
             <div class="container">
-                <div class="row row-cols-1 row-cols-lg-2">
+                <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-6 align-items-center">
                     <div class="col">
                         <img
-                            class="img-thumbnail"
+                            class="w-100 about-image object-fit-cover rounded-3"
                             src="./src/images/imagen-1.png"
                             alt="Colegio La Ninfa"
                         />
                     </div>
                     <div class="col">
-                        <h2 class="display-6 fw-semibold text-primary">
+                        <h2 class="h2 fw-semibold text-primary">
                             Más de un siglo de excelencia educativa
                         </h2>
                         <p>
@@ -674,28 +412,23 @@
                         <a href="./src/pages/nosotros.html" class="btn btn-primary"
                             >Leer más</a
                         >
-                        <a
-                            href="./src/pages/historia.html"
-                            class="btn btn-info text-white"
-                            >Nuestra historia</a
-                        >
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Programas -->
-        <section class="py-5">
+        <section class="py-3 py-lg-5">
             <div class="container" id="programas">
-                <h2 class="display-6 fw-semibold text-center text-primary mb-4">
+                <h2 class="h2 fw-semibold text-center text-primary mb-4">
                     Nuestros Programas Académicos
                 </h2>
                 <div class="row row-cols-1 row-cols-lg-3 g-3">
                     <div class="col">
-                        <div class="card">
+                        <div class="card overflow-hidden">
                             <img
                                 src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                class="card-img-top"
+                                class="w-100 h-300px object-fit-cover"
                                 alt="Tecnología e Informática"
                             />
 
@@ -707,15 +440,19 @@
                                     Programa de vanguardia en desarrollo de software,
                                     redes y sistemas computacionales.
                                 </p>
-                                <a href="#" class="btn btn-primary">Más información</a>
+                                <a
+                                    href="./src/pages/programas.html"
+                                    class="btn btn-primary"
+                                    >Más información</a
+                                >
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card">
+                        <div class="card overflow-hidden">
                             <img
                                 src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
-                                class="card-img-top"
+                                class="w-100 h-300px object-fit-cover"
                                 alt="Tecnología e Informática"
                             />
 
@@ -727,15 +464,19 @@
                                     Formación en procesos de producción, gestión de
                                     calidad y optimización industrial.
                                 </p>
-                                <a href="#" class="btn btn-primary">Más información</a>
+                                <a
+                                    href="./src/pages/programas.html"
+                                    class="btn btn-primary"
+                                    >Más información</a
+                                >
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card">
+                        <div class="card overflow-hidden">
                             <img
                                 src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                class="card-img-top"
+                                class="w-100 h-300px object-fit-cover"
                                 alt="Tecnología e Informática"
                             />
 
@@ -745,7 +486,11 @@
                                     Programa integral en matemáticas, física y química con
                                     aplicaciones tecnológicas.
                                 </p>
-                                <a href="#" class="btn btn-primary">Más información</a>
+                                <a
+                                    href="./src/pages/programas.html"
+                                    class="btn btn-primary"
+                                    >Más información</a
+                                >
                             </div>
                         </div>
                     </div>
@@ -754,112 +499,139 @@
         </section>
 
         <!-- Equipo Directivo -->
-        <section
-            class="bg-parallax"
-            style="
-                --bg-image: url('https://placehold.co/1920x1080/003366/FFFFFF?text=Personal+del+Colegio');
-            "
-        >
-            <div class="bg-dark bg-opacity-75 py-5">
-                <div class="container">
-                    <h2 class="display-6 mb-4 text-center text-white fw-semibold">
-                        Nuestro Equipo Directivo
-                    </h2>
-                    <div class="row row-cols-1 row-cols-lg-3 g-3">
-                        <div class="col">
-                            <div class="card">
-                                <img
-                                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
-                                    class="w-100 object-fit-contain h-250px"
-                                    alt="Tecnología e Informática"
-                                />
+        <section class="bg-primary py-5">
+            <div class="container">
+                <h2 class="h2 mb-4 text-center text-white fw-semibold">
+                    Nuestro Equipo Directivo
+                </h2>
+                <div class="carousel carousel_galeria mb-5">
+                    <div class="carousel__contenedor">
+                        <div class="carousel__lista_3">
+                            <div class="carousel__elemento">
+                                <div class="card h-100">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                                        class="w-100 object-fit-cover h-250px"
+                                        alt="Tecnología e Informática"
+                                    />
 
-                                <div class="card-body">
-                                    <h3 class="card-title text-primary">
-                                        Padre Carlos Mendoza, S.J.
-                                    </h3>
-                                    <h4 class="card-subtitle mb-2 text-secondary">
-                                        Rector
-                                    </h4>
+                                    <div class="card-body">
+                                        <h3 class="card-title text-primary">
+                                            Padre Carlos Mendoza, S.J.
+                                        </h3>
+                                        <h4 class="card-subtitle mb-2 text-secondary">
+                                            Rector
+                                        </h4>
 
-                                    <p class="card-text">
-                                        Doctor en Educación, Universidad de Deusto
-                                    </p>
-                                    <a href="#" class="btn btn-primary">Conoceme</a>
+                                        <p class="card-text">
+                                            Doctor en Educación, Universidad de Deusto
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Conoceme</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel__elemento">
+                                <div class="card h-100">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1376&q=80"
+                                        class="w-100 object-fit-cover h-250px"
+                                        alt="Tecnología e Informática"
+                                    />
+
+                                    <div class="card-body">
+                                        <h3 class="card-title text-primary">
+                                            Dra. María Fernanda Rojas
+                                        </h3>
+                                        <h4 class="card-subtitle mb-2 text-secondary">
+                                            Directora Académica
+                                        </h4>
+
+                                        <p class="card-text">Máster en Pedagogía, UCAB</p>
+                                        <a href="#" class="btn btn-primary">Conoceme</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel__elemento">
+                                <div class="card h-100">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                                        class="w-100 object-fit-cover h-250px"
+                                        alt="Tecnología e Informática"
+                                    />
+
+                                    <div class="card-body">
+                                        <h3 class="card-title text-primary">
+                                            Ing. Luis Alberto Pérez
+                                        </h3>
+                                        <h4 class="card-subtitle text-secondary">
+                                            Director Técnico
+                                        </h4>
+
+                                        <p class="card-text">Ingeniero Industrial, USB</p>
+                                        <a href="#" class="btn btn-primary">Conoceme</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel__elemento">
+                                <div class="card h-100">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1376&q=80"
+                                        class="w-100 object-fit-cover h-250px"
+                                        alt="Tecnología e Informática"
+                                    />
+
+                                    <div class="card-body">
+                                        <h3 class="card-title text-primary">
+                                            Dra. María Fernanda Rojas
+                                        </h3>
+                                        <h4 class="card-subtitle mb-2 text-secondary">
+                                            Directora Académica
+                                        </h4>
+
+                                        <p class="card-text">Máster en Pedagogía, UCAB</p>
+                                        <a href="#" class="btn btn-primary">Conoceme</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="card">
-                                <img
-                                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1376&q=80"
-                                    class="w-100 object-fit-contain h-250px"
-                                    alt="Tecnología e Informática"
-                                />
-
-                                <div class="card-body">
-                                    <h3 class="card-title text-primary">
-                                        Dra. María Fernanda Rojas
-                                    </h3>
-                                    <h4 class="card-subtitle mb-2 text-secondary">
-                                        Directora Académica
-                                    </h4>
-
-                                    <p class="card-text">Máster en Pedagogía, UCAB</p>
-                                    <a href="#" class="btn btn-primary">Conoceme</a>
-                                </div>
-                            </div>
+                        <div class="carousel__botones">
+                            <button aria-label="Anterior" class="carousel__anterior">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <button aria-label="Siguiente" class="carousel__siguiente">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
                         </div>
-                        <div class="col">
-                            <div class="card">
-                                <img
-                                    src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
-                                    class="w-100 object-fit-contain h-250px"
-                                    alt="Tecnología e Informática"
-                                />
-
-                                <div class="card-body">
-                                    <h3 class="card-title text-primary">
-                                        Ing. Luis Alberto Pérez
-                                    </h3>
-                                    <h4 class="card-subtitle text-secondary">
-                                        Director Técnico
-                                    </h4>
-
-                                    <p class="card-text">Ingeniero Industrial, USB</p>
-                                    <a href="#" class="btn btn-primary">Conoceme</a>
-                                </div>
-                            </div>
-                        </div>
+                        <div role="tablist" class="carousel__indicadores"></div>
                     </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <a class="btn btn-light btn-lg" href="./src/pages/galeria.html"
+                        >Ver más</a
+                    >
                 </div>
             </div>
         </section>
 
         <!-- Noticias, Eventos y Calendario -->
-        <section class="py-5">
+        <section class="py-3 py-lg-5">
             <div class="container">
-                <h2 class="h3 mb-3 text-center text-primary fw-semibold">
+                <h2 class="h2 mb-3 text-center text-primary fw-semibold">
                     Últimas Noticias
                 </h2>
                 <div class="row row-cols-1 row-cols-lg-2 g-3 mb-4">
                     <!-- Noticias -->
-
                     <div class="col">
                         <div class="card overflow-hidden">
                             <div class="row g-0">
-                                <div class="col col-lg-4">
-                                    <div
-                                        class="bg-secondary h-100 d-flex align-items-center"
-                                    >
-                                        <img
-                                            src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                            alt="..."
-                                            class="img-fluid d-inline-block"
-                                        />
-                                    </div>
+                                <div class="col-12 col-lg-4">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="Alt1"
+                                        class="w-100 h-250px object-fit-cover"
+                                    />
                                 </div>
-                                <div class="col col-lg-8">
+                                <div class="col-12 col-lg-8">
                                     <div class="card-body">
                                         <p class="card-subtitle text-info">
                                             15 Julio, 2025
@@ -873,7 +645,11 @@
                                             lugar en la competencia nacional realizada en
                                             Caracas...
                                         </p>
-                                        <a href="#" class="btn btn-primary">Leer mas</a>
+                                        <a
+                                            href="./src/pages/articulo.html"
+                                            class="btn btn-primary"
+                                            >Leer más</a
+                                        >
                                     </div>
                                 </div>
                             </div>
@@ -882,51 +658,14 @@
                     <div class="col">
                         <div class="card overflow-hidden">
                             <div class="row g-0">
-                                <div class="col col-lg-4">
-                                    <div
-                                        class="bg-secondary h-100 d-flex align-items-center"
-                                    >
-                                        <img
-                                            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                            alt="..."
-                                            class="img-fluid d-inline-block"
-                                        />
-                                    </div>
+                                <div class="col-12 col-lg-4">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="Alt2"
+                                        class="w-100 h-250px object-fit-cover"
+                                    />
                                 </div>
-                                <div class="col col-lg-8">
-                                    <div class="card-body">
-                                        <p class="card-subtitle text-info">
-                                            10 Julio, 2025
-                                        </p>
-                                        <h3 class="card-title h5 text-primary">
-                                            Inauguración del nuevo laboratorio de ciencias
-                                        </h3>
-                                        <p class="card-text">
-                                            Con tecnología de punta, el nuevo espacio
-                                            fortalecerá la investigación estudiantil en
-                                            áreas científicas...
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Leer mas</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card overflow-hidden">
-                            <div class="row g-0">
-                                <div class="col col-lg-4">
-                                    <div
-                                        class="bg-secondary h-100 d-flex align-items-center"
-                                    >
-                                        <img
-                                            src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                            alt="..."
-                                            class="img-fluid d-inline-block"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="col col-lg-8">
+                                <div class="col-12 col-lg-8">
                                     <div class="card-body">
                                         <p class="card-subtitle text-info">
                                             15 Julio, 2025
@@ -940,7 +679,11 @@
                                             lugar en la competencia nacional realizada en
                                             Caracas...
                                         </p>
-                                        <a href="#" class="btn btn-primary">Leer mas</a>
+                                        <a
+                                            href="./src/pages/articulo.html"
+                                            class="btn btn-primary"
+                                            >Leer más</a
+                                        >
                                     </div>
                                 </div>
                             </div>
@@ -949,18 +692,14 @@
                     <div class="col">
                         <div class="card overflow-hidden">
                             <div class="row g-0">
-                                <div class="col col-lg-4">
-                                    <div
-                                        class="bg-secondary h-100 d-flex align-items-center"
-                                    >
-                                        <img
-                                            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                            alt="..."
-                                            class="img-fluid d-inline-block"
-                                        />
-                                    </div>
+                                <div class="col-12 col-lg-4">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="Alt2"
+                                        class="w-100 h-250px object-fit-cover"
+                                    />
                                 </div>
-                                <div class="col col-lg-8">
+                                <div class="col-12 col-lg-8">
                                     <div class="card-body">
                                         <p class="card-subtitle text-info">
                                             10 Julio, 2025
@@ -973,7 +712,44 @@
                                             fortalecerá la investigación estudiantil en
                                             áreas científicas...
                                         </p>
-                                        <a href="#" class="btn btn-primary">Leer mas</a>
+                                        <a
+                                            href="./src/pages/articulo.html"
+                                            class="btn btn-primary"
+                                            >Leer más</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card overflow-hidden">
+                            <div class="row g-0">
+                                <div class="col-12 col-lg-4">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="Alt4"
+                                        class="w-100 h-250px object-fit-cover"
+                                    />
+                                </div>
+                                <div class="col-12 col-lg-8">
+                                    <div class="card-body">
+                                        <p class="card-subtitle text-info">
+                                            10 Julio, 2025
+                                        </p>
+                                        <h3 class="card-title h5 text-primary">
+                                            Inauguración del nuevo laboratorio de ciencias
+                                        </h3>
+                                        <p class="card-text">
+                                            Con tecnología de punta, el nuevo espacio
+                                            fortalecerá la investigación estudiantil en
+                                            áreas científicas...
+                                        </p>
+                                        <a
+                                            href="./src/pages/articulo.html"
+                                            class="btn btn-primary"
+                                            >Leer más</a
+                                        >
                                     </div>
                                 </div>
                             </div>
@@ -982,31 +758,29 @@
                 </div>
 
                 <div class="d-flex justify-content-center mb-5">
-                    <a class="btn btn-primary btn-lg" href="#">Ver más</a>
+                    <a class="btn btn-primary btn-lg" href="./src/pages/noticias.html"
+                        >Ver más</a
+                    >
                 </div>
 
-                <div class="row">
+                <div class="row g-3">
                     <div class="col-12 col-lg-8">
                         <!-- Eventos -->
-                        <h2 class="h3 mb-3 text-center text-primary fw-semibold">
+                        <h2 class="h2 mb-3 text-center text-primary fw-semibold">
                             Próximos Eventos
                         </h2>
                         <div class="row row-cols-1 g-3 mb-4">
                             <div class="col">
                                 <div class="card overflow-hidden">
                                     <div class="row g-0">
-                                        <div class="col col-lg-4">
-                                            <div
-                                                class="bg-secondary h-100 d-flex align-items-center"
-                                            >
-                                                <img
-                                                    src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                                    alt="..."
-                                                    class="img-fluid d-inline-block"
-                                                />
-                                            </div>
+                                        <div class="col-12 col-lg-4">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                                alt="..."
+                                                class="w-100 object-fit-cover h-250px"
+                                            />
                                         </div>
-                                        <div class="col col-lg-8">
+                                        <div class="col-12 col-lg-8">
                                             <div class="card-body">
                                                 <p class="card-subtitle text-info">
                                                     20 Agosto, 2025
@@ -1030,18 +804,14 @@
                             <div class="col">
                                 <div class="card overflow-hidden">
                                     <div class="row g-0">
-                                        <div class="col col-lg-4">
-                                            <div
-                                                class="bg-secondary h-100 d-flex align-items-center"
-                                            >
-                                                <img
-                                                    src="https://images.unsplash.com/photo-1533109721029-b47c7c34d47c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                                    alt="..."
-                                                    class="img-fluid d-inline-block"
-                                                />
-                                            </div>
+                                        <div class="col-12 col-lg-4">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                                alt="..."
+                                                class="w-100 object-fit-cover h-250px"
+                                            />
                                         </div>
-                                        <div class="col col-lg-8">
+                                        <div class="col-12 col-lg-8">
                                             <div class="card-body">
                                                 <p class="card-subtitle text-info">
                                                     5 Septiembre, 2025
@@ -1055,7 +825,7 @@
                                                     por nuestros talentosos alumnos.
                                                 </p>
                                                 <a href="#" class="btn btn-primary"
-                                                    >Comprar entradas</a
+                                                    >Ver Detalles</a
                                                 >
                                             </div>
                                         </div>
@@ -1069,7 +839,7 @@
                     </div>
                     <!-- Calendario -->
                     <div class="col-12 col-lg-4" id="calendario">
-                        <h3 class="h3 mb-3 text-center text-primary fw-semibold">
+                        <h3 class="h2 mb-3 text-center text-primary fw-semibold">
                             Calendario Escolar
                         </h3>
                         <div class="calendar">
@@ -1101,66 +871,104 @@
         </section>
 
         <!-- Galería -->
-        <section class="bg-primary py-5">
+        <section class="bg-primary py-3 py-lg-5">
             <div class="container">
-                <h2 class="display-6 mb-4 text-center text-white fw-semibold">Galería</h2>
-                <div class="row row-cols-1 row-cols-lg-3 g-3">
-                    <!-- Álbum 1 -->
-                    <div class="col">
-                        <div class="card">
-                            <img
-                                src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                alt="Vida Estudiantil"
-                                class="card-img-top"
-                            />
-                            <div class="card-body">
-                                <h3 class="card-title">Vida Estudiantil</h3>
-                                <a href="#" class="btn btn-primary"
-                                    >Ver todas las fotos</a
-                                >
+                <h2 class="h2 mb-4 text-center text-white fw-semibold">Galería</h2>
+                <div class="carousel carousel_galeria mb-5">
+                    <div class="carousel__contenedor">
+                        <div class="carousel__lista_3">
+                            <div class="carousel__elemento">
+                                <div class="card">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="Vida Estudiantil"
+                                        class="card-img-top"
+                                    />
+                                    <div class="card-body">
+                                        <h3 class="card-title">Vida Estudiantil</h3>
+                                        <a
+                                            href="./src/pages/galeria.html"
+                                            class="btn btn-primary"
+                                            >Ver todas las fotos</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel__elemento">
+                                <div class="card">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="Eventos Deportivos"
+                                        class="card-img-top"
+                                    />
+                                    <div class="card-body">
+                                        <h3 class="card-title">Eventos Deportivos</h3>
+                                        <a
+                                            href="./src/pages/galeria.html"
+                                            class="btn btn-primary"
+                                            >Ver todas las fotos</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel__elemento">
+                                <div class="card">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="Actos Académicos"
+                                        class="card-img-top"
+                                    />
+                                    <div class="card-body">
+                                        <h3 class="card-title">Actos Académicos</h3>
+                                        <a
+                                            href="./src/pages/galeria.html"
+                                            class="btn btn-primary"
+                                            >Ver todas las fotos</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel__elemento">
+                                <div class="card">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="Eventos Deportivos"
+                                        class="card-img-top"
+                                    />
+                                    <div class="card-body">
+                                        <h3 class="card-title">Eventos Deportivos</h3>
+                                        <a
+                                            href="./src/pages/galeria.html"
+                                            class="btn btn-primary"
+                                            >Ver todas las fotos</a
+                                        >
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Álbum 2 -->
-                    <div class="col">
-                        <div class="card">
-                            <img
-                                src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                alt="Eventos Deportivos"
-                                class="card-img-top"
-                            />
-                            <div class="card-body">
-                                <h3 class="card-title">Eventos Deportivos</h3>
-                                <a href="#" class="btn btn-primary"
-                                    >Ver todas las fotos</a
-                                >
-                            </div>
+                        <div class="carousel__botones">
+                            <button aria-label="Anterior" class="carousel__anterior">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <button aria-label="Siguiente" class="carousel__siguiente">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
                         </div>
+                        <div role="tablist" class="carousel__indicadores"></div>
                     </div>
-                    <!-- Álbum 3 -->
-                    <div class="col">
-                        <div class="card">
-                            <img
-                                src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                alt="Actos Académicos"
-                                class="card-img-top"
-                            />
-                            <div class="card-body">
-                                <h3 class="card-title">Actos Académicos</h3>
-                                <a href="#" class="btn btn-primary"
-                                    >Ver todas las fotos</a
-                                >
-                            </div>
-                        </div>
-                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <a class="btn btn-light btn-lg" href="./src/pages/galeria.html"
+                        >Ver más</a
+                    >
                 </div>
             </div>
         </section>
 
         <!-- Información de Interés -->
-        <section class="py-5">
+        <section class="py-3 py-lg-5">
             <div class="container">
-                <h2 class="display-6 mb-4 text-center text-primary fw-semibold">
+                <h2 class="h2 mb-4 text-center text-primary fw-semibold">
                     Información de Interés
                 </h2>
                 <div class="row row-cols-1 row-cols-lg-3 g-3">
@@ -1231,9 +1039,9 @@
         </section>
 
         <!-- Egresados Destacados -->
-        <section class="py-5 bg-primary">
+        <section class="py-3 py-lg-5 bg-primary">
             <div class="container">
-                <h2 class="display-6 mb-4 text-center text-white fw-semibold">
+                <h2 class="h2 mb-4 text-center text-white fw-semibold">
                     Egresados Destacados
                 </h2>
                 <div class="row row-cols-1 row-cols-lg-3 g-3">
@@ -1241,7 +1049,7 @@
                         <div class="card h-100">
                             <img
                                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
-                                class="w-100 object-fit-contain h-250px"
+                                class="w-100 object-fit-cover h-250px"
                                 alt="Tecnología e Informática"
                             />
 
@@ -1263,7 +1071,7 @@
                         <div class="card h-100">
                             <img
                                 src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
-                                class="w-100 object-fit-contain h-250px"
+                                class="w-100 object-fit-cover h-250px"
                                 alt="Tecnología e Informática"
                             />
 
@@ -1286,7 +1094,7 @@
                         <div class="card h-100">
                             <img
                                 src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
-                                class="w-100 object-fit-contain h-250px"
+                                class="w-100 object-fit-cover h-250px"
                                 alt="Tecnología e Informática"
                             />
 
@@ -1313,11 +1121,9 @@
         <!-- Contacto -->
         <section class="py-5">
             <div class="container">
-                <h2 class="display-6 mb-4 text-center text-primary fw-semibold">
-                    Contáctanos
-                </h2>
+                <h2 class="h2 mb-4 text-center text-primary fw-semibold">Contáctanos</h2>
                 <form action="" method="post">
-                    <div class="row row-cols-2 g-3">
+                    <div class="row row-cols-1 row-cols-lg-2 g-3">
                         <div class="col">
                             <label class="form-label" for="name">Nombre completo</label>
                             <input
@@ -1377,18 +1183,40 @@
         <!-- Footer -->
         <footer class="bg-primary text-white">
             <div class="container">
-                <div class="row row-cols-1 row-cols-lg-4 py-5">
+                <div class="row row-cols-1 row-cols-lg-4 g-3 py-5">
                     <div class="col">
-                        <h3>Colegio La Ninfa</h3>
-                        <p>
+                        <h3 class="text-center text-lg-start">Colegio La Ninfa</h3>
+                        <p class="text-center text-lg-start m-0">
                             Educación jesuita de excelencia desde 1900. Formando líderes
                             con valores para un mundo mejor.
                         </p>
                     </div>
 
                     <div class="col">
-                        <h3>Enlaces Rápidos</h3>
-                        <ul>
+                        <h3 class="text-center text-lg-start">Síguenos</h3>
+
+                        <div class="social">
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-facebook-f"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-twitter"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-instagram"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-linkedin-in"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-youtube"></i
+                            ></a>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <h3 class="text-center text-lg-start">Enlaces Rápidos</h3>
+                        <ul class="m-0">
                             <li>
                                 <a href="#cupo" class="link-light"> Admisiones</a>
                             </li>
@@ -1404,7 +1232,7 @@
                     </div>
 
                     <div class="col">
-                        <h3>Contáctanos</h3>
+                        <h3 class="text-center text-lg-start">Contáctanos</h3>
                         <ul class="list-unstyled">
                             <li>
                                 <i class="fas fa-map-marker-alt"></i>
@@ -1435,40 +1263,58 @@
                             </li>
                         </ul>
                     </div>
-
-                    <div class="col">
-                        <h3>Síguenos</h3>
-                        <p>
-                            Mantente conectado con nuestra comunidad a través de las redes
-                            sociales.
-                        </p>
-                        <div class="social">
-                            <a href="#" class="social__link"
-                                ><i class="fab fa-facebook-f"></i
-                            ></a>
-                            <a href="#" class="social__link"
-                                ><i class="fab fa-twitter"></i
-                            ></a>
-                            <a href="#" class="social__link"
-                                ><i class="fab fa-instagram"></i
-                            ></a>
-                            <a href="#" class="social__link"
-                                ><i class="fab fa-linkedin-in"></i
-                            ></a>
-                            <a href="#" class="social__link"
-                                ><i class="fab fa-youtube"></i
-                            ></a>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="py-3 border-top border-white">
                 <p class="text-white text-center m-0">
-                    &copy; 2025 Unidad Educativa Colegio La Ninfa. Todos los derechos
-                    reservados.
+                    Copyright ©2025 Todos los derechos reservados, diseñado por
+                    <a
+                        href="https://asistescolar.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="fw-bold link-light"
+                        >AsistEscolar.com</a
+                    >
                 </p>
             </div>
         </footer>
+
+        <div class="position-fixed top-50 z-1">
+            <div class="sidebar sidebar-left">
+                <a
+                    class="sidebar__button link-dark fs-6"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a
+                    class="sidebar__button link-dark fs-6"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a
+                    class="sidebar__button link-dark fs-6"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a
+                    class="sidebar__button link-dark fs-6"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+            </div>
+        </div>
 
         <script src="./src/js/app.js"></script>
         <script src="./src/js/bootstrap.bundle.min.js"></script>

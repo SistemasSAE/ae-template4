@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/css/fontawesome.min.css"
+        />
+        <link rel="stylesheet" href="../css/estilos.min.css" />
+        <title>Noticias - Colegio La Ninfa</title>
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="bg-primary sticky-top">
+            <nav class="navbar navbar-dark navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="../../index.html">
+                        <img
+                            src="../images/logo.png"
+                            alt="Logo Colegio La Ninfa"
+                            class="logo-img"
+                            width="50"
+                            height="50"
+                        />
+                        Colegio <span class="text-warning">La Ninfa</span>
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar"
+                        aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="offcanvas offcanvas-end"
+                        tabindex="-1"
+                        id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel"
+                    >
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                                Offcanvas
+                            </h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="offcanvas"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="../../index.html"
+                                        >Inicio</a
+                                    >
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Colegio
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./nosotros.html"
+                                                >Nosotros</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./historia.html"
+                                                >Historia</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./programas.html"
+                                                >Programas</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./reglas.html"
+                                                >Normativa Interna</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Publicaciones
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./noticias.html"
+                                                >Noticias</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./eventos.html"
+                                                >Eventos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./galeria.html"
+                                                >Galería</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./horarios.html"
+                                                >Horarios</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./utiles.html"
+                                                >Útiles</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Comunidad
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./egresados.html"
+                                                >Egresados</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./donar.html"
+                                                >Apóyanos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="./eventos.html"
+                                                >Eventos</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./noticias.html"
+                                                >Noticias</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="./contacto.html"
+                                        >Contáctanos</a
+                                    >
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Intranet
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Institución</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Personal</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Representante</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-1.html"
+                                                >Estudiante</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
+                                                href="./sesiones-2.html"
+                                                >Egresados</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hero Section Noticias -->
+        <section
+            class="bg-parallax bg-dark-parallax py-7"
+            style="
+                --bg-image: url('https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            "
+        >
+            <div
+                class="d-flex flex-column justify-content-center align-items-center h-100 p-3"
+            >
+                <span
+                    class="badge rounded-3 text-bg-primary fs-6 mb-2"
+                    style="--bs-bg-opacity: 1"
+                    >Categoria</span
+                >
+                <h1 class="h2 mb-2 text-center text-white fw-semibold">
+                    Requisitos para inscripción Nuevo Año Escolar
+                </h1>
+                <span class="d-inline-block text-white fw-bold">AGOSTO 02, 2023</span>
+                <span class="text-white fw-bold text-center d-block">DEBORA MAYUREL</span>
+            </div>
+        </section>
+
+        <div class="container py-5">
+            <img
+                src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt=""
+                class="article-image"
+            />
+            <p class="fs-6">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste pariatur a
+                suscipit cum eos adipisci excepturi quidem eius nostrum facilis ipsum,
+                ipsam, ea non dignissimos aliquam itaque eaque, consequatur rerum! Qui
+                sequi ratione libero veniam enim architecto, recusandae deleniti in illo
+                vero dolores harum ducimus dicta possimus veritatis! Quasi aliquam
+                voluptate quos est beatae exercitationem laboriosam provident iusto
+                nostrum quod. Neque, assumenda? Voluptatibus amet officiis sequi vero
+                aliquid dolores saepe? Quaerat quidem fugiat consequatur soluta ipsum
+                harum, deserunt alias sed autem? Optio harum voluptates a voluptatibus
+                possimus vero rem recusandae.
+            </p>
+            <p class="fs-6">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste pariatur a
+                suscipit cum eos adipisci excepturi quidem eius nostrum facilis ipsum,
+                ipsam, ea non dignissimos aliquam itaque eaque, consequatur rerum! Qui
+                sequi ratione libero veniam enim architecto, recusandae deleniti in illo
+                vero dolores harum ducimus dicta possimus veritatis! Quasi aliquam
+                voluptate quos est beatae exercitationem laboriosam provident iusto
+                nostrum quod. Neque, assumenda? Voluptatibus amet officiis sequi vero
+                aliquid dolores saepe? Quaerat quidem fugiat consequatur soluta ipsum
+                harum, deserunt alias sed autem? Optio harum voluptates a voluptatibus
+                possimus vero rem recusandae.
+            </p>
+            <p class="fs-6">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste pariatur a
+                suscipit cum eos adipisci excepturi quidem eius nostrum facilis ipsum,
+                ipsam, ea non dignissimos aliquam itaque eaque, consequatur rerum! Qui
+                sequi ratione libero veniam enim architecto, recusandae deleniti in illo
+                vero dolores harum ducimus dicta possimus veritatis! Quasi aliquam
+                voluptate quos est beatae exercitationem laboriosam provident iusto
+                nostrum quod. Neque, assumenda? Voluptatibus amet officiis sequi vero
+                aliquid dolores saepe? Quaerat quidem fugiat consequatur soluta ipsum
+                harum, deserunt alias sed autem? Optio harum voluptates a voluptatibus
+                possimus vero rem recusandae.
+            </p>
+            <p class="fs-6">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste pariatur a
+                suscipit cum eos adipisci excepturi quidem eius nostrum facilis ipsum,
+                ipsam, ea non dignissimos aliquam itaque eaque, consequatur rerum! Qui
+                sequi ratione libero veniam enim architecto, recusandae deleniti in illo
+                vero dolores harum ducimus dicta possimus veritatis! Quasi aliquam
+                voluptate quos est beatae exercitationem laboriosam provident iusto
+                nostrum quod. Neque, assumenda? Voluptatibus amet officiis sequi vero
+                aliquid dolores saepe? Quaerat quidem fugiat consequatur soluta ipsum
+                harum, deserunt alias sed autem? Optio harum voluptates a voluptatibus
+                possimus vero rem recusandae.
+            </p>
+
+            <p class="fw-bold text-primary">Descargar adjunto:</p>
+            <div class="mb-3">
+                <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="d-inline-flex align-items-center gap-2 text-decoration-none"
+                >
+                    <i class="fa-solid fa-file-lines text-primary fs-2"></i>
+                    <span class="badge fw-medium bg-primary rounded-pill fs-6">
+                        Lorem.pdf
+                    </span>
+                </a>
+            </div>
+            <div class="mb-3">
+                <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="d-inline-flex align-items-center gap-2 text-decoration-none"
+                >
+                    <i class="fa-solid fa-link text-primary fs-2"></i>
+                    <span class="badge fw-medium bg-primary rounded-pill fs-6">
+                        Ir al enlace
+                    </span>
+                </a>
+            </div>
+
+            <div class="social justify-content-end">
+                <a
+                    href="#"
+                    class="d-flex fw-bold gap-2 align-items-center text-white social__link-facebook px-3 rounded-pill text-decoration-none"
+                >
+                    <i class="fa-brands fa-facebook-f"></i>
+                    COMPARTIR
+                </a>
+                <a href="#" class="social__link social__link-twitter">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="#" class="social__link social__link-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="#" class="social__link social__link-envelope">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="#" class="social__link social__link-print">
+                    <i class="fa-solid fa-print"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-primary text-white">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-lg-4 py-5">
+                    <div class="col">
+                        <h3>Colegio La Ninfa</h3>
+                        <p>
+                            Educación jesuita de excelencia desde 1900. Formando líderes
+                            con valores para un mundo mejor.
+                        </p>
+                    </div>
+                    <div class="col">
+                        <h3>Enlaces Rápidos</h3>
+                        <ul>
+                            <li>
+                                <a href="#cupo" class="link-light"> Admisiones</a>
+                            </li>
+                            <li>
+                                <a href="#calendario" class="link-light">
+                                    Calendario Escolar</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" class="link-light"> Trabaja con Nosotros</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3>Contáctanos</h3>
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span
+                                    >Av. Principal, Sector La Ninfa, Caracas,
+                                    Venezuela</span
+                                >
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <a
+                                    href="tel:+582125551234"
+                                    class="link-light text-decoration-none"
+                                    >+58 212 555 1234</a
+                                >
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <a
+                                    href="mailto:info@colegiolaninfa.edu.ve"
+                                    class="link-light text-decoration-none"
+                                    >info@colegiolaninfa.edu.ve</a
+                                >
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Lunes a Viernes: 7:00 AM - 4:00 PM</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3>Síguenos</h3>
+                        <p>
+                            Mantente conectado con nuestra comunidad a través de las redes
+                            sociales.
+                        </p>
+                        <div class="social">
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-facebook-f"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-twitter"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-instagram"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-linkedin-in"></i
+                            ></a>
+                            <a href="#" class="social__link"
+                                ><i class="fab fa-youtube"></i
+                            ></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="py-3 border-top border-white">
+                <p class="text-white text-center m-0">
+                    &copy; 2025 Unidad Educativa Colegio La Ninfa. Todos los derechos
+                    reservados.
+                </p>
+            </div>
+        </footer>
+
+        <script src="../js/app.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/js/all.min.js"></script>
+    </body>
+</html>

@@ -1,16 +1,61 @@
-.bg-parallax {
-    --bg-image: url('../images/imagen-1.png');
+.article-image {
+    width: 56%;
+    height: 500px;
+    object-fit: cover;
+    float: left;
+    border-radius: 1rem;
+    margin: 0 1rem 1rem 0;
+}
 
+.dropdown-item:hover,
+.dropdown-item:focus {
+    color: var(--bs-white);
+    background-color: var(--bs-primary);
+}
+
+.navbar-brand img {
+    height: 60px;
+}
+
+.bg-image {
     background-image: var(--bg-image);
-    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
+
+    &.bg-dark-image {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            var(--bg-image);
+    }
+}
+
+.bg-parallax {
+    background-image: var(--bg-image);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &.bg-dark-parallax {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            var(--bg-image);
+    }
+
+    > .container {
+        position: relative;
+        z-index: 1;
+    }
 }
 
 .h-250px {
     height: 250px;
+}
+
+.h-300px {
+    height: 300px;
+}
+
+.about-image {
+    height: 400px;
 }
 
 .card {
@@ -60,6 +105,22 @@
 }
 
 .carousel {
+    &_galeria {
+        padding: 0 2rem;
+
+        .carousel__elemento {
+            padding: 0 8px;
+        }
+        .carousel__botones {
+            left: -3rem;
+            right: -3rem;
+            bottom: 50%;
+            justify-content: space-between;
+        }
+        .carousel__indicadores {
+            bottom: -2rem;
+        }
+    }
     &__contenedor {
         position: relative;
     }
@@ -225,19 +286,18 @@
     flex-direction: row;
     gap: 0.625rem;
     &__link {
-        display: inline-block;
-        display: flex;
-        justify-content: center;
+        display: inline-flex;
         align-items: center;
-        width: 2rem;
-        height: 2rem;
-        color: $white;
-        border-radius: 50rem;
-        font-size: 1rem;
-        transition: ease all 1s;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
         background-color: $secondary;
+        color: $white;
+        transition: all 0.3s ease;
         &:hover {
-            background-color: $warning;
+            background-color: $black;
+            transform: translateY(-3px);
         }
         &-primary {
             background-color: $primary;
@@ -490,6 +550,44 @@
     box-shadow: none !important;
 }
 
+.sidebar {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &-left {
+        left: 0;
+        .sidebar__button {
+            border-top-right-radius: 6rem;
+            border-bottom-right-radius: 6rem;
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    }
+    &-right {
+        right: 0;
+        .sidebar__button {
+            border-top-left-radius: 6rem;
+            border-bottom-left-radius: 6rem;
+        }
+    }
+    &__button {
+        width: 3.125rem;
+        height: 3.125rem;
+        background-color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s;
+        box-shadow: -5px 0px 20px -5px rgba(0, 0, 0, 0.3);
+        &:hover {
+            background-color: #d3d4d5;
+        }
+    }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .nav-link,
@@ -544,5 +642,38 @@
 
     .swal-gallery-title {
         font-size: 1.3rem;
+    }
+
+    .social {
+        justify-content: center;
+    }
+
+    .carousel {
+        &__botones {
+            bottom: 1rem;
+            right: 1rem;
+            left: 1rem;
+            justify-content: space-between;
+        }
+        &__anterior,
+        &__siguiente {
+            width: 2rem;
+            height: 2rem;
+            font-size: 1rem;
+        }
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .about-image {
+        height: 200px;
+    }
+
+    .article-image {
+        width: 100%;
+        height: 250px;
+        margin: 0 0 1rem 0;
     }
 }
