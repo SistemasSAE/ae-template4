@@ -32,13 +32,30 @@
             const nextButton = container.querySelector('.carousel__siguiente');
             const dots = container.querySelector('.carousel__indicadores');
 
-            new Glider(carousel, {
+            const glider = new Glider(carousel, {
                 ...gliderConfig1SlidesBase,
                 arrows: {
                     prev: prevButton,
                     next: nextButton,
                 },
                 dots: dots,
+            });
+
+            // Auto-desplazamiento cada 5 segundos
+            let autoplay = setInterval(() => {
+                glider.scrollItem('next');
+            }, 4000);
+
+            // Pausar autoplay al interactuar
+            container.addEventListener('mouseenter', () => {
+                clearInterval(autoplay);
+            });
+
+            // Reanudar autoplay al dejar de interactuar
+            container.addEventListener('mouseleave', () => {
+                autoplay = setInterval(() => {
+                    glider.scrollItem('next');
+                }, 4000);
             });
         });
     };

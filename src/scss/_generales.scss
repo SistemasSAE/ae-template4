@@ -9,6 +9,10 @@
     height: 100%;
 }
 
+.h-250px {
+    height: 250px;
+}
+
 .card {
     &-icon {
         width: 4rem;
@@ -488,6 +492,14 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .nav-link,
+    .navbar-nav .nav-link.active,
+    .navbar-nav .nav-link.show,
+    .nav-link:hover,
+    .nav-link:focus {
+        color: #000;
+    }
+
     .timeline {
         &::after {
             left: 1.5rem;
