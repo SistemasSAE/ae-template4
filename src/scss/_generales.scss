@@ -655,6 +655,21 @@
     }
 }
 
+/* Estilos adicionales para la animación */
+
+.stat-number {
+    transition: all 0.3s ease;
+    font-size: 2rem;
+    font-weight: bold;
+    color: $primary;
+}
+
+.stat-label {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: $info;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .navbar-nav {

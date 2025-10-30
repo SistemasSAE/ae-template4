@@ -369,6 +369,66 @@
         }
     };
 
+    const CifrasIncremento = () => {
+        const checkCifras = document.getElementById('cifras');
+        if (document.body.contains(checkCifras)) {
+            // Función para animar los contadores
+            function animateCounters() {
+                const counters = document.querySelectorAll('.stat-number');
+                const speed = 200; // Velocidad de incremento (menor = más rápido)
+
+                counters.forEach((counter) => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const increment = target / speed;
+                    let current = 0;
+
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            counter.textContent = Math.ceil(current);
+                            setTimeout(updateCounter, 1);
+                        } else {
+                            counter.textContent = target;
+                        }
+                    };
+
+                    updateCounter();
+                });
+            }
+
+            // Detectar cuando la sección Cifras está en el viewport
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <=
+                        (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <=
+                        (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            // Verificar si la sección está visible al cargar la página
+            document.addEventListener('DOMContentLoaded', function () {
+                const cifrasSection = document.getElementById('cifras');
+
+                // Función para verificar visibilidad
+                function checkVisibility() {
+                    if (isElementInViewport(cifrasSection)) {
+                        animateCounters();
+                        // Remover el event listener después de activar la animación una vez
+                        window.removeEventListener('scroll', checkVisibility);
+                    }
+                }
+
+                // Verificar al cargar y al hacer scroll
+                checkVisibility();
+                window.addEventListener('scroll', checkVisibility);
+            });
+        }
+    };
+
     /*----- ----- ----- ----- -----
 	# Declaraciones
 	----- ----- ----- ----- -----*/
@@ -381,4 +441,5 @@
         LightBox();
     });
     LineaTiempo();
+    CifrasIncremento();
 })();
