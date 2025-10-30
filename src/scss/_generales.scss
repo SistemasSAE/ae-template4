@@ -162,7 +162,7 @@
         .carousel__botones {
             left: -3rem;
             right: -3rem;
-            bottom: 50%;
+            bottom: calc(50% - 1rem);
             justify-content: space-between;
         }
         .carousel__indicadores {
@@ -637,14 +637,41 @@
     }
 }
 
+.navbar-nav {
+    .nav-link {
+        &.active,
+        &.show {
+            color: #cccccc;
+        }
+    }
+}
+
+.nav-link {
+    color: #fff;
+
+    &:hover,
+    &:focus {
+        color: #cccccc;
+    }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
-    .nav-link,
-    .navbar-nav .nav-link.active,
-    .navbar-nav .nav-link.show,
-    .nav-link:hover,
-    .nav-link:focus {
+    .navbar-nav {
+        .nav-link {
+            &.active,
+            &.show {
+                color: #444444;
+            }
+        }
+    }
+
+    .nav-link {
         color: #000;
+        &:hover,
+        &:focus {
+            color: #444444;
+        }
     }
 
     .timeline {

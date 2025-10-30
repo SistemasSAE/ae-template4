@@ -15,7 +15,7 @@
             href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/css/fontawesome.min.css"
         />
         <link rel="stylesheet" href="../css/estilos.min.css" />
-        <title>Registro de Egresados - Colegio La Ninfa</title>
+        <title>Equipo - Colegio La Ninfa</title>
     </head>
     <body>
         <header class="bg-primary sticky-top">
@@ -242,155 +242,140 @@
             </nav>
         </header>
 
-        <!-- Registro Section -->
-        <section class="py-5">
+        <section class="py-7 bg-primary-subtle mb-5">
             <div class="container">
-                <div class="rounded-4 shadow-lg overflow-hidden p-6">
-                    <h2 class="text-center text-primary fw-semibold display-6">
-                        Registro de Egresados
-                    </h2>
-                    <p class="text-center mx-lg-6 fs-5 mb-5">
-                        Únete a nuestra comunidad de egresados y mantente conectado con el
-                        Colegio La Ninfa. Completa el formulario para acceder a beneficios
-                        exclusivos, eventos y redes de contacto.
-                    </p>
+                <h1 class="display-6 text-center text-primary fw-semibold">
+                    Conoce a Nuestro Personal
+                </h1>
+                <p class="fs-5 text-center mx-lg-8">
+                    Descubre a las personas que trabajan detrás de escena para mantener
+                    activa y unida a la comunidad de Egresados. Encuentra aquí sus roles e
+                    información de contacto directo.
+                </p>
+            </div>
+        </section>
 
-                    <form class="mb-5" id="egresadosForm">
-                        <div class="row row-cols-1 row-cols-lg-2 g-4 mb-5">
-                            <div class="col">
-                                <label class="form-label" for="nombres"
-                                    >Nombres y Apellidos
-                                    <span class="text-danger">*</span></label
-                                >
-                                <input
-                                    type="text"
-                                    id="nombres"
-                                    class="form-control"
-                                    placeholder="Ingresa tus nombres y apellidos completos"
-                                    required
-                                />
-                            </div>
-                            <div class="col">
-                                <label class="form-label" for="cedula"
-                                    >Número de Cédula
-                                    <span class="text-danger">*</span></label
-                                >
-                                <input
-                                    type="text"
-                                    id="cedula"
-                                    class="form-control"
-                                    placeholder="Ingresa tu número de cédula"
-                                    required
-                                />
-                            </div>
-                            <div class="col">
-                                <label class="form-label" for="email"
-                                    >Correo electrónico
-                                    <span class="text-danger">*</span></label
-                                >
-                                <input
-                                    type="email"
-                                    id="email"
-                                    class="form-control"
-                                    placeholder="Ingresa tu correo electrónico"
-                                    required
-                                />
-                            </div>
-                            <div class="col">
-                                <label class="form-label" for="telefono"
-                                    >Número de teléfono</label
-                                >
-                                <input
-                                    type="tel"
-                                    id="telefono"
-                                    class="form-control"
-                                    placeholder="Ingresa tu número de teléfono"
-                                />
-                            </div>
-                            <div class="col">
-                                <label class="form-label" for="pais"
-                                    >País de Residencia
-                                    <span class="text-danger">*</span></label
-                                >
-                                <select id="pais" class="form-select" required>
-                                    <option value="" disabled selected>
-                                        Selecciona tu país
-                                    </option>
-                                    <option value="Venezuela">Venezuela</option>
-                                    <option value="Argentina">Argentina</option>
-                                    <option value="Chile">Chile</option>
-                                    <option value="Colombia">Colombia</option>
-                                    <option value="Perú">Perú</option>
-                                    <option value="Ecuador">Ecuador</option>
-                                    <option value="México">México</option>
-                                    <option value="España">España</option>
-                                    <option value="Estados Unidos">Estados Unidos</option>
-                                    <option value="Canadá">Canadá</option>
-                                    <option value="Otro">Otro</option>
-                                </select>
-                            </div>
-                            <div class="col">
-                                <label class="form-label" for="ciudad"
-                                    >Ciudad de Residencia
-                                    <span class="text-danger">*</span></label
-                                >
-                                <input
-                                    type="text"
-                                    id="ciudad"
-                                    class="form-control"
-                                    placeholder="Ingresa tu ciudad de residencia"
-                                    required
-                                />
-                            </div>
-                            <div class="col">
-                                <label class="form-label" for="empresa">Empresa</label>
-                                <input
-                                    type="text"
-                                    id="empresa"
-                                    class="form-control"
-                                    placeholder="Ingresa el nombre de tu empresa actual"
-                                />
-                            </div>
-                            <div class="col">
-                                <label class="form-label" for="egreso"
-                                    >Año de egreso
-                                    <span class="text-danger">*</span></label
-                                >
-                                <select id="egreso" class="form-select" required>
-                                    <option value="" disabled selected>
-                                        Selecciona tu año de egreso
-                                    </option>
-                                    <!-- Años desde 1970 hasta el actual -->
-                                    <script>
-                                        const currentYear = new Date().getFullYear();
-                                        document.write(
-                                            Array.from(
-                                                {
-                                                    length: currentYear - 1969,
-                                                },
-                                                (_, i) =>
-                                                    `<option value="${1970 + i}">${
-                                                        1970 + i
-                                                    }</option>`,
-                                            ).join(''),
-                                        );
-                                    </script>
-                                </select>
+        <!-- Sección de Noticias -->
+        <section class="mb-5">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-lg-3 g-3">
+                    <!-- Noticia 1 -->
+                    <div class="col">
+                        <div class="card h-100">
+                            <img
+                                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                                class="w-100 object-fit-cover h-250px"
+                                alt="Tecnología e Informática"
+                            />
+
+                            <div class="card-body">
+                                <h3 class="card-title text-primary">
+                                    Padre Carlos Mendoza, S.J.
+                                </h3>
+                                <h4 class="card-subtitle mb-2 text-secondary">Rector</h4>
+
+                                <p class="card-text">
+                                    Doctor en Educación, Universidad de Deusto
+                                </p>
+                                <a href="#" class="btn btn-primary">Conoceme</a>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="d-flex justify-content-center align-items-center">
-                            <button type="submit" class="btn btn-primary">
-                                Enviar registro
-                            </button>
+                    <!-- Noticia 2 -->
+                    <div class="col">
+                        <div class="card h-100">
+                            <img
+                                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1376&q=80"
+                                class="w-100 object-fit-cover h-250px"
+                                alt="Tecnología e Informática"
+                            />
+
+                            <div class="card-body">
+                                <h3 class="card-title text-primary">
+                                    Dra. María Fernanda Rojas
+                                </h3>
+                                <h4 class="card-subtitle mb-2 text-secondary">
+                                    Directora Académica
+                                </h4>
+
+                                <p class="card-text">Máster en Pedagogía, UCAB</p>
+                                <a href="#" class="btn btn-primary">Conoceme</a>
+                            </div>
                         </div>
-                    </form>
+                    </div>
 
-                    <p class="text-center">
-                        ¿Ya tienes una cuenta?
-                        <a href="Sesión2.html">Iniciar sesión</a>
-                    </p>
+                    <!-- Noticia 3 -->
+                    <div class="col">
+                        <div class="card h-100">
+                            <img
+                                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                                class="w-100 object-fit-cover h-250px"
+                                alt="Tecnología e Informática"
+                            />
+
+                            <div class="card-body">
+                                <h3 class="card-title text-primary">
+                                    Ing. Luis Alberto Pérez
+                                </h3>
+                                <h4 class="card-subtitle text-secondary">
+                                    Director Técnico
+                                </h4>
+
+                                <p class="card-text">Ingeniero Industrial, USB</p>
+                                <a href="#" class="btn btn-primary">Conoceme</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Noticia 4 -->
+                    <div class="col">
+                        <div class="card h-100">
+                            <img
+                                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1376&q=80"
+                                class="w-100 object-fit-cover h-250px"
+                                alt="Tecnología e Informática"
+                            />
+
+                            <div class="card-body">
+                                <h3 class="card-title text-primary">
+                                    Dra. María Fernanda Rojas
+                                </h3>
+                                <h4 class="card-subtitle mb-2 text-secondary">
+                                    Directora Académica
+                                </h4>
+
+                                <p class="card-text">Máster en Pedagogía, UCAB</p>
+                                <a href="#" class="btn btn-primary">Conoceme</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Paginación -->
+                <nav class="mt-5" aria-label="Navegacion de Noticias">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                <i class="fas fa-chevron-left"></i>
+                            </a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </section>
 

@@ -95,19 +95,6 @@
         });
     };
 
-    const MenuEstatico = () => {
-        const navbar = document.getElementById('mainNavbar');
-        if (document.body.contains(navbar)) {
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 120) {
-                    navbar.classList.remove('d-none');
-                } else {
-                    navbar.classList.add('d-none');
-                }
-            });
-        }
-    };
-
     const Calendario = () => {
         const checkCalendario = document.querySelector('.calendar');
         if (document.body.contains(checkCalendario)) {
@@ -389,7 +376,6 @@
     window.addEventListener('load', () => {
         BotonScrollTop();
         GliderCreator();
-        MenuEstatico();
         Calendario();
         FuncionesFormulario();
         LightBox();
