@@ -216,13 +216,17 @@
             </nav>
         </header>
 
-        <!-- Hero Section para Eventos -->
-        <section class="py-5">
+        <section
+            class="bg-parallax bg-dark-parallax py-7"
+            style="
+                --bg-image: url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            "
+        >
             <div class="container">
-                <h1 class="display-6 text-center text-primary fw-semibold">
+                <h1 class="display-6 text-center text-white fw-semibold">
                     Eventos del Colegio La Ninfa
                 </h1>
-                <p class="fs-5 text-center mx-lg-8">
+                <p class="fs-5 text-center text-white mx-lg-8">
                     Mantente informado sobre los próximos eventos académicos, culturales y
                     deportivos que tenemos preparados para nuestra comunidad educativa.
                 </p>
@@ -230,16 +234,15 @@
         </section>
 
         <!-- Próximos Eventos -->
-        <section class="mb-4">
+        <section class="py-5">
             <div class="container">
-                <h2 class="display-6 text-center text-primary fw-semibold">Eventos</h2>
                 <div class="row row-cols-1 row-cols-lg-3 g-3">
                     <!-- Evento 1 -->
                     <div class="col">
-                        <div class="card position-relative">
+                        <div class="card position-relative overflow-hidden">
                             <img
                                 src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                class="w-100 h-250px object-fit-contain"
+                                class="w-100 h-250px object-fit-cover"
                                 alt="..."
                             />
 
@@ -269,10 +272,10 @@
 
                     <!-- Evento 2 -->
                     <div class="col">
-                        <div class="card position-relative">
+                        <div class="card position-relative overflow-hidden">
                             <img
                                 src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                class="w-100 h-250px object-fit-contain"
+                                class="w-100 h-250px object-fit-cover"
                                 alt="..."
                             />
 
@@ -302,10 +305,10 @@
 
                     <!-- Evento 3 -->
                     <div class="col">
-                        <div class="card position-relative">
+                        <div class="card position-relative overflow-hidden">
                             <img
                                 src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                class="w-100 h-250px object-fit-contain"
+                                class="w-100 h-250px object-fit-cover"
                                 alt="..."
                             />
 
@@ -334,10 +337,10 @@
 
                     <!-- Evento 4 -->
                     <div class="col">
-                        <div class="card position-relative">
+                        <div class="card position-relative overflow-hidden">
                             <img
                                 src="https://images.unsplash.com/photo-1533109721029-b47c7c34d47c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                class="w-100 h-250px object-fit-contain"
+                                class="w-100 h-250px object-fit-cover"
                                 alt="..."
                             />
 
@@ -367,10 +370,10 @@
 
                     <!-- Evento 5 -->
                     <div class="col">
-                        <div class="card position-relative">
+                        <div class="card position-relative overflow-hidden">
                             <img
                                 src="https://images.unsplash.com/photo-1511882150382-421056c89033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                class="w-100 h-250px object-fit-contain"
+                                class="w-100 h-250px object-fit-cover"
                                 alt="..."
                             />
 
@@ -399,10 +402,10 @@
 
                     <!-- Evento 6 -->
                     <div class="col">
-                        <div class="card position-relative">
+                        <div class="card position-relative overflow-hidden">
                             <img
                                 src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                class="w-100 h-250px object-fit-contain"
+                                class="w-100 h-250px object-fit-cover"
                                 alt="..."
                             />
 
@@ -429,6 +432,30 @@
                         </div>
                     </div>
                 </div>
+
+                <nav class="mt-5" aria-label="Navegacion de Noticias">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                <i class="fas fa-chevron-left"></i>
+                            </a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </section>
 

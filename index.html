@@ -18,10 +18,14 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/css/fontawesome.min.css"
         />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css"
+        />
         <link rel="stylesheet" href="./src/css/estilos.min.css" />
         <title>Unidad Educativa Colegio La Ninfa</title>
     </head>
-    <body>
+    <body id="VentanaInicio">
         <!-- Header -->
         <header class="bg-primary sticky-top">
             <nav class="navbar navbar-dark navbar-expand-lg">
@@ -386,6 +390,48 @@
             </div>
         </section>
 
+        <section class="bg-primary-subtle py-3 py-lg-5" id="cifras">
+            <div class="container">
+                <h2 class="h2 mb-4 text-center text-primary fw-semibold">Cifras</h2>
+                <p class="text-center lead mb-5">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus error
+                    a reiciendis illo quasi, eaque labore molestiae libero ex mollitia
+                    laudantium est aliquid adipisci culpa perferendis sint quis minus sed?
+                    Laborum dolores vero quaerat rerum accusamus ea. Qui doloremque atque
+                    error quod. Velit enim provident veniam illo recusandae explicabo
+                    architecto tempora, molestiae id autem iusto sed dolores aliquid
+                    numquam laborum!
+                </p>
+
+                <div class="row row-cols-2 row-cols-lg-4 g-3">
+                    <div class="col">
+                        <div class="text-center">
+                            <span class="d-block stat-label">Familias</span>
+                            <span class="stat-number" data-target="912">0</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="text-center">
+                            <span class="d-block stat-label">Estudiantes</span>
+                            <span class="stat-number" data-target="1204">0</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="text-center">
+                            <span class="d-block stat-label">Egresados</span>
+                            <span class="stat-number" data-target="5568">0</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="text-center">
+                            <span class="d-block stat-label">Colaboradores</span>
+                            <span class="stat-number" data-target="146">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Programas -->
         <section class="py-3 py-lg-5">
             <div class="container" id="programas">
@@ -473,7 +519,7 @@
                 <h2 class="h2 mb-4 text-center text-white fw-semibold">
                     Nuestro Equipo Directivo
                 </h2>
-                <div class="carousel carousel_galeria mb-5">
+                <div class="carousel carousel__galeria mb-5">
                     <div class="carousel__contenedor">
                         <div class="carousel__lista_3">
                             <div class="carousel__elemento">
@@ -863,7 +909,7 @@
         <section class="bg-primary py-3 py-lg-5">
             <div class="container">
                 <h2 class="h2 mb-4 text-center text-white fw-semibold">Galería</h2>
-                <div class="carousel carousel_galeria mb-5">
+                <div class="carousel carousel__galeria mb-5">
                     <div class="carousel__contenedor">
                         <div class="carousel__lista_3">
                             <div class="carousel__elemento">
@@ -955,12 +1001,12 @@
         </section>
 
         <!-- Información de Interés -->
-        <section class="py-3 py-lg-5">
+        <section class="py-5">
             <div class="container">
                 <h2 class="h2 mb-4 text-center text-primary fw-semibold">
                     Información de Interés
                 </h2>
-                <div class="carousel carousel_galeria">
+                <div class="carousel carousel__galeria">
                     <div class="carousel__contenedor">
                         <div class="carousel__lista_3">
                             <div class="carousel__elemento">
@@ -1052,7 +1098,7 @@
                                 <i class="fa-solid fa-chevron-right"></i>
                             </button>
                         </div>
-                        <div role="tablist" class="carousel__indicadores"></div>
+                        <div role="tablist" class="carousel__indicadores dark-dots"></div>
                     </div>
                 </div>
             </div>
@@ -1064,7 +1110,7 @@
                 <h2 class="h2 mb-4 text-center text-white fw-semibold">
                     Egresados Destacados
                 </h2>
-                <div class="carousel carousel_galeria mb-5">
+                <div class="carousel carousel__galeria mb-5">
                     <div class="carousel__contenedor">
                         <div class="carousel__lista_3">
                             <div class="carousel__elemento">
@@ -1197,48 +1243,6 @@
             </div>
         </section>
 
-        <section class="bg-primary-subtle py-3 py-lg-5" id="cifras">
-            <div class="container">
-                <h2 class="h2 mb-4 text-center text-primary fw-semibold">Cifras</h2>
-                <p class="text-center lead mb-5">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus error
-                    a reiciendis illo quasi, eaque labore molestiae libero ex mollitia
-                    laudantium est aliquid adipisci culpa perferendis sint quis minus sed?
-                    Laborum dolores vero quaerat rerum accusamus ea. Qui doloremque atque
-                    error quod. Velit enim provident veniam illo recusandae explicabo
-                    architecto tempora, molestiae id autem iusto sed dolores aliquid
-                    numquam laborum!
-                </p>
-
-                <div class="row row-cols-2 row-cols-lg-4">
-                    <div class="col">
-                        <div class="text-center">
-                            <span class="d-block stat-label">Familias</span>
-                            <span class="stat-number" data-target="912">0</span>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="text-center">
-                            <span class="d-block stat-label">Estudiantes</span>
-                            <span class="stat-number" data-target="1204">0</span>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="text-center">
-                            <span class="d-block stat-label">Egresados</span>
-                            <span class="stat-number" data-target="5568">0</span>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="text-center">
-                            <span class="d-block stat-label">Colaboradores</span>
-                            <span class="stat-number" data-target="146">0</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Contacto -->
         <section class="py-5">
             <div class="container">
@@ -1303,12 +1307,15 @@
                         </form>
                     </div>
                     <div class="col">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1388.9238248994393!2d-69.33065339939417!3d10.060535656192947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e87671e97d45ad1%3A0x929add4e3b1652e9!2sColegio%20Mar%C3%ADa%20Auxiliadora!5e0!3m2!1ses-419!2sve!4v1761846231155!5m2!1ses-419!2sve"
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                            class="w-100 h-300px"
-                        ></iframe>
+                        <div class="map-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d412.38130396121585!2d-66.90367912461622!3d10.480612619289987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sve!4v1758748662027!5m2!1ses-419!2sve"
+                                class="responsive-iframe"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                            ></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1418,43 +1425,6 @@
             </div>
         </footer>
 
-        <div class="position-fixed top-50 z-1">
-            <div class="sidebar sidebar-left">
-                <a
-                    class="sidebar__button link-dark fs-6"
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a
-                    class="sidebar__button link-dark fs-6"
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-                <a
-                    class="sidebar__button link-dark fs-6"
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
-                <a
-                    class="sidebar__button link-dark fs-6"
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <i class="fa-brands fa-twitter"></i>
-                </a>
-            </div>
-        </div>
-
         <button class="btnScrollTop" title="Go to top">
             <i class="fa-solid fa-arrow-up"></i>
         </button>
@@ -1463,5 +1433,6 @@
         <script src="./src/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/js/all.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.all.min.js"></script>
     </body>
 </html>
