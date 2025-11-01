@@ -430,41 +430,47 @@
     };
 
     const PopUpInfo = () => {
-        const checkInicio = document.getElementById('VentanaInicio');
-        if (document.body.contains(checkInicio)) {
-            Swal.fire({
-                imageUrl: './src/images/logotipo.png',
-                imageHeight: 100,
-                imageAlt: 'Logo colegio',
-                html: `
-                        <p class="fw-bold">Clubes escolares</p>
-                        <a
-                            href="#"
-                            class="btn btn-primary text-white fw-bold rounded-pill w-100 mb-3"
-                            >Club de naciones unidas - Masmum BQTO</a
-                        >
-                        <a
-                            href="#"
-                            class="btn btn-primary text-white fw-bold rounded-pill w-100 mb-3"
-                            >Club de periodismo y redes sociales</a
-                        >
-                        <a
-                            href="#"
-                            class="btn btn-primary text-white fw-bold rounded-pill w-100 mb-3"
-                            >Club de ajedrez</a
-                        >
-                        <a
-                            href="#"
-                            class="btn btn-primary text-white fw-bold rounded-pill w-100 mb-3"
-                            >Club de matematicas</a
-                        >
-                    `,
-                showCloseButton: true,
-                showConfirmButton: false,
-                customClass: {
-                    actions: 'w-100 justify-content-end px-4',
-                    popup: 'rounded-4',
-                },
+        const checkPopUp = document.querySelector('.alertaInfo');
+        if (document.body.contains(checkPopUp)) {
+            const btnInfo = document.querySelectorAll('.alertaInfo');
+
+            btnInfo.forEach((button) => {
+                // Usar forEach en lugar de for-loop
+                button.addEventListener('click', () => {
+                    Swal.fire({
+                        imageUrl: './src/images/logotipo.png',
+                        imageHeight: 100,
+                        imageAlt: 'Logo colegio',
+                        html: `
+                <p class="fw-bold">Clubes escolares</p>
+                <a
+                    href="#"
+                    class="btn btn-primary text-white fw-bold rounded-pill w-100 mb-3"
+                    >Club de naciones unidas - Masmum BQTO</a
+                >
+                <a
+                    href="#"
+                    class="btn btn-primary text-white fw-bold rounded-pill w-100 mb-3"
+                    >Club de periodismo y redes sociales</a
+                >
+                <a
+                    href="#"
+                    class="btn btn-primary text-white fw-bold rounded-pill w-100 mb-3"
+                    >Club de ajedrez</a
+                >
+                <a
+                    href="#"
+                    class="btn btn-primary text-white fw-bold rounded-pill w-100 mb-3"
+                    >Club de matematicas</a
+                >
+            `,
+                        showConfirmButton: false,
+                        customClass: {
+                            actions: 'w-100 justify-content-end px-4',
+                            popup: 'rounded-4',
+                        },
+                    });
+                });
             });
         }
     };
