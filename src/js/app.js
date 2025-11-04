@@ -465,6 +465,7 @@
                 >
             `,
                         showConfirmButton: false,
+                        showCloseButton: true,
                         customClass: {
                             actions: 'w-100 justify-content-end px-4',
                             popup: 'rounded-4',
